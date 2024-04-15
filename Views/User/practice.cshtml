@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Getting Started with Chart JS with www.chartjs3.com</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .chartCard {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .chartBox {
+            width: 100%;
+            max-width: 700px;
+        @*border-radius:10px;*@border: solid 3px rgba(54, 162, 235, 1);
+            background: white;
+        }
+
+        .container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .containerBody {
+            height: 300px;
+            /* Set a specific height for the chart container */
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chartCard">
+        <div class="chartBox">
+            <div class="container">
+                <div class="containerBody">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+
+		
+        $(document).ready(function () {
+            margin();
+			chart();
+
+            function margin() {
+
+                $(".page-content").removeClass();
+                $(".container-fluid").removeClass();
+            }
+
+
+function chart(){
+  $.ajax("../api/adminapi/getNR")
+				.done(function (result) {
+
+					var b = [];
+
+					b = result.filter(function (item) {
+						return item.test === "Neutrophils" && item.unitname === "%";
+					});
+
+					var c = [];
+
+					c = result.filter(function (item) {
+						return item.test === "WBC" && item.unitname === "x(10^9)/L";
+					});
+
+					var d = [];
+
+					d = result.filter(function (item) {
+						return item.test === "Lymphocyte" && item.unitname === "%";
+					});
+
+
+					var e = [];
+
+					e = result.filter(function (item) {
+						return item.test === "Basophil" && item.unitname === "%";
+					});
+
+					var f = [];
+
+					f = result.filter(function (item) {
+						return item.test === "Eosinophil" && item.unitname === "%";
+					});
+
+					var g = [];
+
+					g = result.filter(function (item) {
+						return item.test === "Hematocrit" && item.unitname === "mg/dl";
+					});
+
+
+					var h = [];
+
+					h = result.filter(function (item) {
+						return item.test === "Hemoglobin" && item.unitname === "mg/dl";
+					});
+
+
+					var i = [];
+
+					i = result.filter(function (item) {
+						return item.test === "MCH" && item.unitname === "pg";
+					});
+
+					var j = [];
+
+					j = result.filter(function (item) {
+						return item.test === "MCHC" && item.unitname === "g/dL";
+					});
+
+					var k = [];
+
+					k = result.filter(function (item) {
+						return item.test === "MCV" && item.unitname === "fL";
+					});
+
+					var l = [];
+
+					l = result.filter(function (item) {
+						return item.test === "Monocyte" && item.unitname === "%";
+					});
+
+
+					var m = [];
+
+					m = result.filter(function (item) {
+						return item.test === "MPV" && item.unitname === "fL";
+					});
+
+					var n = [];
+
+					n = result.filter(function (item) {
+						return item.test === "Platelet Count" && item.unitname === "x(10^9)/L";
+					});
+
+					var o = [];
+
+					o = result.filter(function (item) {
+						return item.test === "RBC" && item.unitname === "10^12/L";
+					});
+
+					var p = [];
+
+					p = result.filter(function (item) {
+						return item.test === "RCDW" && item.unitname === "%";
+					});
+
+
+
+                      $.ajax("../api/adminapi/getstudenthi")
+				.done(function (result) {
+                   
+					var pisot = result.filter(function (item) {
+						return item.spiId === 9;
+					});
+				console.log(pisot);
+
+					 pisot.forEach(function (sampleValue) {
+                 //  console.log(sampleValue);
+                    
+               
+
+
+
+
+
+
+
+
+
+				
+                  // console.log(sampleValue.neutrophils)
+					// Check Neutrophils value against maxRange and minRange
+					const neutrophilsColor = sampleValue.neutrophils >= b[0].minRange && sampleValue.neutrophils <= b[0].maxRange ? 'green' : 'red';
+					// Check WBC value against maxRange and minRange
+					const wbcColor = sampleValue.wbc >= c[0].minRange && sampleValue.wbc <= c[0].maxRange ? 'green' : 'red';
+					const lymColor = sampleValue.lymphocyte >= d[0].minRange && sampleValue.lymphocyte <= d[0].maxRange ? 'green' : 'red';
+					const basoColor = sampleValue.basophil >= e[0].minRange && sampleValue.basophil <= e[0].maxRange ? 'green' : 'red';
+					const eosiColor = sampleValue.eosinophil >= f[0].minRange && sampleValue.eosinophil <= f[0].maxRange ? 'green' : 'red';
+					const hemaColor = sampleValue.hematocrit >= g[0].minRange && sampleValue.hematocrit <= g[0].maxRange ? 'green' : 'red';
+					const hemoColor = sampleValue.hemoglobin >= h[0].minRange && sampleValue.hemoglobin <= h[0].maxRange ? 'green' : 'red';
+					const mchColor = sampleValue.mch >= i[0].minRange && sampleValue.mch <= i[0].maxRange ? 'green' : 'red';
+					const mchcColor = sampleValue.mchc >= j[0].minRange && sampleValue.mchc <= j[0].maxRange ? 'green' : 'red';
+					const mcvColor = sampleValue.mcv >= k[0].minRange && sampleValue.mcv <= k[0].maxRange ? 'green' : 'red';
+					const monoColor = sampleValue.monocyte >= l[0].minRange && sampleValue.monocyte <= l[0].maxRange ? 'green' : 'red';
+					const mpvColor = sampleValue.mpv >= l[0].minRange && sampleValue.mpv <= l[0].maxRange ? 'green' : 'red';
+					const plColor = sampleValue.plateletcount >= l[0].minRange && sampleValue.plateletcount <= l[0].maxRange ? 'green' : 'red';
+					const rbcColor = sampleValue.rbc >= l[0].minRange && sampleValue.rbc <= l[0].maxRange ? 'green' : 'red';
+					const rcdwColor = sampleValue.rcdw >= l[0].minRange && sampleValue.rcdw <= l[0].maxRange ? 'green' : 'red';
+
+
+					console.log(Chart.version);
+					console.log(neutrophilsColor, wbcColor, lymColor, basoColor, eosiColor, hemaColor, hemoColor, mchColor, mchcColor, mcvColor, monoColor, mpvColor, plColor, rbcColor, rcdwColor);
+
+
+				
+
+					var data = {
+						labels: ['Neutrophils', 'WBC', 'Lympocyte', 'Basophil', 'Eosinophil', 'Hematocrit', 'Hemoglobin', 'Mch', 'Mchc', 'Mcv', 'Monocyte', 'Mpv', 'Platelet Count', 'Rbc', 'Rcdw'],
+						datasets: [{
+							label: 'Blood Count',
+
+							data: [sampleValue.neutrophils,
+							sampleValue.wbc,
+							sampleValue.lymphocyte,
+							sampleValue.basophil,
+							sampleValue.eosinophil,
+							sampleValue.hematocrit,
+							sampleValue.hemoglobin,
+							sampleValue.mch,
+							sampleValue.mchc,
+							sampleValue.mcv,
+							sampleValue.monocyte,
+							sampleValue.mpv,
+							sampleValue.plateletcount,
+							sampleValue.rbc,
+							sampleValue.rcdw],
+
+
+
+							backgroundColor: [
+								neutrophilsColor,
+								wbcColor,
+								lymColor,
+								basoColor,
+								eosiColor,
+								hemaColor,
+								hemoColor,
+								mchColor,
+								mchcColor,
+								mcvColor,
+								monoColor,
+								mpvColor,
+								plColor,
+								rbcColor,
+								rcdwColor,
+							],
+							borderColor: [
+								neutrophilsColor,
+								wbcColor,
+								lymColor,
+								basoColor,
+								eosiColor,
+								hemaColor,
+								hemoColor,
+								mchColor,
+								mchcColor,
+								mcvColor,
+								monoColor,
+								mpvColor,
+								plColor,
+								rbcColor,
+								rcdwColor,
+							],
+							borderWidth: 1
+						}]
+					};
+
+
+                     // config 
+            const config = {
+                type: 'bar',
+                data,
+                options: {
+                    maintainAspectRatio: false, // Set to false to make it responsive
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            };
+
+            // render init block
+            const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
+
+            // Adjust container width dynamically based on the number of labels
+            const containerBody = document.querySelector('.containerBody');
+            const totalLabels = myChart.data.labels.length;
+
+            if (totalLabels > 7) {
+                const newWidth = 200 + ((totalLabels - 7) * 30)
+                containerBody.style.width = `${newWidth}%`;
+            }
+
+
+
+
+					
+
+
+
+
+
+
+
+
+				});
+
+
+ });
+					   
+
+					});
+
+
+					}
+
+
+
+
+
+
+            @* // setup 
+            const data = {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Weekly Sales',
+                    data: [18, 12, 6, 9, 12, 3, 9, 18, 12, 6, 9, 12, 3, 9, 18, 12, 6, 9, 12, 3, 9],
+                    backgroundColor: [
+                        'rgba(255, 26, 104, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(0, 0, 0, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 26, 104, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(0, 0, 0, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+
+            // config 
+            const config = {
+                type: 'bar',
+                data,
+                options: {
+                    maintainAspectRatio: false, // Set to false to make it responsive
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            };
+
+            // render init block
+            const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
+
+            // Adjust container width dynamically based on the number of labels
+            const containerBody = document.querySelector('.containerBody');
+            const totalLabels = myChart.data.labels.length;
+
+            if (totalLabels > 7) {
+                const newWidth = 100 + ((totalLabels - 7) * 30)
+                containerBody.style.width = `${newWidth}%`;
+            } *@
+
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>
+<style>
+    .sidebar-wrapper {
+        display: none;
+    }
+</style>
+
+

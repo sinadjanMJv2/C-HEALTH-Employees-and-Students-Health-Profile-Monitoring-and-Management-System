@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Appointment Schedule</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/homepage.css">
+
+</head>
+
+<body>
+
+    <header style="background: linear-gradient(to right, #16222a, #3a6073);">
+        <div class="container">
+            <h1>Appointment Scheduler</h1>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="User" asp-action="Appoint">Appointment</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+
+                   
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="User" asp-action="studenthealthprofile">Health
+                            Profile</a>
+                    </li>
+
+
+                   <li class="nav-item">
+                        @* <a class="nav-link" asp-area="" asp-controller="User" asp-action="Home">Logout</a> *@
+                        <a class="nav-link btnLogout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="s1">
+        <div class="container">
+            <div class="schedule">
+
+
+                @Html.Partial("PartialAppoint/ProfileAppoint")            
+                @Html.Partial("PartialAppoint/displayschedule")
+                @Html.Partial("PartialAppoint/modalAppoint")
+                @Html.Partial("PartialAppoint/modalPreview")
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css" />
+<!-- Add dark theme CSS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    var dates = [];
+    var userId;
+    var appointmentList = {};
+
+    
+
+
+    $(document).ready(function () {
+        getDates();
+        getTime();
+        margin();
+        getUserID();
+        getAppointmentList();
+     
+
+        var userType = sessionStorage.getItem('userType');
+        if (userType === null) {
+            window.location.href = "/User/practLogin";
+        }
+        else {
+            if (userType === "admin") {
+                window.location.href = "/Admin/AdminCategory";
+            }
+        }
+
+         $(".btnLogout").click((e) => {
+            sessionStorage.clear();
+            localStorage.clear();
+            window.location.href = "/User/Home";
+        });
+
+
+        function margin() {
+
+            $(".page-content").removeClass();
+            $(".container-fluid").removeClass();
+        }
+
+        function getUserID() {
+            var retrievedArray = JSON.parse(localStorage.getItem('userData'));
+       
+            retrievedArray.forEach(function (item) {
+                if (item.spiId == null || item.spiId == undefined) {
+
+                    console.log("employee siya")
+                    if (item.epiId == null || item.epiId == undefined) {
+                        console.log("student siya")
+                    } else {
+                        userId = item.epiId;
+                   $("#Username").html(item.fullname);
+                    $("#Usergmail").html(item.gmailaddress);
+                     $("#UserProgam").html(item.courseStrandYearName);
+                    }
+                } else {
+                    userId = item.spiId;
+
+                    $("#Username").html(item.fullname);
+                    $("#Usergmail").html(item.gmailaddress);
+                     $("#UserProgam").html(item.courseStrandYearName);
+                }
+
+
+            });
+        }
+
+
+        function getAppointmentList() {
+            //getting the appointment list first.
+            $.ajax("../api/adminapi/getAppointmentList")
+                .done(function (result) {
+                    appointmentList = result;
+                    console.log("Appointment List : ", appointmentList);
+                    
+                    getDates();
+                });
+        }
+
+
+
+        function getDates() {
+            $.ajax("../api/adminapi/getDateTime")
+                .done(function (result) {
+
+                    var allowedDates = [];
+
+                 
+                
+                    result.forEach(obj => {
+  
+                        @* //  console.log('obj',obj.avadate);
+                        // Check if the avadate property exists in the current object
+                        if (obj.avadate !== undefined) {
+
+                            //Check if the appointment list has the data of student id inside the Date
+                            const matchingAppointments = appointmentList.filter(appointment =>
+                                appointment.dateApp === obj.avadate && appointment.patientId === userId
+                            );
+
+                            console.log("matching",matchingAppointments);
+
+                            //If there is no student id within that date then push the value
+                            if (matchingAppointments.length <= 0) {
+                                // Push the value to the new array
+                               
+                            }
+
+                        } *@
+
+                          allowedDates.push(obj.avadate);
+
+                        
+                    }); 
+
+                    var arrayWithoutDuplicates = [...new Set(allowedDates)];
+                    console.log('dupli', arrayWithoutDuplicates);
+
+                    //   var allowedDates = ["2023-12-30", "2023-11-05", "2023-12-23"];
+
+                    // Initialize flatpickr with options and dark theme
+                    flatpickr("#customDate", {
+                        altInput: true,
+                        altFormat: "F j, Y",
+                        dateFormat: "Y-m-d",
+                        enable: allowedDates,
+                        defaultDate: allowedDates[0],
+                        theme: "dark", // Apply dark theme
+                    });
+
+                });
+
+        }
+
+        function getTime() {
+            $.ajax("../api/adminapi/getDateTime")
+                .done(function (result) {
+
+                    // console.log( document.getElementById("customDate").value;)
+                    var avatimeArray = [];
+
+                    //Making the gate time list inside the result
+                    var getDateTimeList = result;
+
+
+                    document.getElementById('customDate').addEventListener('input', function () {
+                        // Get the selected date value
+
+
+                        avatimeArray.length = 0; // clear the array first
+
+                        var selectedDate = this.value;
+
+
+                        console.log(selectedDate)
+
+                        console.log("Date time list : ", getDateTimeList);
+                        getDateTimeList.forEach(obj => {
+                            // Check if the avadate property exists and is equal to the selected date
+                            if (obj.avadate !== undefined && obj.avadate === selectedDate) {
+
+                                //count the number of appointments based on the avadate and selecteddate
+                                const matchingAppointments = appointmentList.filter(appointment =>
+                                    appointment.dateApp === selectedDate && appointment.timeApp === obj.avatime && appointment.patientId === userId
+                                );
+
+                                //if the number of appointments are less than the time slot then push the time.
+                                if (matchingAppointments.length < obj.timeSlot && matchingAppointments.length <= 0) {
+                                    // Push the avatime value to the array
+                                    avatimeArray.push(obj.avatime);
+                                }
+                            }
+                        });
+
+                        console.log('Avatime Array for Selected Date:', avatimeArray);
+
+                        // Get the select box element
+                        var selectTime = document.getElementById('selectime');
+                        // Clear existing options
+                        selectTime.innerHTML = '';
+
+
+                        // Populate the select box with options from the array
+                        avatimeArray.forEach(optionValue => {
+                            var option = document.createElement('option');
+                            // option.value = optionValue;
+                            option.text = optionValue;
+                            selectTime.appendChild(option);
+                        });
+
+
+
+
+
+
+                    }); // end of selecct date
+
+                });
+
+        }
+
+        $("#appoint").click((e) => {
+
+
+
+            var selectedValue = document.getElementById('selectime').value;
+            var DateValue = document.getElementById('customDate').value;
+            // Check if the selected value is not null or empty
+            if (selectedValue.trim()) {
+
+                $('[data-dismiss="modal"]').click();
+                console.log('Selected option value:', selectedValue);
+                $('#appoint').attr('data-toggle', 'modal').attr('data-target', '#exampleModal');
+
+
+
+                $('.D').html('Date: &emsp;' + DateValue);
+
+                $('.T').html('Time: &emsp;' + selectedValue);
+
+
+                $("#saveApp").click((e) => {
+
+                    var appData = {
+
+                        DateApp: DateValue,
+                        TimeApp: selectedValue,
+                        PatientId: userId,
+                        Status: "Pending",
+
+                    };
+
+                    console.log(appData)
+
+
+
+                    //  console.log(appData);
+                    //  console.log("yes im clicked");
+
+
+                  $.ajax
+                        ({
+                        url: "../api/adminapi/AddAppointSchedule",
+                        type: "POST",
+                        data:
+                        {
+                        appoint: appData
+                        },
+                        })
+                        .done(function () {
+
+
+                        displaySavedProgress();
+                        window.location.reload();
+
+
+
+
+
+                        });
+
+
+                });
+
+            } else {
+                console.log('No option selected');
+                alertError();
+            }
+
+
+            $("#back").click((e) => {
+                $('#back').attr('data-toggle', 'modal').attr('data-target', '#confirmModal');
+            });
+
+          
+
+      
+
+
+
+
+
+
+
+
+        });//end of the add appoint function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function alertError() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Select Date And Time First!',
+            })
+        }
+
+        function displaySavedProgress() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Appointment has been saved',
+                showConfirmButton: false,
+                timer: 1500
+            })
+
+        }
+
+
+
+
+
+
+
+    });//end of ajax jquery
+
+</script>
+<style>
+    .sidebar-wrapper {
+        display: none;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>

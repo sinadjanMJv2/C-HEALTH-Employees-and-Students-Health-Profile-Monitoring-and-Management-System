@@ -1,0 +1,88 @@
+ @* <link rel="stylesheet" href="~/lib/FontAwesome/all.min.css">
+<script src="~/lib/FontAwesome/all.min.js"></script>
+
+ <script src="~/lib/jquery/dist/jquery.js"></script> *@
+
+<center><h1 style="color: #818896;">Active Medicine List</h1></center>
+
+<div class="input-group rounded">
+  <input type="search" name="Asearchbar"   id="AsearchText" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+  <span class="input-group-text border-0" id="search-addon">
+    <i class="fas fa-search"></i>
+  </span>
+</div>
+
+    @* <span>
+        <input style="width:500px;" type="text" name="Asearchbar" class="form-control" id="AsearchText"
+            placeholder="Search item name" />
+    </span> *@
+
+
+<span id="no"></span>
+<template id="cardo-container" >
+    <div class="card">
+        <div class="card-body">
+            
+            <h5 class="card-title">Card title</h5>
+               <hr/>
+            <h6 class="card-subtitle mb-2 ">Card subtitle</h6>
+            <h6 class="card-units mb-2 ">Card subtitle</h6>
+            <h6 class="card-stock mb-2 ">Card subtitle</h6>
+            <h6 class="card-datepurchased mb-2 ">Card subtitle</h6>
+            <h6 class="card-expirydate mb-2 ">Card subtitle</h6>
+            <h6 class="card-status mb-2 ">Card subtitle</h6>
+            @* <h6 class="card-description mb-2 ">Card subtitle</h6> *@
+   <hr/>
+       <center>
+        <a class="card-link btn btn-success updateMed" data-bs-toggle="tooltip" data-bs-placement="top" title="Update">
+               <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
+            </a>
+
+             <a class="btn btn-info infoMed" title="Product Description">
+                <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i>
+            </a>
+            
+            <a class="btn btn-warning addStock" title="Add Stocks">
+               <i class="fa-solid fa-boxes-stacked " style="color: #ffffff;"></i>
+            </a>
+            
+              <a class="btn btn-primary stockHistory" title="View added stock history">
+                <i class="fa-solid fa-clipboard " style="color: #ffffff;"></i>
+            </a>
+
+            <a class="deleteMed" title="Delete">
+                @* <i class="fa-solid fa-trash"></i> *@
+            </a>
+            
+            </center>
+             </div>
+    </div>
+</template>
+<div class="parentstab">
+        
+</div>
+<style>
+    .parentstab{
+        padding-top: 20px;
+    }
+    .card-body{
+        color: #353639;
+        background-color: rgb(255, 255, 255);
+    }
+    .card{
+         display: flex; 
+      display: inline-block;
+       width: 20rem; 
+       margin-right: 25px; 
+       margin-bottom: 25px;
+
+      
+      
+      
+       background-color: transparent;
+        backdrop-filter: blur(20px);
+       -webkit-backdrop-filter: blur(25px); 
+
+    }
+   
+</style>

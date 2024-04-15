@@ -1,0 +1,23 @@
+
+
+
+
+
+<button type="button" title="Create Doctor" class="btn btn-success" style="color: #ffffff;" data-bs-toggle="modal"
+    data-bs-target="#modalDoctorCreate">
+    <i class="fa-solid fa-circle-plus" style="color: #ffffff;"></i>
+    Add Doctor
+</button>
+
+@Html.Partial("PartialDoctor/CreateDoctor")
+@Html.Partial("PartialDoctor/DoctorTable")
+@Html.Partial("PartialDoctor/DoctorUpdate")
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="~/partialjs/Doctor.js"></script>
+
+
+

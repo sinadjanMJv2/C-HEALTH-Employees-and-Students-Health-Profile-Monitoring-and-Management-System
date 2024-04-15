@@ -1,0 +1,85 @@
+
+   
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h6><span>List</span><small class="px-1">of Doctors</small></h6>
+            </div>
+            <table id="DoctorData" class="display table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Doctor First Name</th>
+                        <th>Doctor Last Name</th>
+                        <th>Doctor Address</th>
+                        <th>Doctor G-mail Account</th>
+                        <th>Status</th>
+                        <th>Action Button</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+ <style>
+    .row{
+        padding-top: 20px;
+    }
+        /* Add some basic styling */
+        .cart-body{
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background-color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 1000px;
+            max-width: 2000px;
+            padding: 20px;
+        }
+
+        .card-title h6 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: #ddd;
+        }
+
+    </style>

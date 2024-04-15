@@ -1,0 +1,23 @@
+<h1>Admin Account Index</h1>
+<button type="button" id="ADMINISTRATOR" title="Add Product" class="btn btn-success bars"
+  style="color: #ffffff; width: 50px; " data-bs-toggle="modal" data-bs-target="#modalAccountCreate">
+  <i class="fa-solid fa-circle-plus fa-lg " style="color: #ffffff;"></i>
+</button>
+
+
+@Html.Partial("PartialAdminAccount/AdminAccountTable")
+@Html.Partial("PartialAdminAccount/AdminCreateAccount")
+@Html.Partial("PartialAdminAccount/AdminUpdatesAccount")
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="~/partialjs/adminaccount.js"></script>
+

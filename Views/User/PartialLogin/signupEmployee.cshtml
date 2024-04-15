@@ -1,0 +1,184 @@
+<template id="EmployeeOptionTemplates">
+    <option value=""></option>
+</template>
+
+<template id="EmpdepartmentOptionTemplates">
+    <option value=""></option>
+</template>
+
+<template id="EmpcourseOptionTemplates">
+    <option value=""></option>
+</template>
+
+<template id="EmprabensOptionTemplates">
+    <option value=""></option>
+</template>
+
+
+
+<div class="modal fade" id="modalEmployeeCreate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                @* <div class="modal-body d-flex justify-content-center" > *@
+                    <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Signup Employee</h5>
+                @* </div> *@
+                <button type="button" id="modalEmployeeCreateClose" class="btn-close btn-light" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body EmployeeCreate d-flex justify-content-center">
+                <div>
+
+
+
+                    <form id="createEmployeeForm">
+                        <div class="row">
+                            <div class="address">Name</div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label name="" class="control-label">First Name</label>
+                                    <input type="text" name="Firstname" id="inputFNames"
+                                        placeholder="Enter First Name" class="form-control" required />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label name="" class="control-label">Last Name</label>
+                                    <input type="text" name="Lastname" id="inputLNames"
+                                        placeholder="Enter Last Name" class="form-control" required />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label name="" class="control-label">Middle Name</label>
+                                    <input type="text" name="Middlename" id="inputMNames"
+                                        placeholder="Enter Middle Name" class="form-control" required />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label name="" class="control-label">Birthdate</label>
+                                    <input type="date" name="Birthdate" id="inputbirths"
+                                        placeholder="Enter Birthdate" class="form-control" required />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label name="" class="control-label">Gmail address</label>
+                                    <input type="text" name="Gmailaddress" id="inputemails"
+                                        placeholder="Enter GmailAddress" class="form-control" required />
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                     <label name="" class="control-label">Select Gender</label>
+                                    <select name="Gender" class="form-select">
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="address">Address</div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label name="" class="control-label">Select Province</label>
+                                    <select id="Emprabens" name="AddressProvince" class="form-select">
+                                        
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label name="" class="control-label">Select Municipality</label>
+                                    <select id="Empmuni" name="AddressMunicipality" class="form-select">
+                                    
+                                    </select>
+                                    
+                                </div>
+                            </div>
+
+
+                             <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label name="" class="control-label">Select Baranggay</label>
+                                    <select id="Empbarang" name="AddressBarangay" class="form-select">
+        
+                                    </select>
+                                    
+                                </div>
+                            </div>
+                            
+
+                            <div class="col-sm-6">
+                                
+                                    <div class="form-group">
+                                        <label name="" class="control-label">Purok</label>
+                                        <input type="text" name="AddressPurok" id="EmpPurok" placeholder="Enter Purok"
+                                            class="form-control" required />
+                                      
+
+                                    </div>
+                             
+                            </div>
+
+                            <div class="address">Department Course Or Year</div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label name="" class="control-label">Select Department</label>
+                                    <select id="EmpDepartment" name="DepartmentId" class="form-select">
+                                         <option value="" disabled selected>Select a department</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label name="" class="control-label">Select Course/Year</label>
+                            
+                                    <select id="EmpCourse" name="CourseStrandYearId" class="form-select">
+                                    
+                                    </select>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+             
+                    <button type="button" class="btn btn-success" id="createEmployee">Confirm</button>
+            
+              
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .Address {
+        text-align: center;
+        font-size: large;
+        font-weight: bolder;
+        padding-bottom: 20px;
+    }
+  @* .modal-header{
+    background-color: #6c7b88;
+    color: #ffffff;
+    
+  } *@
+  .modal-title{
+    font-size: 25px;
+  }
+
+</style>
