@@ -290,9 +290,16 @@
             liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
         }
 
+
+          console.log("Checking the value number now",date.getDate())
+          console.log("Checking the value month",new Date().getMonth())
+            console.log("Checking the value number now",new Date().getFullYear())
+                 
+
         for (let i = 1; i <= lastDateofMonth; i++) {
         let isActive = i === date.getDate() && currMonth === new Date().getMonth() &&
-                        currYear === new Date().getFullYear();
+                        currYear === new Date().getFullYear();      
+                  
         let isToday = isActive ? "active" : "";
         let customText = isActive ? "Available date for school medical checkup" : "";
         liTag += `<li class="${isToday}">${i}<span class="custom-text">${customText}</span></li>`;

@@ -87,11 +87,13 @@ header .current-date{
 }
 .days li:not(.active):hover::before{
   background: #f2f2f2;
+  display: none;
 }
 
 /* Tooltip text */
 .custom-text {
-  visibility: hidden;
+  visibility: visible;
+
   width: 200px;
   background-color: #000;
   color: #fff;
@@ -108,7 +110,8 @@ header .current-date{
 }
 
 /* Tooltip text show on hover */
-li:hover .custom-text {
+li.active:hover .custom-text {
   visibility: visible;
   opacity: 1;
 }
+
