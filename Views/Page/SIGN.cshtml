@@ -8,23 +8,51 @@
   <title>Login & Registration Form</title>
   <!---Custom CSS File--->
   <link rel="stylesheet" href="~/css/login.css">
-  
+  <link rel="stylesheet" href="~/css/calendar.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+
 </head>
 
-<body class="body" style=" background: linear-gradient(rgba(0 0 0 / 0.8), rgba(0 0 0 / 0)), url('../../image/frvtatak.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+<body class="body"
+  style=" background: linear-gradient(rgba(0 0 0 / 0.8), rgba(0 0 0 / 0)), url('../../image/frvtatak.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
 
+  <div class="wrapper-calendar">
+    <header>
+      <p class="current-date"></p>
+      <div class="icons">
+        <span id="prev" class="material-symbols-rounded">chevron_left</span>
+        <span id="next" class="material-symbols-rounded">chevron_right</span>
+      </div>
+    </header>
+    <div class="calendar">
+      <ul class="weeks">
+        <li>Sun</li>
+        <li>Mon</li>
+        <li>Tue</li>
+        <li>Wed</li>
+        <li>Thu</li>
+        <li>Fri</li>
+        <li>Sat</li>
+      </ul>
+      <ul class="days"></ul>
+    </div>
+  </div>
 
   @* kani siya mao ni sa background log in form *@
-  <div class="container"> 
-    
-    <img src="~/image/logo.png" alt="" class="image" >
+  <div class="container">
+
+    <img src="~/image/logo.png" alt="" class="image">
+
+
     <input type="checkbox" id="check">
 
 
 
 
 
-    <div class="login form" >
+    <div class="login form">
       <header>Login</header>
       <form action="#" id="signinForm">
         <input class="gmail" type="text" placeholder="Enter your email" required>
@@ -77,7 +105,10 @@
 
 <script>
   var AdminList = {};
+  var DateList = [];
   var gmailAdd = {};
+  var listDate = [];
+
   $(() => {
 
     var userType = sessionStorage.getItem('userType');
@@ -93,6 +124,7 @@
 
     margin();
     getAdminAcc();
+    getDate();
 
     function margin() {
 
@@ -109,15 +141,42 @@
           var gmailaddress = [];
           result.forEach(item => {
             gmailaddress.push(item.gmail);
-           // console.log(gmailaddress)
+            // console.log(gmailaddress)
           });
 
           gmailAdd = [... new Set(gmailaddress)];
 
-        console.log("gmailaddress",gmailAdd)
+          console.log("gmailaddress", gmailAdd)
         });
     }
 
+
+    function getDate() {
+      $.ajax("../api/adminapi/getDate")
+        .done(function (result) {
+
+
+          result.forEach(item => {
+            DateList.push(item.avadate);
+
+          });
+
+          listDate = [... new Set(DateList)];
+
+          console.log("Date: ", listDate)
+
+        
+
+
+         
+        });
+
+        
+    }
+
+
+
+       
 
 
 
@@ -134,40 +193,40 @@
 
 
       } else {
-      if(gmailAdd.includes(gmail)){
-        $.ajax({
-          url: "/api/adminapi/userloginAdmin",
-          method: "POST",
-          data: {
-            "gmail": gmail,
-            "password": pass
-          },
-          success: res => {
-            sessionStorage.setItem("Logged", true)
-            sessionStorage.setItem('userType', 'admin');
+        if (gmailAdd.includes(gmail)) {
+          $.ajax({
+            url: "/api/adminapi/userloginAdmin",
+            method: "POST",
+            data: {
+              "gmail": gmail,
+              "password": pass
+            },
+            success: res => {
+              sessionStorage.setItem("Logged", true)
+              sessionStorage.setItem('userType', 'admin');
 
 
 
-            var filterUserData = (gmail, pass) => AdminList.filter(user => user.gmail == gmail && user.password == pass);
-            var filteredUserData = filterUserData(gmail, pass);
+              var filterUserData = (gmail, pass) => AdminList.filter(user => user.gmail == gmail && user.password == pass);
+              var filteredUserData = filterUserData(gmail, pass);
 
 
-            sessionStorage.setItem('adminData', JSON.stringify(filteredUserData));
+              sessionStorage.setItem('adminData', JSON.stringify(filteredUserData));
 
               displaySavedProgress();
               location.href = '/Admin/AdminCategory';
-               
-         
-          },
 
-          error: err => {
-          gmailvalidation();
-          }
-        })
 
-        }else{
-         error();
-            
+            },
+
+            error: err => {
+              gmailvalidation();
+            }
+          })
+
+        } else {
+          error();
+
         }
 
       }
@@ -190,60 +249,116 @@
 
       } else {
 
-        if(gmailAdd.includes(email)){
-
-          
-
-        console.log("naa ras database")
-
-
-        var filterUserData =  AdminList.filter(user => user.gmail == email);
-        console.log('filter',filterUserData)
-
-        filterUserData.forEach(item =>{
-         // console.log(item.password);
-        
-
-        
-         emailjs.init("4Djz2B1HMZ8LQD22Z"); // Account Public Key
-        
-
-        var params = {
-          sendername: "FRV COLLEGE",
-          to: item.gmail,
-          subject: "health alerts",
-          replyto: "angkol mj",
-          message:  item.password,
-        };
-
-        var serviceID = "service_wt1byeb"; // Email Service ID
-        var templateID = "template_w3eqpec"; // Email Template ID
-
-        emailjs.send(serviceID, templateID, params)
-        .then( res => {
-            alert("Email sent successfully!!")
-        })
-        .catch(
-     
-        ); 
-      });
+        if (gmailAdd.includes(email)) {
 
 
 
-        }else{
-        error();
+          console.log("naa ras database")
+
+
+          var filterUserData = AdminList.filter(user => user.gmail == email);
+          console.log('filter', filterUserData)
+
+          filterUserData.forEach(item => {
+            // console.log(item.password);
+
+
+
+            emailjs.init("4Djz2B1HMZ8LQD22Z"); // Account Public Key
+
+
+            var params = {
+              sendername: "FRV COLLEGE",
+              to: item.gmail,
+              subject: "health alerts",
+              replyto: "angkol mj",
+              message: item.password,
+            };
+
+            var serviceID = "service_wt1byeb"; // Email Service ID
+            var templateID = "template_w3eqpec"; // Email Template ID
+
+            emailjs.send(serviceID, templateID, params)
+              .then(res => {
+                alert("Email sent successfully!!")
+              })
+              .catch(
+
+            );
+          });
+
+
+
+        } else {
+          error();
         }
 
-        }
+      }
 
 
-      });
-
-
-
+    });
 
 
 
+
+
+
+
+
+
+    const daysTag = $(".days"),
+      currentDate = $(".current-date");
+
+    let date = new Date(),
+      currYear = date.getFullYear(),
+      currMonth = date.getMonth();
+
+    const months = ["January", "February", "March", "April", "May", "June", "July",
+      "August", "September", "October", "November", "December"];
+
+    const renderCalendar = () => {
+      let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(),
+        lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(),
+        lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(),
+        lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
+      let liTag = "";
+
+      for (let i = firstDayofMonth; i > 0; i--) {
+        liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+      }
+
+
+
+      
+ for (let i = 1; i <= lastDateofMonth; i++) {
+        let isActive = DateList.includes(`${currYear}-${(currMonth + 1).toString().padStart(2, '0')}-${i.toString().padStart(2, '0')}`) ? "active" : "";
+
+        let customText = isActive ? "Available date for school medical checkup" : "";
+        liTag += `<li class="${isActive}">${i}<span class="custom-text">${customText}</span></li>`;
+      }
+    
+
+
+      for (let i = lastDayofMonth; i < 6; i++) {
+        liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
+      }
+      currentDate.text(`${months[currMonth]} ${currYear}`);
+      daysTag.html(liTag);
+    };
+    renderCalendar();
+
+    $(".icons span").click(function () {
+      currMonth = $(this).attr("id") === "prev" ? currMonth - 1 : currMonth + 1;
+
+      if (currMonth < 0 || currMonth > 11) {
+        date = new Date(currYear, currMonth, new Date().getDate());
+        currYear = date.getFullYear();
+        currMonth = date.getMonth();
+      } else {
+        date = new Date();
+      }
+      renderCalendar();
+    });
 
 
 
@@ -275,7 +390,7 @@
       });
     }
 
-     function gmailvalidation() {
+    function gmailvalidation() {
       Swal.fire({
         icon: 'error',
         title: 'Incorrect Password and Email',
@@ -285,14 +400,14 @@
     }
 
 
-     function displaySavedProgress() {
-        Swal.fire({
-            icon: 'success',
-            title: 'Welcome',
-            text: 'Successfully Login',
-            showConfirmButton: false,
-            timer: 3500
-        })
+    function displaySavedProgress() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Welcome',
+        text: 'Successfully Login',
+        showConfirmButton: false,
+        timer: 3500
+      })
 
     }
 
