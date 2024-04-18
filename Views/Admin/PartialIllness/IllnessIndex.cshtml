@@ -1,0 +1,354 @@
+<script>
+  // get the logged status  sessionStorage.getItem("Borrower") == "false" ||
+  if( sessionStorage.getItem("Admin/AdminCategory") == "false" || sessionStorage.getItem("Logged")==="false" || sessionStorage.getItem("Logged")==undefined || sessionStorage.getItem("Logged")==null){
+    location.href = '/Page/SIGN'
+  }
+</script>
+
+<button id="addEmployeeButton" type="button" title="Add Employee" class="btn btn-success"
+    style="color: #ffffff;  margin-bottom: 20px; font-family: 'Poppins' , sans-serif;" data-bs-toggle="modal"
+    data-bs-target="#modalIllCreate">
+
+    <i class="fa-solid fa-circle-plus" style="color: #ffffff; "></i>
+    Add New Illness
+</button>
+
+
+@Html.Partial("PartialIllness/CreateIllname")
+@Html.Partial("PartialIllness/IllTable")
+@Html.Partial("PartialIllness/IllnessUpdate")
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+<script>
+var selectedill;
+var selectedillId;
+var illList = {};
+var Lname = [];
+
+
+
+
+
+$(document).ready(function () {
+
+    var userType = sessionStorage.getItem('userType');
+    if(userType === null)
+    {
+        window.location.href = "/Page/SIGN";
+    }
+    else
+    {
+        if(userType === "patient")
+        {
+            window.location.href = "/User/StudentHealthProfile";
+        }
+    }
+
+
+      getill();
+    displayIllData();
+
+   
+   ///console.log(catname);
+    function getill() {
+        $.ajax("../api/adminapi/getIll")
+            .done(function (result) {
+                illList = result;
+                var iLLname = [];
+                
+                result.forEach(function (item) {
+                    @* console.log(item); *@
+                    iLLname.push(item.illnessname);
+                    
+                });
+
+                 Lname = [...new Set(iLLname)];
+                console.log('arr',Lname);
+               
+
+            });
+    }
+
+
+
+
+
+     $("#createIll").click((e) => {
+
+        console.log("yehey na click jyud ko");
+        //     console.log(catname);
+
+        var arrData = {}; //ayaw ni tan dug kani dre nga line
+        var formelements = $("#createIllForm .form-group");
+
+        //getting the data from the form
+        var formInputs = $("#createIllForm").serializeArray();
+        formInputs.forEach(function (item) {
+            arrData[item.name] = item.value;
+        });
+
+        if (formInputs.length === formelements.length && formInputs[0].value !== '') {
+ 
+
+   // console.log('value',formInputs[0].value)
+            if (!Lname.includes(formInputs[0].value)) {
+                //AJAX ADD DEPARTMENT
+                $.ajax
+                    ({
+                        url: "../api/adminapi/AddIll",
+                        type: "POST",
+                        data:
+                        {
+                            addill: arrData
+                        },
+                    })
+                    .done(function () {
+
+                        $("#createIllForm")[0].reset();
+                        $("#modalIllCreate").modal("toggle");
+                        getill();
+                        displaySavedProgress();
+                     displayIllData();
+
+                    });
+            } else {
+                vol1();
+            }
+
+
+        }
+        else {
+            alertError();
+        }
+    });
+
+
+
+
+    function displayIllData() {
+        $('#IllnessData').DataTable().destroy();
+        if (!$.fn.DataTable.isDataTable('#IllnessData')) {
+            $('#IllnessData').DataTable({
+                ajax: {
+                    url: '../api/adminapi/getill', // API endpoint to retrieve department
+                    dataSrc: ''
+                },
+                columns:
+                    [
+                       
+                        { data: 'illnessname' },
+                        {
+                            data: 'illnessId',
+                            render: function (data, type, row) {
+                                return btnAddIll(data);
+                            }
+                        },
+                    ]
+            });
+        }
+        getill();
+    }
+
+    function btnAddIll(illnessId) {
+        return "<center><a class='btn btn-info IllnessUpdate' style='color : #ffffff;'  data-illnessId=" + illnessId + ">Update</a> &emsp; <a class='btn btn-danger IllnessDelete' data-illnessId=" + illnessId + "  style='color : #ffffff;'>Delete</a></center>"
+      //sample <a class='btn btn-danger CategoryDelete' data-id=" + id + "  style='color : #ffffff;'>Delete</a>
+    
+    }
+
+
+     $("tbody").delegate(".IllnessUpdate", "click", function (e) {
+        console.log("I was clicked");
+        var i = e.target.closest("a").getAttribute("data-illnessId");
+        if (i != null) {
+            $("#createIllForm")[0].reset();
+            $("#modalIllUpdate").modal("toggle");
+
+            selectedillId = i;
+            selectedill = illList.find(element => element.illnessId == i);
+
+            console.log("ill: ",selectedill);
+
+            oFormObject = document.forms["updateIllForm"];
+            initForm(oFormObject, selectedill);
+        }
+    });
+
+    function initForm(form, data) {
+
+        Object.getOwnPropertyNames(data).forEach(function (item) {
+            var currentElem = form.elements[item.charAt(0).toUpperCase() + item.slice(1)];
+
+            if (currentElem == null) { return; }
+            form.elements[item.charAt(0).toUpperCase() + item.slice(1)].setAttribute("value", data[item]);
+
+        });
+    }
+
+
+
+    $("#updateIllness").click(function () {
+        alertSaveChanges();
+    });
+
+    function alertSaveChanges() {
+        Swal.fire({
+            title: 'Do you want to save the changes?',
+            confirmButtonText: 'Save',
+            showCancelButton: true,
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                updateIllHolder();
+            }
+        })
+    }
+
+    function updateIllHolder() {
+        
+        var arrData = {};
+        var formelements = $("#updateIllForm .form-group");
+
+        //getting the data from the form
+        var formInputs = $("#updateIllForm").serializeArray();
+        formInputs.forEach(function (item) {
+            arrData[item.name] = item.value;
+        });
+        arrData.illnessId = selectedillId;
+
+        if (formInputs.length === formelements.length && formInputs[0].value !== '') {
+             if (!Lname.includes(formInputs[0].value)) {
+              proceedUpdate(arrData);
+             console.log("gi click lagi ko " + arrData);
+             }else{
+              vol1();
+             }
+          
+        } else {
+            alertError();
+        }
+    }
+
+
+
+      function proceedUpdate(arrData) {
+        //AJAX UPDATE DEPARTMENT
+        $.ajax
+            ({
+                url: "../api/adminapi/updateIll",
+                type: "POST",
+                data:
+                {
+                    upill: arrData,
+                },
+            })
+            .done(function () {
+                $("#updateIllForm")[0].reset();
+                $("#modalIllUpdate").modal("toggle");
+                displayIllData();
+                displaySavedProgress();
+            });
+    }
+
+
+
+    $("tbody").delegate(".IllnessDelete", "click", function (e) {
+        var i = e.target.closest("a").getAttribute("data-illnessId");
+        if (i != null) {
+            //Insert code here for the delete
+            selectedillId = i;
+            alertDeleteConfirmation();
+        }
+    });
+
+    function alertDeleteConfirmation() {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to Delete this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                proceedDelete();
+            }
+        })
+    }
+
+    function proceedDelete() {
+       
+        //AJAX DELETE DEPARTMENT
+        $.ajax
+            ({
+                url: "../api/adminapi/deleteill",
+                type: "POST",
+                data:
+            
+    {
+                    id: selectedillId
+                },
+            })
+            .done(function () {
+                displayIllData();
+                alertDeleteInfo();
+            });
+    }
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+    function alertDeleteInfo() {
+        Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+        )
+    }
+
+
+    function vol1() {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Inputted name is already in the data',
+        })
+    }
+    function alertError() {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Input the necessary elements!',
+        })
+    }
+
+    function displaySavedProgress() {
+        Swal.fire({
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 1500
+        })
+
+    }
+
+}); //Don't touch this putang ina mo ka
+
+</script>
+
+

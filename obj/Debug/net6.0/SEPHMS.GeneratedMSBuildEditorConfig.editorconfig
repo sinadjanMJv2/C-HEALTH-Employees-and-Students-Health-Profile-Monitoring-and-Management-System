@@ -219,6 +219,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEV4cGlyZWRNZWRpY2luZVxNZWRpY2luZVVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialIllness/CreateIllname.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbElsbG5lc3NcQ3JlYXRlSWxsbmFtZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialIllness/IllnessIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbElsbG5lc3NcSWxsbmVzc0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialIllness/IllnessUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbElsbG5lc3NcSWxsbmVzc1VwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialIllness/IllTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbElsbG5lc3NcSWxsVGFibGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialLowStockMedicine/MedicineAddStock.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbExvd1N0b2NrTWVkaWNpbmVcTWVkaWNpbmVBZGRTdG9jay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

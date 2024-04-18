@@ -7,11 +7,11 @@ namespace SEPHMS.Entities
     {
         public int PhysicianId { get; set; }
         public string Lastname { get; set; }
-        public string Middlename { get; set; }
+        public string? Middlename { get; set; }
         public string Fullname { get; set; }
         public string Firstname { get; set; }
         public string Gender { get; set; }
-        public string Gmail { get; set; }
+        public string? Gmail { get; set; }
         public int? Pcode { get; set; }
     }
 }

@@ -382,6 +382,47 @@ namespace SEPHMS.Controllers
 
 
 
+       public ActionResult<List<Illness>> getIll(){
+            return _context.Illnesses.ToList();
+        }
+
+
+         public IActionResult AddIll(Illness addill)
+        {
+          _context.Illnesses.Add(addill);
+            _context.SaveChanges();
+
+            return Ok();
+        }
+
+            public IActionResult updateIll(Illness upill)
+        {
+            try
+            {
+            _context.Illnesses.Update(upill);
+            _context.SaveChanges();
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
+            
+            return Ok();
+        }
+        
+          public IActionResult deleteill(int id)
+        {
+          
+            var res = _context.Illnesses.Where(element => element.IllnessId == id).FirstOrDefault();
+            _context.Illnesses.Remove(res);
+            _context.SaveChanges();
+            return Ok();
+        }
+
+
+
+
 
 
         public ActionResult<List<Category>> getCategory(){

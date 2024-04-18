@@ -89,6 +89,10 @@ namespace SEPHMS.Controllers
             return View("PartialPhysician/PhysicianIndex");
         }
          
+
+         public ActionResult AdminIllness(){
+            return View("PartialIllness/IllnessIndex");
+        }
         
 
         

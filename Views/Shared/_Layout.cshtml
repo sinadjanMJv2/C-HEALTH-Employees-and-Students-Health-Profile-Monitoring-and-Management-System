@@ -251,6 +251,40 @@
             </a>
             </li> *@
 
+
+             <li class="header-menu" id="Logbook">
+              <span>LogBook</span>
+            </li>
+            <li class="sidebar-dropdown" id="ill">
+              <a href="#">
+               <i class='fas fa-syringe'></i>
+                <span>Illness</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a asp-area="" asp-controller="Admin" asp-action="AdminIllness"> Common Illness
+                    </a>
+                  </li>
+                  <li>
+                    <a asp-area="" asp-controller="Admin" asp-action="AdminIllness">Illness(es)
+                    </a>
+                  </li>
+
+
+                </ul>
+              </div>
+            </li>
+
+             <li  id="Logbook">
+
+              <a asp-area="" asp-controller="Admin" asp-action="AdminAvailabilty">
+                <i class="fas fa-calendar-check"></i>
+                <span>Logbook</span>
+              </a>
+            </li>
+         
+
           </ul>
         </div>
         <!-- sidebar-menu  -->
