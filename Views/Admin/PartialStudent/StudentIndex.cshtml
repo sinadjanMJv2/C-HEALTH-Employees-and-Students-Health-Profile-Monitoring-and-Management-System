@@ -1,4 +1,4 @@
-<button type="button" title="Add Student" class="btn btn-success"
+<button id="addEmployeeButton" type="button" title="Add Student" class="btn btn-success"
     style="color: #ffffff;  margin-bottom: 20px; font-family: 'Poppins' , sans-serif;" data-bs-toggle="modal"
     data-bs-target="#modalStudentCreate">
     <i class="fa-solid fa-circle-plus" style="color: #ffffff; "></i>
@@ -33,16 +33,23 @@
         var userType = sessionStorage.getItem('userType');
         if (userType === null) {
             window.location.href = "/Page/SIGN";
+        } else if (userType === "patient") {
+            window.location.href = "/User/StudentHealthProfile";
+
+        } else if (userType === "physician") {
+
+            window.onload = function () {
+                document.getElementById("addEmployeeButton").style.display = "none";
+            };
         }
-        else {
-            if (userType === "patient") {
-                window.location.href = "/User/StudentHealthProfile";
-            }
-        }
+
+
+
+
 
         getStudent();
         displayStudentData();
-         gmailValidate();
+        gmailValidate();
 
 
         AddSelectDepartment();
@@ -607,24 +614,24 @@
 
 
 
-      
 
-    function gmailValidate(){
 
-          $.ajax("../api/adminapi/getStudent")
+        function gmailValidate() {
+
+            $.ajax("../api/adminapi/getStudent")
                 .done(function (result) {
                     StudentList = result;
-   
-                  var gmailaddress = [];
+
+                    var gmailaddress = [];
                     result.forEach(function (item) {
                         gmailaddress.push(item.gmailaddress);
 
                     });
 
                     gmail = [... new Set(gmailaddress)];
-                    });
+                });
 
-    }
+        }
 
 
 
@@ -644,15 +651,15 @@
             $.ajax("../api/adminapi/getStudents")
                 .done(function (result) {
                     StudentList = result;
-   
 
-                    @* var gmailaddress = [];
-                    result.forEach(function (item) {
+
+    @* var gmailaddress = [];
+                        result.forEach(function (item) {
                         gmailaddress.push(item.gmailaddress);
 
-                    });
+                        });
 
-                    gmail = [... new Set(gmailaddress)]; *@
+                        gmail = [... new Set(gmailaddress)]; *@
 
 
 
@@ -766,7 +773,7 @@
                     var prabens = $('#prabens option:selected').text();
                     var muni = $('#muni option:selected').text();
                     var barang = $('#barang option:selected').text();
-                    
+
                     arrData.Status = "Approved";
 
 
@@ -835,7 +842,22 @@
                             {
                                 data: 'spiId',
                                 render: function (data, type, row) {
-                                    return btnAddStudentData(data);
+
+
+
+
+                                    let userTypeLog = window.sessionStorage.getItem("userType");
+
+                                    if (userTypeLog == null) {
+                                        window.location.href = "/Page/SIGN";
+                                    } else if (userTypeLog == "physician") {
+                                        return btnAddStudentDataForPatient(data);
+                                    }else if (userTypeLog == "admin") {
+                                        return btnAddStudentData(data);
+                                    }
+
+
+
                                 }
                             },
                         ]
@@ -844,9 +866,16 @@
             getStudent();
         }
 
+         function btnAddStudentDataForPatient(id) {
+            return "<center> <a style='color : #ffffff;' class='btn btn-info StudentInfo' data-spiId=" + id + ">&nbsp;&nbsp;View Info&nbsp;&nbsp;</a><br><br> <a style='color : #ffffff;' class='btn btn-danger StudentDelete' data-spiId=" + id + " hidden>&emsp;&nbsp;Delete&nbsp;&emsp;</a></center>"
+        }
+
+
         function btnAddStudentData(id) {
             return "<center><a style='color : #ffffff;' class='btn btn-primary StudentUpdate' data-spiId=" + id + ">&emsp;Update&emsp;</a>  <br> <br>  <a  style='color : #ffffff;'   class='btn btn-success StudentHIInfo' data-spiId=" + id + "> Add Health </a> <br><br> <a style='color : #ffffff;' class='btn btn-info StudentInfo' data-spiId=" + id + ">&nbsp;&nbsp;View Info&nbsp;&nbsp;</a><br><br> <a style='color : #ffffff;' class='btn btn-danger StudentDelete' data-spiId=" + id + " hidden>&emsp;&nbsp;Delete&nbsp;&emsp;</a></center>"
         }
+
+
 
 
         $("tbody").delegate(".StudentInfo", "click", function (e) {
@@ -1265,37 +1294,37 @@
             console.log(formInputs.length);
             console.log(formelements.length);
 
-          if (formInputs.length === formelements.length && formInputs[0].value !== '' && formInputs[3].value !== '') {
-            if (formelements.length === 34) {
+            if (formInputs.length === formelements.length && formInputs[0].value !== '' && formInputs[3].value !== '') {
+                if (formelements.length === 34) {
 
 
 
-                //AJAX ADD DEPARTMENT
-                $.ajax
-                    ({
-                        url: "../api/adminapi/AddStudentHealth",
-                        type: "POST",
-                        data:
-                        {
-                            shi: arrData,
+                    //AJAX ADD DEPARTMENT
+                    $.ajax
+                        ({
+                            url: "../api/adminapi/AddStudentHealth",
+                            type: "POST",
+                            data:
+                            {
+                                shi: arrData,
 
-                        },
-                    })
-                    .done(function () {
+                            },
+                        })
+                        .done(function () {
 
-                        $("#addStudentHealthInfoForm")[0].reset();
-                        $("#modalStudentHealthInfo").modal("toggle");
-                        // getNR();
-                        displaySavedProgress();
-                        //  displayNRData();
+                            $("#addStudentHealthInfoForm")[0].reset();
+                            $("#modalStudentHealthInfo").modal("toggle");
+                            // getNR();
+                            displaySavedProgress();
+                            //  displayNRData();
 
-                    });
+                        });
 
 
-            }
-            else {
-                alertError();
-            }
+                }
+                else {
+                    alertError();
+                }
 
             } else {
                 alertError();

@@ -1,6 +1,7 @@
-<button type="button" title="Add Employee" class="btn btn-success"
+<button id="addEmployeeButton" type="button" title="Add Employee" class="btn btn-success"
     style="color: #ffffff;  margin-bottom: 20px; font-family: 'Poppins' , sans-serif;" data-bs-toggle="modal"
     data-bs-target="#modalEmployeeCreate">
+
     <i class="fa-solid fa-circle-plus" style="color: #ffffff; "></i>
     Add New Employee
 </button>
@@ -34,12 +35,16 @@
         var userType = sessionStorage.getItem('userType');
         if (userType === null) {
             window.location.href = "/Page/SIGN";
+        } else if (userType === "patient") {
+            window.location.href = "/User/StudentHealthProfile";
+
+        } else if (userType === "physician") {
+
+            window.onload = function () {
+                document.getElementById("addEmployeeButton").style.display = "none";
+            };
         }
-        else {
-            if (userType === "patient") {
-                window.location.href = "/User/StudentHealthProfile";
-            }
-        }
+
 
         getEmployee();
         displayEmployeeData();
@@ -58,7 +63,7 @@
         new MultiSelectTag('physicians')  // id
 
 
-     function getUnits() {
+        function getUnits() {
             $.ajax("../api/adminapi/getNR")
                 .done(function (result) {
 
@@ -815,7 +820,20 @@
                             {
                                 data: 'epiId',
                                 render: function (data, type, row) {
-                                    return btnAddEmployeeData(data);
+
+                                    let userTypeLog = window.sessionStorage.getItem("userType");
+
+                                    if (userTypeLog == null) {
+                                        window.location.href = "/Page/SIGN";
+                                    } else if (userTypeLog == "physician") {
+                                        return btnAddEmployeeDataPhysician(data);
+
+
+                                    } else if (userTypeLog == "admin") {
+                                        return btnAddEmployeeData(data);
+                                    }
+
+
                                 }
                             },
                         ]
@@ -827,6 +845,11 @@
         function btnAddEmployeeData(id) {
             return "<center><a style='color : #ffffff;' class='btn btn-primary EmployeeUpdate' data-epiId=" + id + ">&emsp;Update&emsp;</a> <br><br> <a style='color : #ffffff;' class='btn btn-danger EmployeeDelete' data-epiId=" + id + ">&emsp;&nbsp;Delete&nbsp;&emsp;</a> <br> <br>  <a  style='color : #ffffff;'   class='btn btn-success EmployeeHIInfo' data-epiId=" + id + "> Add Health </a> <br><br> <a style='color : #ffffff;' class='btn btn-info EmployeeInfo' data-epiId=" + id + ">&nbsp;&nbsp;View Info&nbsp;&nbsp;</a></center>"
         }
+
+        function btnAddEmployeeDataPhysician(id) {
+            return "<center>  <a style='color : #ffffff;' class='btn btn-info EmployeeInfo' data-epiId=" + id + ">&nbsp;&nbsp;View Info&nbsp;&nbsp;</a></center>"
+        }
+
 
 
 

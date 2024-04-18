@@ -27,6 +27,8 @@ namespace SEPHMS.Entities
         public virtual DbSet<Employeehealthinformation> Employeehealthinformations { get; set; }
         public virtual DbSet<Employeepersonalinformation> Employeepersonalinformations { get; set; }
         public virtual DbSet<Equipment> Equipment { get; set; }
+        public virtual DbSet<Illness> Illnesses { get; set; }
+        public virtual DbSet<Logbook> Logbooks { get; set; }
         public virtual DbSet<Medicine> Medicines { get; set; }
         public virtual DbSet<Medicinestockhistory> Medicinestockhistories { get; set; }
         public virtual DbSet<Normalrange> Normalranges { get; set; }
@@ -507,6 +509,51 @@ namespace SEPHMS.Entities
                     .HasColumnName("status");
             });
 
+            modelBuilder.Entity<Illness>(entity =>
+            {
+                entity.ToTable("illness");
+
+                entity.Property(e => e.IllnessId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("illnessId");
+
+                entity.Property(e => e.Illnessname)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .HasColumnName("illnessname");
+            });
+
+            modelBuilder.Entity<Logbook>(entity =>
+            {
+                entity.ToTable("logbook");
+
+                entity.Property(e => e.Logbookid)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("logbookid");
+
+                entity.Property(e => e.DatePrescribe)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .HasColumnName("datePrescribe");
+
+                entity.Property(e => e.IllnessId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("illnessId");
+
+                entity.Property(e => e.MedicineId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("medicineId");
+
+                entity.Property(e => e.PatientId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("patientId");
+
+                entity.Property(e => e.TimePrescribe)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .HasColumnName("timePrescribe");
+            });
+
             modelBuilder.Entity<Medicine>(entity =>
             {
                 entity.ToTable("medicine");
@@ -663,6 +710,10 @@ namespace SEPHMS.Entities
                     .HasMaxLength(250)
                     .HasColumnName("gender");
 
+                entity.Property(e => e.Gmail)
+                    .HasMaxLength(250)
+                    .HasColumnName("gmail");
+
                 entity.Property(e => e.Lastname)
                     .IsRequired()
                     .HasMaxLength(250)
@@ -671,6 +722,10 @@ namespace SEPHMS.Entities
                 entity.Property(e => e.Middlename)
                     .HasMaxLength(250)
                     .HasColumnName("middlename");
+
+                entity.Property(e => e.Pcode)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("pcode");
             });
 
             modelBuilder.Entity<Signup>(entity =>

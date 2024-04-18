@@ -79,12 +79,14 @@
             });
 
             if (formInputs.length === formelements.length && formInputs[0].value !== '') {
-
-
-                arrData.Fullname = ` ${arrData.Firstname} ${arrData.Middlename} ${arrData.Lastname}`;
+  
+             var ranpcode = Math.floor(Math.random() * 100000000).toString().padStart(8, '0');
+           
+               arrData.Fullname = ` ${arrData.Firstname} ${arrData.Middlename} ${arrData.Lastname}`;
+              arrData.Pcode = ranpcode;
 
                 // console.log(arrData.Fullname);
-                //  console.log(arrData);
+             //     console.log("Physician: ",arrData);
 
                 if (arrData.Fullname != fullname) {
 

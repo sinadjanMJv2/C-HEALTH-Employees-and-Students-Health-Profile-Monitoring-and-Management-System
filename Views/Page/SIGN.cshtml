@@ -105,6 +105,8 @@
 
 <script>
   var AdminList = {};
+  var PhyList = {};
+  var gmailAddPhy = {};
   var DateList = [];
   var gmailAdd = {};
   var listDate = [];
@@ -123,7 +125,7 @@
     }
 
     margin();
-    getAdminAcc();
+    getAdminAndPhysicianAcc();
     getDate();
 
     function margin() {
@@ -132,7 +134,7 @@
       $(".container-fluid").removeClass();
     }
 
-    function getAdminAcc() {
+    function getAdminAndPhysicianAcc() {
       $.ajax("../api/adminapi/getAdminAccount")
         .done(function (result) {
 
@@ -147,6 +149,23 @@
           gmailAdd = [... new Set(gmailaddress)];
 
           console.log("gmailaddress", gmailAdd)
+        });
+
+
+      $.ajax("../api/adminapi/getPhysician")
+        .done(function (result) {
+
+          PhyList = result;
+
+          var gmailaddressPhy = [];
+          result.forEach(item => {
+            gmailaddressPhy.push(item.gmail);
+
+          });
+
+          gmailAddPhy = [... new Set(gmailaddressPhy)];
+
+          console.log("Physician gmailaddress", gmailAddPhy)
         });
     }
 
@@ -165,18 +184,18 @@
 
           console.log("Date: ", listDate)
 
-        
 
 
-         
+
+
         });
 
-        
+
     }
 
 
 
-       
+
 
 
 
@@ -190,46 +209,59 @@
       if (gmail.trim() === "" || pass.trim() === "") {
         // SweetAlert for validation
         empty();
+      } else if (gmailAdd.includes(gmail)) {
+        $.ajax({
+          url: "/api/adminapi/userloginAdmin",
+          method: "POST",
+          data: {
+            "gmail": gmail,
+            "password": pass
+          },
+          success: res => {
+            sessionStorage.setItem("Logged", true)
+            sessionStorage.setItem('userType', 'admin');
 
+            var filterUserData = (gmail, pass) => AdminList.filter(user => user.gmail == gmail && user.password == pass);
+            var filteredUserData = filterUserData(gmail, pass);
 
+            sessionStorage.setItem('adminData', JSON.stringify(filteredUserData));
+
+            displaySavedProgress();
+            location.href = '/Admin/AdminCategory';
+          },
+          error: err => {
+            gmailvalidation();
+          }
+        });
+
+       } else if (gmailAddPhy.includes(gmail)) {
+        $.ajax({
+          url: "/api/adminapi/userloginPhysician",
+          method: "POST",
+          data: {
+            "gmail": gmail,
+            "password": pass
+          },
+          success: res => {
+            sessionStorage.setItem("Logged", true)
+            sessionStorage.setItem('userType', 'physician');
+
+            var filterUserData = (gmail, pass) => PhyList.filter(user => user.gmail == gmail && user.pcode == pass);
+            var filteredUserData = filterUserData(gmail, pass);
+
+            sessionStorage.setItem('adminData', JSON.stringify(filteredUserData));
+
+            displaySavedProgress();
+            location.href = '/Admin/AdminStudent';
+          },
+          error: err => {
+            gmailvalidation();
+          }
+        });
       } else {
-        if (gmailAdd.includes(gmail)) {
-          $.ajax({
-            url: "/api/adminapi/userloginAdmin",
-            method: "POST",
-            data: {
-              "gmail": gmail,
-              "password": pass
-            },
-            success: res => {
-              sessionStorage.setItem("Logged", true)
-              sessionStorage.setItem('userType', 'admin');
-
-
-
-              var filterUserData = (gmail, pass) => AdminList.filter(user => user.gmail == gmail && user.password == pass);
-              var filteredUserData = filterUserData(gmail, pass);
-
-
-              sessionStorage.setItem('adminData', JSON.stringify(filteredUserData));
-
-              displaySavedProgress();
-              location.href = '/Admin/AdminCategory';
-
-
-            },
-
-            error: err => {
-              gmailvalidation();
-            }
-          })
-
-        } else {
-          error();
-
-        }
-
+        error();
       }
+
 
     })
 
@@ -329,14 +361,14 @@
 
 
 
-      
- for (let i = 1; i <= lastDateofMonth; i++) {
+
+      for (let i = 1; i <= lastDateofMonth; i++) {
         let isActive = DateList.includes(`${currYear}-${(currMonth + 1).toString().padStart(2, '0')}-${i.toString().padStart(2, '0')}`) ? "active" : "";
 
         let customText = isActive ? "Available date for school medical checkup" : "";
         liTag += `<li class="${isActive}">${i}<span class="custom-text">${customText}</span></li>`;
       }
-    
+
 
 
       for (let i = lastDayofMonth; i < 6; i++) {

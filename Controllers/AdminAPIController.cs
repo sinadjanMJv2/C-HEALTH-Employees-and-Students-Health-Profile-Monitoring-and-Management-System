@@ -1352,6 +1352,16 @@ namespace SEPHMS.Controllers
             return new BadRequestObjectResult("Account not found");
         }
 
+
+          [HttpPost]
+        public async Task<IActionResult> userloginPhysician(string gmail, int password){
+            var user = await _context.Physicians.FirstOrDefaultAsync(b=>b.Gmail ==gmail && b.Pcode == password);
+            if(user != null){
+                return Ok();
+            }
+            return new BadRequestObjectResult("Account not found");
+        }
+
          public IActionResult AddAppointSchedule(Appointment appoint)
         {
           _context.Appointments.Add(appoint);
