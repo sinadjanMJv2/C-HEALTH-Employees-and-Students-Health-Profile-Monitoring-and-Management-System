@@ -10,8 +10,8 @@ namespace SEPHMS.Entities
         public string? Middlename { get; set; }
         public string Fullname { get; set; }
         public string Firstname { get; set; }
-        public string Gender { get; set; }
-        public string? Gmail { get; set; }
+        public string? Gender { get; set; }
         public int? Pcode { get; set; }
+        public string? Gmail { get; set; }
     }
 }

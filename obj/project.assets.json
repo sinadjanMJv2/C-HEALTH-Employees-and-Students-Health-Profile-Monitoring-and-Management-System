@@ -9192,23 +9192,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Mj\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Student And Employee Profiling and Health Monitoring System\\SEPHMS\\SEPHMS.csproj",
+      "projectUniqueName": "D:\\CAPSTONE PROJECT\\C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System\\SEPHMS.csproj",
       "projectName": "SEPHMS",
-      "projectPath": "C:\\Student And Employee Profiling and Health Monitoring System\\SEPHMS\\SEPHMS.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Student And Employee Profiling and Health Monitoring System\\SEPHMS\\obj\\",
+      "projectPath": "D:\\CAPSTONE PROJECT\\C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System\\SEPHMS.csproj",
+      "packagesPath": "C:\\Users\\Mj\\.nuget\\packages\\",
+      "outputPath": "D:\\CAPSTONE PROJECT\\C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Mj\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

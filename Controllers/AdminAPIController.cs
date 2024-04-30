@@ -27,6 +27,62 @@ namespace SEPHMS.Controllers
             _context = context;
         }
 
+
+
+
+      public ActionResult<List<Cart>> popCart(){
+            var res = 
+            (
+                from cp in _context.Carts
+                join m in _context.Medicines on cp.MedicineId equals m.MedicineId
+                join c in _context.Categories on m.Category equals c.Id
+
+                select new cartList
+                {
+                    MedicineId = m.MedicineId,
+                    CategoryId = c.Id,
+                    CategoryName = c.Categoryname,
+                    MedicineName = m.MedicineName,
+                    Units = m.Units,
+                    Stock = m.MedicineStock,
+                    Dosage = m.Dosage,
+                    Quantity = cp.CQuantity,
+                    MockStock = cp.CMockStock,
+                    CartId = cp.CartId
+
+                }
+            ).ToList();
+
+            return Ok(res);
+        }
+
+
+
+
+
+       public IActionResult addCart(Cart ct)
+        {
+            _context.Carts.Add(ct);
+            _context.SaveChanges();
+            return Ok(ct);
+        }
+
+
+          public IActionResult updateCart(Cart ct)
+        {
+            _context.Carts.Update(ct);
+            _context.SaveChanges();
+            return Ok(ct);
+        }
+
+
+         public IActionResult deleteCart(int cartId)
+        {
+            var res = _context.Carts.Where(q => q.CartId == cartId).FirstOrDefault();
+            _context.Carts.Remove(res);
+            _context.SaveChanges();
+            return Ok();
+        }
         
 
 

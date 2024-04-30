@@ -8,561 +8,569 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SEPHMS
 build_property.RootNamespace = SEPHMS
-build_property.ProjectDir = C:\Student And Employee Profiling and Health Monitoring System\SEPHMS\
+build_property.ProjectDir = D:\CAPSTONE PROJECT\C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Student And Employee Profiling and Health Monitoring System\SEPHMS
+build_property.MSBuildProjectDirectory = D:\CAPSTONE PROJECT\C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialAdminAccount/AdminAccountIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialAdminAccount/AdminAccountIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEFkbWluQWNjb3VudFxBZG1pbkFjY291bnRJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialAdminAccount/AdminAccountTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialAdminAccount/AdminAccountTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEFkbWluQWNjb3VudFxBZG1pbkFjY291bnRUYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialAdminAccount/AdminCreateAccount.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialAdminAccount/AdminCreateAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEFkbWluQWNjb3VudFxBZG1pbkNyZWF0ZUFjY291bnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialAdminAccount/AdminUpdateAccount.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialAdminAccount/AdminUpdateAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEFkbWluQWNjb3VudFxBZG1pblVwZGF0ZUFjY291bnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialAdminAccount/AdminUpdatesAccount.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialAdminAccount/AdminUpdatesAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEFkbWluQWNjb3VudFxBZG1pblVwZGF0ZXNBY2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialAvailable/PartialDate/AvailableDateTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialAvailable/PartialDate/AvailableDateTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEF2YWlsYWJsZVxQYXJ0aWFsRGF0ZVxBdmFpbGFibGVEYXRlVGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialAvailable/PartialDate/AvailableDateTime.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialAvailable/PartialDate/AvailableDateTime.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEF2YWlsYWJsZVxQYXJ0aWFsRGF0ZVxBdmFpbGFibGVEYXRlVGltZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialAvailable/PartialDate/AvailableDateUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialAvailable/PartialDate/AvailableDateUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEF2YWlsYWJsZVxQYXJ0aWFsRGF0ZVxBdmFpbGFibGVEYXRlVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialAvailable/PartialDate/CreateAvailableDate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialAvailable/PartialDate/CreateAvailableDate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEF2YWlsYWJsZVxQYXJ0aWFsRGF0ZVxDcmVhdGVBdmFpbGFibGVEYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialAvailable/PartialTime/AvailableDateTimeUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialAvailable/PartialTime/AvailableDateTimeUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEF2YWlsYWJsZVxQYXJ0aWFsVGltZVxBdmFpbGFibGVEYXRlVGltZVVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialAvailable/PartialTime/AvailableTimeTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialAvailable/PartialTime/AvailableTimeTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEF2YWlsYWJsZVxQYXJ0aWFsVGltZVxBdmFpbGFibGVUaW1lVGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialAvailable/PartialTime/CreateAvailableDateTime.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialAvailable/PartialTime/CreateAvailableDateTime.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEF2YWlsYWJsZVxQYXJ0aWFsVGltZVxDcmVhdGVBdmFpbGFibGVEYXRlVGltZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialBookedStudent/BookedIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialBookedStudent/BookedIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEJvb2tlZFN0dWRlbnRcQm9va2VkSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialBookedStudent/StudentBookTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialBookedStudent/StudentBookTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEJvb2tlZFN0dWRlbnRcU3R1ZGVudEJvb2tUYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialCategory/CategoryIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialCategory/CategoryIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbENhdGVnb3J5XENhdGVnb3J5SW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialCategory/CategoryTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialCategory/CategoryTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbENhdGVnb3J5XENhdGVnb3J5VGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialCategory/CategoryUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialCategory/CategoryUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbENhdGVnb3J5XENhdGVnb3J5VXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialCategory/CreateCategory.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialCategory/CreateCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbENhdGVnb3J5XENyZWF0ZUNhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialCourse/CourseIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialCourse/CourseIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbENvdXJzZVxDb3Vyc2VJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialCourse/CourseTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialCourse/CourseTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbENvdXJzZVxDb3Vyc2VUYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialCourse/CourseUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialCourse/CourseUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbENvdXJzZVxDb3Vyc2VVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialCourse/CreateCourse.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialCourse/CreateCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbENvdXJzZVxDcmVhdGVDb3Vyc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialDepartment/CreateDepartment.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialDepartment/CreateDepartment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbERlcGFydG1lbnRcQ3JlYXRlRGVwYXJ0bWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialDepartment/DepartmentIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialDepartment/DepartmentIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbERlcGFydG1lbnRcRGVwYXJ0bWVudEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialDepartment/DepartmentTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialDepartment/DepartmentTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbERlcGFydG1lbnRcRGVwYXJ0bWVudFRhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialDepartment/DepartmentUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialDepartment/DepartmentUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbERlcGFydG1lbnRcRGVwYXJ0bWVudFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialDoctor/CreateDoctor.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialDoctor/CreateDoctor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbERvY3RvclxDcmVhdGVEb2N0b3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialDoctor/DoctorIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialDoctor/DoctorIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbERvY3RvclxEb2N0b3JJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialDoctor/DoctorTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialDoctor/DoctorTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbERvY3RvclxEb2N0b3JUYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialDoctor/DoctorUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialDoctor/DoctorUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbERvY3RvclxEb2N0b3JVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialEmployeeHealthProfile/AddEmployeeHealthInfo.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialEmployeeHealthProfile/AddEmployeeHealthInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEVtcGxveWVlSGVhbHRoUHJvZmlsZVxBZGRFbXBsb3llZUhlYWx0aEluZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialEmployeeHealthProfile/cardtable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialEmployeeHealthProfile/cardtable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEVtcGxveWVlSGVhbHRoUHJvZmlsZVxjYXJkdGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialEmployeeHealthProfile/EmployeeHealthInfo.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialEmployeeHealthProfile/EmployeeHealthInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEVtcGxveWVlSGVhbHRoUHJvZmlsZVxFbXBsb3llZUhlYWx0aEluZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialEmployeeHealthProfile/EmployeeHealthInfoIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialEmployeeHealthProfile/EmployeeHealthInfoIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEVtcGxveWVlSGVhbHRoUHJvZmlsZVxFbXBsb3llZUhlYWx0aEluZm9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialEmployeeHealthProfile/EmployeeHealthInformationTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialEmployeeHealthProfile/EmployeeHealthInformationTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEVtcGxveWVlSGVhbHRoUHJvZmlsZVxFbXBsb3llZUhlYWx0aEluZm9ybWF0aW9uVGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialEmployeeHealthProfile/updateEmployeeHealth.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialEmployeeHealthProfile/updateEmployeeHealth.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEVtcGxveWVlSGVhbHRoUHJvZmlsZVx1cGRhdGVFbXBsb3llZUhlYWx0aC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialEmployee/CreateEmployee.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialEmployee/CreateEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEVtcGxveWVlXENyZWF0ZUVtcGxveWVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialEmployee/EmployeeIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialEmployee/EmployeeIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEVtcGxveWVlXEVtcGxveWVlSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialEmployee/EmployeeInfo.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialEmployee/EmployeeInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEVtcGxveWVlXEVtcGxveWVlSW5mby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialEmployee/EmployeeTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialEmployee/EmployeeTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEVtcGxveWVlXEVtcGxveWVlVGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialEmployee/EmployeeUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialEmployee/EmployeeUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEVtcGxveWVlXEVtcGxveWVlVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialEquipment/CreateEquipment.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialEquipment/CreateEquipment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEVxdWlwbWVudFxDcmVhdGVFcXVpcG1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialEquipment/EquipmentIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialEquipment/EquipmentIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEVxdWlwbWVudFxFcXVpcG1lbnRJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialEquipment/EquipmentTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialEquipment/EquipmentTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEVxdWlwbWVudFxFcXVpcG1lbnRUYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialEquipment/EquipmentUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialEquipment/EquipmentUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEVxdWlwbWVudFxFcXVpcG1lbnRVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialExpiredMedicine/MedicineAddStock.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialExpiredMedicine/MedicineAddStock.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEV4cGlyZWRNZWRpY2luZVxNZWRpY2luZUFkZFN0b2NrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialExpiredMedicine/MedicineCardExpired.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialExpiredMedicine/MedicineCardExpired.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEV4cGlyZWRNZWRpY2luZVxNZWRpY2luZUNhcmRFeHBpcmVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialExpiredMedicine/MedicineDetails.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialExpiredMedicine/MedicineDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEV4cGlyZWRNZWRpY2luZVxNZWRpY2luZURldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialExpiredMedicine/MedicineIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialExpiredMedicine/MedicineIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEV4cGlyZWRNZWRpY2luZVxNZWRpY2luZUluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialExpiredMedicine/MedicineStockHistory.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialExpiredMedicine/MedicineStockHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEV4cGlyZWRNZWRpY2luZVxNZWRpY2luZVN0b2NrSGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialExpiredMedicine/MedicineUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialExpiredMedicine/MedicineUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEV4cGlyZWRNZWRpY2luZVxNZWRpY2luZVVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialIllness/CreateIllname.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialIllness/CreateIllname.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbElsbG5lc3NcQ3JlYXRlSWxsbmFtZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialIllness/IllnessIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialIllness/IllnessIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbElsbG5lc3NcSWxsbmVzc0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialIllness/IllnessUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialIllness/IllnessUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbElsbG5lc3NcSWxsbmVzc1VwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialIllness/IllTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialIllness/IllTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbElsbG5lc3NcSWxsVGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialLowStockMedicine/MedicineAddStock.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialLowStockMedicine/MedicineAddStock.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbExvd1N0b2NrTWVkaWNpbmVcTWVkaWNpbmVBZGRTdG9jay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialLowStockMedicine/MedicineCardLowStock.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialLowStockMedicine/MedicineCardLowStock.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbExvd1N0b2NrTWVkaWNpbmVcTWVkaWNpbmVDYXJkTG93U3RvY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialLowStockMedicine/MedicineDetails.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialLowStockMedicine/MedicineDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbExvd1N0b2NrTWVkaWNpbmVcTWVkaWNpbmVEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialLowStockMedicine/MedicineIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialLowStockMedicine/MedicineIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbExvd1N0b2NrTWVkaWNpbmVcTWVkaWNpbmVJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialLowStockMedicine/MedicineStockHistory.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialLowStockMedicine/MedicineStockHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbExvd1N0b2NrTWVkaWNpbmVcTWVkaWNpbmVTdG9ja0hpc3RvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialLowStockMedicine/MedicineUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialLowStockMedicine/MedicineUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbExvd1N0b2NrTWVkaWNpbmVcTWVkaWNpbmVVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialMedicine/CreateMedicine.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialMedicine/Cart/ModalAddCart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbE1lZGljaW5lXENhcnRcTW9kYWxBZGRDYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialMedicine/Cart/ModalCartList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbE1lZGljaW5lXENhcnRcTW9kYWxDYXJ0TGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialMedicine/CreateMedicine.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbE1lZGljaW5lXENyZWF0ZU1lZGljaW5lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialMedicine/MedicineAddStock.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialMedicine/MedicineAddStock.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbE1lZGljaW5lXE1lZGljaW5lQWRkU3RvY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialMedicine/MedicineCard.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialMedicine/MedicineCard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbE1lZGljaW5lXE1lZGljaW5lQ2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialMedicine/MedicineCardInactive.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialMedicine/MedicineCardInactive.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbE1lZGljaW5lXE1lZGljaW5lQ2FyZEluYWN0aXZlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialMedicine/MedicineDetails.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialMedicine/MedicineDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbE1lZGljaW5lXE1lZGljaW5lRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialMedicine/MedicineIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialMedicine/MedicineIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbE1lZGljaW5lXE1lZGljaW5lSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialMedicine/MedicineStockHistory.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialMedicine/MedicineStockHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbE1lZGljaW5lXE1lZGljaW5lU3RvY2tIaXN0b3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialMedicine/MedicineUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialMedicine/MedicineUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbE1lZGljaW5lXE1lZGljaW5lVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialNormalRange/CreateNormalRange.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialNormalRange/CreateNormalRange.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbE5vcm1hbFJhbmdlXENyZWF0ZU5vcm1hbFJhbmdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialNormalRange/NormalRangeIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialNormalRange/NormalRangeIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbE5vcm1hbFJhbmdlXE5vcm1hbFJhbmdlSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialNormalRange/NormalRangeTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialNormalRange/NormalRangeTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbE5vcm1hbFJhbmdlXE5vcm1hbFJhbmdlVGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialNormalRange/NormalRangeUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialNormalRange/NormalRangeUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbE5vcm1hbFJhbmdlXE5vcm1hbFJhbmdlVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialNurse/NurseIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialNurse/NurseIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbE51cnNlXE51cnNlSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialPhysician/CreatePhysician.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialPhysician/CreatePhysician.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFBoeXNpY2lhblxDcmVhdGVQaHlzaWNpYW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialPhysician/PhysicianIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialPhysician/PhysicianIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFBoeXNpY2lhblxQaHlzaWNpYW5JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialPhysician/PhysicianTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialPhysician/PhysicianTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFBoeXNpY2lhblxQaHlzaWNpYW5UYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialPhysician/PhysicianUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialPhysician/PhysicianUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFBoeXNpY2lhblxQaHlzaWNpYW5VcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialStudentHealthProfile/AddStudentHealthInfo.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialStudentHealthProfile/AddStudentHealthInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFN0dWRlbnRIZWFsdGhQcm9maWxlXEFkZFN0dWRlbnRIZWFsdGhJbmZvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialStudentHealthProfile/cardtable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialStudentHealthProfile/cardtable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFN0dWRlbnRIZWFsdGhQcm9maWxlXGNhcmR0YWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialStudentHealthProfile/StudentHealthInfo.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialStudentHealthProfile/StudentHealthInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFN0dWRlbnRIZWFsdGhQcm9maWxlXFN0dWRlbnRIZWFsdGhJbmZvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialStudentHealthProfile/StudentHealthInfoIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialStudentHealthProfile/StudentHealthInfoIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFN0dWRlbnRIZWFsdGhQcm9maWxlXFN0dWRlbnRIZWFsdGhJbmZvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialStudentHealthProfile/StudentHealthInformationTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialStudentHealthProfile/StudentHealthInformationTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFN0dWRlbnRIZWFsdGhQcm9maWxlXFN0dWRlbnRIZWFsdGhJbmZvcm1hdGlvblRhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialStudentHealthProfile/updateStudentHealth.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialStudentHealthProfile/updateStudentHealth.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFN0dWRlbnRIZWFsdGhQcm9maWxlXHVwZGF0ZVN0dWRlbnRIZWFsdGguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialStudent/CreateStudent.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialStudent/CreateStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFN0dWRlbnRcQ3JlYXRlU3R1ZGVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialStudent/StudentIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialStudent/StudentIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFN0dWRlbnRcU3R1ZGVudEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialStudent/StudentInfo.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialStudent/StudentInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFN0dWRlbnRcU3R1ZGVudEluZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialStudent/StudentTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialStudent/StudentTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFN0dWRlbnRcU3R1ZGVudFRhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialStudent/StudentUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialStudent/StudentUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFN0dWRlbnRcU3R1ZGVudFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialUnit/CreateUnit.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialUnit/CreateUnit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFVuaXRcQ3JlYXRlVW5pdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialUnit/UnitIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialUnit/UnitIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFVuaXRcVW5pdEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialUnit/UnitTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialUnit/UnitTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFVuaXRcVW5pdFRhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Admin/PartialUnit/UnitUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialUnit/UnitUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbFVuaXRcVW5pdFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Home/Index.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Home/PartialDoctor/CreateDoctor.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Home/PartialDoctor/CreateDoctor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsRG9jdG9yXENyZWF0ZURvY3Rvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Home/PartialDoctor/DoctorIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Home/PartialDoctor/DoctorIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsRG9jdG9yXERvY3RvckluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Home/PartialDoctor/DoctorTable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Home/PartialDoctor/DoctorTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsRG9jdG9yXERvY3RvclRhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Home/PartialDoctor/DoctorUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Home/PartialDoctor/DoctorUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsRG9jdG9yXERvY3RvclVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Home/PartialLowStockMedicine/CreateMedicine.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Home/PartialLowStockMedicine/CreateMedicine.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsTG93U3RvY2tNZWRpY2luZVxDcmVhdGVNZWRpY2luZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Home/PartialLowStockMedicine/MedicineAddStock.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Home/PartialLowStockMedicine/MedicineAddStock.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsTG93U3RvY2tNZWRpY2luZVxNZWRpY2luZUFkZFN0b2NrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Home/PartialLowStockMedicine/MedicineCardLowStock.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Home/PartialLowStockMedicine/MedicineCardLowStock.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsTG93U3RvY2tNZWRpY2luZVxNZWRpY2luZUNhcmRMb3dTdG9jay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Home/PartialLowStockMedicine/MedicineDetails.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Home/PartialLowStockMedicine/MedicineDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsTG93U3RvY2tNZWRpY2luZVxNZWRpY2luZURldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Home/PartialLowStockMedicine/MedicineIndex.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Home/PartialLowStockMedicine/MedicineIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsTG93U3RvY2tNZWRpY2luZVxNZWRpY2luZUluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Home/PartialLowStockMedicine/MedicineStockHistory.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Home/PartialLowStockMedicine/MedicineStockHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsTG93U3RvY2tNZWRpY2luZVxNZWRpY2luZVN0b2NrSGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Home/PartialLowStockMedicine/MedicineUpdate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Home/PartialLowStockMedicine/MedicineUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsTG93U3RvY2tNZWRpY2luZVxNZWRpY2luZVVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Home/Privacy.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Page/SIGN.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Page/SIGN.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZVxTSUdOLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Page/Signin.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Page/Signin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZVxTaWduaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Page/Signup.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Page/Signup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZVxTaWdudXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Page/SUP.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Page/SUP.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZVxTVVAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Shared/Error.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Shared/k.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Shared/k.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXGsuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/Navbar.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/Navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxOYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialAppoint/Appoint.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialAppoint/Appoint.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsQXBwb2ludFxBcHBvaW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialAppoint/displayschedule.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialAppoint/displayschedule.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsQXBwb2ludFxkaXNwbGF5c2NoZWR1bGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialAppoint/modalAppoint.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialAppoint/modalAppoint.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsQXBwb2ludFxtb2RhbEFwcG9pbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialAppoint/modalPreview.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialAppoint/modalPreview.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsQXBwb2ludFxtb2RhbFByZXZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialAppoint/ProfileAppoint.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialAppoint/ProfileAppoint.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsQXBwb2ludFxQcm9maWxlQXBwb2ludC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialHome/Home.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialHome/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsSG9tZVxIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialHome/location.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialHome/location.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsSG9tZVxsb2NhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialLogin/practLogin.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialLogin/practLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsTG9naW5ccHJhY3RMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialLogin/signupCreate.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialLogin/signupCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsTG9naW5cc2lnbnVwQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialLogin/signupEmployee.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialLogin/signupEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsTG9naW5cc2lnbnVwRW1wbG95ZWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialLogin/userLogin.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialLogin/userLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsTG9naW5cdXNlckxvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialViewHealthProfileAndSchedule/cardtable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialViewHealthProfileAndSchedule/cardtable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsVmlld0hlYWx0aFByb2ZpbGVBbmRTY2hlZHVsZVxjYXJkdGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialViewHealthProfileAndSchedule/Comparechart.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialViewHealthProfileAndSchedule/Comparechart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsVmlld0hlYWx0aFByb2ZpbGVBbmRTY2hlZHVsZVxDb21wYXJlY2hhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialViewHealthProfileAndSchedule/modalHealthProfile.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialViewHealthProfileAndSchedule/modalHealthProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsVmlld0hlYWx0aFByb2ZpbGVBbmRTY2hlZHVsZVxtb2RhbEhlYWx0aFByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialViewHealthProfileAndSchedule/Profile.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialViewHealthProfileAndSchedule/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsVmlld0hlYWx0aFByb2ZpbGVBbmRTY2hlZHVsZVxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialViewHealthProfileAndSchedule/StudentHealthProfile.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialViewHealthProfileAndSchedule/StudentHealthProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsVmlld0hlYWx0aFByb2ZpbGVBbmRTY2hlZHVsZVxTdHVkZW50SGVhbHRoUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialViewMedicine/modalDesc.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialViewMedicine/modalDesc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsVmlld01lZGljaW5lXG1vZGFsRGVzYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialViewMedicine/viewMedtable.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialViewMedicine/viewMedtable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsVmlld01lZGljaW5lXHZpZXdNZWR0YWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/PartialViewMedicine/ViewMidecine.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/PartialViewMedicine/ViewMidecine.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsVmlld01lZGljaW5lXFZpZXdNaWRlY2luZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/practice.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/practice.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxwcmFjdGljZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/User/studentformappointment.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/User/studentformappointment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxzdHVkZW50Zm9ybWFwcG9pbnRtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/_ViewImports.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/_ViewStart.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Student And Employee Profiling and Health Monitoring System/SEPHMS/Views/Shared/_Layout.cshtml]
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-grxd8hgowr

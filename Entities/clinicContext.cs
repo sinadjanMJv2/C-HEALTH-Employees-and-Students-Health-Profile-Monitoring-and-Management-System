@@ -19,6 +19,7 @@ namespace SEPHMS.Entities
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Adminaccount> Adminaccounts { get; set; }
         public virtual DbSet<Appointment> Appointments { get; set; }
+        public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Coursestrandyear> Coursestrandyears { get; set; }
         public virtual DbSet<Date> Dates { get; set; }
@@ -29,6 +30,7 @@ namespace SEPHMS.Entities
         public virtual DbSet<Equipment> Equipment { get; set; }
         public virtual DbSet<Illness> Illnesses { get; set; }
         public virtual DbSet<Logbook> Logbooks { get; set; }
+        public virtual DbSet<Logbookdetail> Logbookdetails { get; set; }
         public virtual DbSet<Medicine> Medicines { get; set; }
         public virtual DbSet<Medicinestockhistory> Medicinestockhistories { get; set; }
         public virtual DbSet<Normalrange> Normalranges { get; set; }
@@ -45,7 +47,7 @@ namespace SEPHMS.Entities
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySql("server=localhost;database=clinic;user=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.27-mariadb"));
+                optionsBuilder.UseMySql("server=localhost;database=clinic;user=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.32-mariadb"));
             }
         }
 
@@ -152,6 +154,27 @@ namespace SEPHMS.Entities
                     .IsRequired()
                     .HasMaxLength(250)
                     .HasColumnName("timeApp");
+            });
+
+            modelBuilder.Entity<Cart>(entity =>
+            {
+                entity.ToTable("cart");
+
+                entity.Property(e => e.CartId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("cartId");
+
+                entity.Property(e => e.CMockStock)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("cMockStock");
+
+                entity.Property(e => e.CQuantity)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("cQuantity");
+
+                entity.Property(e => e.MedicineId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("medicineId");
             });
 
             modelBuilder.Entity<Category>(entity =>
@@ -531,10 +554,18 @@ namespace SEPHMS.Entities
                     .HasColumnType("int(11)")
                     .HasColumnName("logbookid");
 
-                entity.Property(e => e.DatePrescribe)
+                entity.Property(e => e.DatetimePrescribe)
                     .IsRequired()
                     .HasMaxLength(250)
-                    .HasColumnName("datePrescribe");
+                    .HasColumnName("datetimePrescribe");
+
+                entity.Property(e => e.Daystotake)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("daystotake");
+
+                entity.Property(e => e.Hmtotake)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("hmtotake");
 
                 entity.Property(e => e.IllnessId)
                     .HasColumnType("int(11)")
@@ -544,14 +575,33 @@ namespace SEPHMS.Entities
                     .HasColumnType("int(11)")
                     .HasColumnName("medicineId");
 
-                entity.Property(e => e.PatientId)
+                entity.Property(e => e.PatiendId)
                     .HasColumnType("int(11)")
-                    .HasColumnName("patientId");
+                    .HasColumnName("patiendId");
+            });
 
-                entity.Property(e => e.TimePrescribe)
-                    .IsRequired()
-                    .HasMaxLength(250)
-                    .HasColumnName("timePrescribe");
+            modelBuilder.Entity<Logbookdetail>(entity =>
+            {
+                entity.HasKey(e => e.LogbookdetailsId)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("logbookdetail");
+
+                entity.Property(e => e.LogbookdetailsId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("logbookdetailsId");
+
+                entity.Property(e => e.Llogbookid)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("llogbookid");
+
+                entity.Property(e => e.MedicineId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("medicineId");
+
+                entity.Property(e => e.Quatity)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("quatity");
             });
 
             modelBuilder.Entity<Medicine>(entity =>
