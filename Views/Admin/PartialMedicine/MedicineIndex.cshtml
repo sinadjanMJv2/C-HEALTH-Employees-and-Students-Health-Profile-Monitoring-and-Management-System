@@ -42,15 +42,17 @@
 </div>
 
 
-<button type="button"  class="btn btn-success" style="color: #ffffff; " data-bs-toggle="modal"
+<button type="button" class="btn btn-success" style="color: #ffffff; " data-bs-toggle="modal"
     data-bs-target="#modalMedicineCreate">
     <i class="fa-solid fa-circle-plus" style="color: #ffffff;"></i>
     Add New Medicine
 </button>
 
-<button type="button" title="Cart list" class="btn btn-primary" id="cartModalOpen" style="color: #ffffff; width: 50px;" data-bs-toggle="modal" data-bs-target="#modalCart">
+<button type="button" title="Cart list" class="btn btn-primary" id="cartModalOpen" style="color: #ffffff; width: 50px;"
+    data-bs-toggle="modal" data-bs-target="#modalCart">
 
-  <i class="fa-solid fa-cart-shopping"></i><div id="cartNum" ></div>
+    <i class="fa-solid fa-cart-shopping"></i>
+    <div id="cartNum"></div>
 </button>
 
 
@@ -82,11 +84,13 @@
     var TotalArr = [];
     var arr = {};
     var cQuantity;
-     var quants;
-     var cartArr = [];
+    var quants;
+    var cartArr = [];
 
     var selectedStockId;
     var selectedStock;
+
+    var detailedId;
 
 
 
@@ -103,14 +107,16 @@
         }
 
         populateIndex();
- populateCart();
+        populateCart();
 
         getMedicine();
         getCategory();
 
 
 
-  new MultiSelectTag('illness')
+
+
+
 
 
         function populateIndex() {
@@ -155,9 +161,10 @@
                         cloned.querySelector(".infoMed").setAttribute("data-medicineId", item.medicineId);
                         cloned.querySelector(".addStock").setAttribute("data-medicineId", item.medicineId);
                         cloned.querySelector(".stockHistory").setAttribute("data-medicineId", item.medicineId);
-                        
+
                         cloned.querySelector(".addtocart").setAttribute("data-medicineId", item.medicineId);
 
+                        // cloned.querySelector("#checkoutBtn").setAttribute("data-medicineId", item.medicineId);
                         parent.prepend(cloned);
                     });
                 });
@@ -696,7 +703,13 @@
                                         var parent = document.querySelector(".parentHistory")
                                         var cloned = template.content.cloneNode(true);
 
-                                        cloned.querySelector(".stockHis").innerHTML = "Added" + "&nbsp;&nbsp;" + item.addedStock + "&nbsp;&nbsp; stock" + " on " + item.date + "<hr>";
+                                        if (item.addedStock.toString().includes('-')) {
+                                            cloned.querySelector(".stockHis").innerHTML = "Deducted" + "&nbsp;&nbsp;" + item.addedStock + "&nbsp;&nbsp; stock" + " on " + item.date + "<hr>";
+
+                                        } else {
+
+                                            cloned.querySelector(".stockHis").innerHTML = "Added" + "&nbsp;&nbsp;" + item.addedStock + "&nbsp;&nbsp; stock" + " on " + item.date + "<hr>";
+                                        }
 
                                         parent.prepend(cloned);
                                     });
@@ -762,18 +775,14 @@
 
 
 
-   function populateCart()
-   {
-      $.ajax("../api/adminapi/popCart")
-      .done(function(item)
-      {
-        cartArr = item;
-          $("#cartNum").html("(" + cartArr.length + ")");
-      
-      });
-    }
+        function populateCart() {
+            $.ajax("../api/adminapi/popCart")
+                .done(function (item) {
+                    cartArr = item;
+                    $("#cartNum").html("(" + cartArr.length + ")");
 
-    
+                });
+        }
 
 
 
@@ -783,358 +792,508 @@
 
 
 
-         //ADD TO CART SECTION
-    $(".parentstab").delegate(".addtocart", "click", function(e){
-      var i = e.target.closest("a").getAttribute("data-medicineId");
-      console.log("na click jyud ang buang");
-
-      if(i != null)
-      {
-
-        selectedMedicineId = i;
-        selectedMedicine = MedicineList.find(element => element.medicineId == i);
-
-        $("#modalAddCart").modal("toggle");
-
-          $(".cardInfo .info-title").html('<center>' + selectedMedicine.medicineName + '</center>');
-           $(".cardInfo #info-dosage").html('<center>' +selectedMedicine.units+'&emsp;'+ selectedMedicine.dosage + '</center><br>');
-          $(".cardInfo .info-Stocks").html('Current Stocks : ' + selectedMedicine.stock);
-
-         cQuantity = selectedMedicine.stock;
-         
-      }
-    });
 
 
-    
-  
+        //ADD TO CART SECTION
+        $(".parentstab").delegate(".addtocart", "click", function (e) {
+            var i = e.target.closest("a").getAttribute("data-medicineId");
+            console.log("na click jyud ang buang");
+
+            if (i != null) {
+
+                selectedMedicineId = i;
+                selectedMedicine = MedicineList.find(element => element.medicineId == i);
+
+                $("#modalAddCart").modal("toggle");
+
+                $(".cardInfo .info-title").html('<center>' + selectedMedicine.medicineName + '</center>');
+                $(".cardInfo #info-dosage").html('<center>' + selectedMedicine.units + '&emsp;' + selectedMedicine.dosage + '</center><br>');
+                $(".cardInfo .info-Stocks").html('Current Stocks : ' + selectedMedicine.stock);
+
+                cQuantity = selectedMedicine.stock;
+
+            }
+        });
 
 
-    //DETECTING INPUT FROM ADD CART FORM
-     $("#addCart").on("input", function(){
-    
-      quants = $(this).val();   //take note of this
-
-      quants > cQuantity ?  document.getElementById("addCart").value = cQuantity : console.log(cQuantity);
-    
-    });
 
 
-      //CLICKING CLOSE BUTTON OF ADD TO CART MODAL
-     $("#modalAddCartClose").click(function(){
-      $("#addCartForm")[0].reset();
-      quants = 0;
-      //console.log(cartPrice);
-    });
+
+
+        //DETECTING INPUT FROM ADD CART FORM
+        $("#addCart").on("input", function () {
+
+            quants = $(this).val();   //take note of this
+
+            quants > cQuantity ? document.getElementById("addCart").value = cQuantity : console.log(cQuantity);
+
+        });
+
+
+        //CLICKING CLOSE BUTTON OF ADD TO CART MODAL
+        $("#modalAddCartClose").click(function () {
+            $("#addCartForm")[0].reset();
+            quants = 0;
+            //console.log(cartPrice);
+        });
 
 
 
         //CONFIRM ADD TO CART
-    $("#addCartBtn").click((e) => {
-      //ADD TO CART
-      if(quants <= 0 || quants == null)
-      {
-        alert("Invalid");
-      }
-      else
-      {
-        var testCart = 
-        {
-          medicineId : selectedMedicine.medicineId,
-          cQuantity : quants,
-          cMockStock : selectedMedicine.stock - quants
-        }
+        $("#addCartBtn").click((e) => {
+            //ADD TO CART
+            if (quants <= 0 || quants == null) {
+                alert("Invalid");
+            }
+            else {
+                var testCart =
+                {
+                    medicineId: selectedMedicine.medicineId,
+                    cQuantity: quants,
+                    cMockStock: selectedMedicine.stock - quants
+                }
 
-        var found = cartArr.find(element => element.medicineId == testCart.medicineId);
-        if(found != null)
-        {
-          //API UPDATE
-          if(found.mockStock < testCart.cQuantity)
-          {
-            alert("You already have a total of " + found.quantity + " quantity of this product. Automatically updated to the maximum purchase limit.");
+                var found = cartArr.find(element => element.medicineId == testCart.medicineId);
+                if (found != null) {
+                    //API UPDATE
+                    if (found.mockStock < testCart.cQuantity) {
+                        alert("You already have a total of " + found.quantity + " quantity of this product. Automatically updated to the maximum purchase limit.");
 
-            found.quantity = cQuantity;
-            found.mockStock = cQuantity - found.quantity;
+                        found.quantity = cQuantity;
+                        found.mockStock = cQuantity - found.quantity;
 
-            var resHold = 
-            {
-              medicineId : found.MedicineId,
-              cQuantity : found.quantity,
-              cMockStock : found.mockStock,
-              cartId : found.cartId 
+                        var resHold =
+                        {
+                            medicineId: found.MedicineId,
+                            cQuantity: found.quantity,
+                            cMockStock: found.mockStock,
+                            cartId: found.cartId
+                        }
+
+                        $.ajax
+                            ({
+                                url: "../api/adminapi/updateCart",
+                                type: "POST",
+                                data:
+                                {
+                                    ct: resHold
+
+                                },
+                            })
+                            .done(function (item) {
+                                //cartArr.push(item);
+                                populateCart();
+                            });
+                    }
+                    else {
+                        var newQuantVal = 0;
+                        var newMockStock = 0;
+
+                        newQuantVal = parseInt(found.quantity) + parseInt(testCart.cQuantity);
+                        found.quantity = newQuantVal;
+
+                        newMockStock = parseInt(selectedMedicine.stock) - parseInt(newQuantVal);
+                        found.mockStock = newMockStock;
+
+                        var resHold =
+                        {
+                            medicineId: found.medicineId,
+                            CQuantity: found.quantity,
+                            CMockStock: found.mockStock,
+                            cartId: found.cartId
+                        }
+
+                        console.log('reshold', resHold)
+                        console.log("asd", testCart.cQuantity)
+                        $.ajax
+                            ({
+                                url: "../api/adminapi/updateCart",
+                                type: "POST",
+                                data:
+                                {
+                                    ct: resHold
+
+
+                                },
+                            })
+                            .done(function (item) {
+                                //cartArr.push(item);
+                                //console.log("1" + cartArr);
+                                populateCart();
+                                //console.log("1" + item);
+                            });
+                    }
+                }
+                else {
+                    $.ajax
+                        ({
+                            url: "../api/adminapi/addCart",
+                            type: "POST",
+                            data:
+                            {
+                                ct: testCart
+                            },
+                        })
+                        .done(function (item) {
+                            populateCart();
+                        });
+                }
+
             }
 
-            $.ajax
-            ({
-              url: "../api/adminapi/updateCart",
-              type: "POST",
-              data:
-              {
-                ct : resHold
-               
-              },
-            })
-            .done(function(item)
-            {
-              //cartArr.push(item);
-              populateCart();
-            });
-          }
-          else
-          {
-            var newQuantVal = 0;
-            var newMockStock = 0;
+            $("#addCartForm")[0].reset();
 
-            newQuantVal = parseInt(found.quantity) + parseInt(testCart.cQuantity);
-            found.quantity = newQuantVal;
+            quants = 0;
 
-            newMockStock = parseInt(selectedMedicine.stock) - parseInt(newQuantVal);
-            found.mockStock = newMockStock;
-
-            var resHold = 
-            {
-              medicineId : found.medicineId,
-              CQuantity : found.quantity,
-              CMockStock : found.mockStock,
-              cartId : found.cartId
-            }
-
-            console.log('reshold',resHold)
-             console.log("asd",testCart.cQuantity)
-            $.ajax
-            ({
-              url: "../api/adminapi/updateCart",
-              type: "POST",
-              data:
-              {
-                ct : resHold
-
-             
-              },
-            })
-            .done(function(item)
-            {
-              //cartArr.push(item);
-              //console.log("1" + cartArr);
-              populateCart();
-              //console.log("1" + item);
-            });
-          }
-        }
-        else
-        {
-          $.ajax
-            ({
-              url: "../api/adminapi/addCart",
-              type: "POST",
-              data:
-              {
-                ct : testCart
-              },
-            })
-            .done(function(item)
-            {
-              populateCart();
-            });
-        }
-
-      }
-
-      $("#addCartForm")[0].reset();
- 
-      quants = 0;
-     
-    });
-
-
-
-     //POPULATING THE ADDED CART TO THE LIST
-    $("#cartModalOpen").click(function(){
-      populateCartList();
-
-    });
-
-
-
-
-    
-    function populateCartList()
-    {
-      document.querySelector(".parentCart").innerHTML = "";
-       document.getElementById("checkoutBtn").disabled = true;
-      
-      
-
-      //populateIndex();
-      cartArr.forEach(function(item){
-          var template = document.querySelector("template#card-container-cart");
-          var parent = document.querySelector(".parentCart");
-          var cloned = template.content.cloneNode(true);
-           
-
-          cloned.querySelector(".card .card-title").innerHTML = item.medicineName;
-          cloned.querySelector(".card .card-body").innerHTML = "Dosage : " + item.units + "&emsp;" +  item.dosage;
-          cloned.querySelector(".card .card-stock").innerHTML = item.quantity;
-        
-        
-
-          cloned.querySelector(".stockMinus").setAttribute("data-medicineId", item.medicineId);
-          cloned.querySelector(".stockPlus").setAttribute("data-medicineId", item.medicineId);
-          cloned.querySelector(".deleteCart").setAttribute("data-medicineId", item.medicineId);
-
-          parent.prepend(cloned);
-      });
-
-        if(cartArr.length <= 0)
-        {
-          $(".infoCart .showT").html('No cart item');
-
-        }
-       
-    }
-
-
-
-     //MAG ADD TAG STOCKS MGA HIGALA
-    $(".parentCart").delegate(".stockPlus", "click", function(e){
-
-    console.log("hi mj na click na")
-
-      var i = e.target.closest("a").getAttribute("data-medicineId");
-      if(i != null)
-      {
-        selectedStockId = i;
-        selectedStock = cartArr.find(element => element.medicineId == i);
-
-        var stock = selectedStock.quantity;
-        var cartStock = selectedStock.stock;
-
-       
-        if(selectedStock.stock >= parseInt(stock) + 1)
-        {
-          var newQuantVal = parseInt(stock) + 1;
-          var newMockStock = parseInt(cartStock) - parseInt(newQuantVal);
-
-          selectedStock.quantity = parseInt(newQuantVal);
-          selectedStock.mockStock = parseInt(newMockStock);
-
-          var resHold = 
-          {
-            medicineId : selectedStock.medicineId,
-            CQuantity : selectedStock.quantity,
-            CMockStock : selectedStock.mockStock,
-            cartId : selectedStock.cartId
-          }
-
-          $.ajax
-          ({
-            url: "../api/adminapi/updateCart",
-            type: "POST",
-            data:
-            {
-              ct : resHold
-            },
-          })
-          .done(function(item)
-          {
-            populateCart();
-          });
-
-          populateCartList();
-        
-        }
-      }
-    });
-
-
-
-     //MAG MINUS TAG STOCKS
-    $(".parentCart").delegate(".stockMinus", "click", function(e){
-      var i = e.target.closest("a").getAttribute("data-medicineId");
-      if(i != null)
-      {
-        selectedStockId = i;
-        selectedStock = cartArr.find(element => element.medicineId == i);
-
-        var stock = selectedStock.quantity;
-        var cartStock = selectedStock.stock;
-      
-        if(parseInt(stock) - 1 > 0)
-        {
-          var newQuantVal = parseInt(stock) - 1;
-          var newMockStock = parseInt(cartStock) - parseInt(newQuantVal);
-
-          selectedStock.quantity = parseInt(newQuantVal);
-          selectedStock.mockStock = parseInt(newMockStock);
-
-          var resHold = 
-          {
-            medicineId : selectedStock.medicineId,
-            CQuantity : selectedStock.quantity,
-            CMockStock : selectedStock.mockStock,
-            cartId : selectedStock.cartId
-          }
-
-          $.ajax
-          ({
-            url: "../api/adminapi/updateCart",
-            type: "POST",
-            data:
-            {
-              ct : resHold
-            },
-          })
-          .done(function(item)
-          {
-            populateCart();
-          });
-
-          populateCartList();
-          
-        }
-      }
-    });
-
-
-
-     //MAG DELETE TAG GI CART BORDS
-    $(".parentCart").delegate(".deleteCart", "click", function(e){
-      var i = e.target.closest("a").getAttribute("data-medicineId");
-      if(i != null)
-      {
-        selectedStockId = i;
-        selectedStock = cartArr.find(element => element.medicineId == i);
-
-        const index = cartArr.indexOf(selectedStock);
-
-        var x = cartArr.splice(index, 1);
-
-        //delete cartArr[index];
-        //cartArr.slice(index);
-        if(cartArr.length <= 0)
-        {
-          $(".infoCart .showT").html('No cart item');
-        }
-
-        //get the cartid value from cart to delete
-        var cartDel = selectedStock.cartId;
-        $.ajax
-        ({
-          url: "../api/adminapi/deleteCart",
-          type: "POST",
-          data:
-          {
-            cartId : cartDel
-          },
-        })
-        .done(function(item)
-        {
-          populateCart();
         });
 
-        populateCartList();
-      }
-    });
+
+
+        //POPULATING THE ADDED CART TO THE LIST
+        $("#cartModalOpen").click(function () {
+            populateCartList();
+
+        });
+
+
+
+
+
+        function populateCartList() {
+            document.querySelector(".parentCart").innerHTML = "";
+            //    document.getElementById("checkoutBtn").disabled = true;
+
+
+
+
+            //populateIndex();
+            cartArr.forEach(function (item) {
+
+                detailedId = item.medicineId;
+                var template = document.querySelector("template#card-container-cart");
+                var parent = document.querySelector(".parentCart");
+                var cloned = template.content.cloneNode(true);
+
+
+                cloned.querySelector(".card .card-title").innerHTML = item.medicineName;
+                cloned.querySelector(".card .card-body").innerHTML = "Dosage : " + item.units + "&emsp;" + item.dosage;
+                cloned.querySelector(".card .card-stock").innerHTML = item.quantity;
+
+
+
+                cloned.querySelector(".stockMinus").setAttribute("data-medicineId", item.medicineId);
+                cloned.querySelector(".stockPlus").setAttribute("data-medicineId", item.medicineId);
+                cloned.querySelector(".deleteCart").setAttribute("data-medicineId", item.medicineId);
+
+                parent.prepend(cloned);
+            });
+
+            if (cartArr.length <= 0) {
+                $(".infoCart .showT").html('No cart item');
+                $(".labelCart").hide();
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+        $("#patientFull, #illnesss").on("change", function () {
+            check();
+        });
+
+
+
+
+        function check() {
+            var patientSelected = document.getElementById("patientFull").selectedOptions.length > 0;
+            var illnessSelected = document.getElementById("illnesss").selectedOptions.length > 0;
+
+
+            if (patientSelected && illnessSelected) {
+                document.getElementById("checkoutBtn").disabled = false;
+            } else {
+                document.getElementById("checkoutBtn").disabled = true;
+            }
+        }
+
+
+
+
+
+
+        //MAG ADD TAG STOCKS MGA HIGALA
+        $(".parentCart").delegate(".stockPlus", "click", function (e) {
+
+            console.log("hi mj na click na")
+
+            var i = e.target.closest("a").getAttribute("data-medicineId");
+            if (i != null) {
+                selectedStockId = i;
+                selectedStock = cartArr.find(element => element.medicineId == i);
+
+                var stock = selectedStock.quantity;
+                var cartStock = selectedStock.stock;
+
+
+                if (selectedStock.stock >= parseInt(stock) + 1) {
+                    var newQuantVal = parseInt(stock) + 1;
+                    var newMockStock = parseInt(cartStock) - parseInt(newQuantVal);
+
+                    selectedStock.quantity = parseInt(newQuantVal);
+                    selectedStock.mockStock = parseInt(newMockStock);
+
+                    var resHold =
+                    {
+                        medicineId: selectedStock.medicineId,
+                        CQuantity: selectedStock.quantity,
+                        CMockStock: selectedStock.mockStock,
+                        cartId: selectedStock.cartId
+                    }
+
+                    $.ajax
+                        ({
+                            url: "../api/adminapi/updateCart",
+                            type: "POST",
+                            data:
+                            {
+                                ct: resHold
+                            },
+                        })
+                        .done(function (item) {
+                            populateCart();
+                        });
+
+                    populateCartList();
+
+                }
+            }
+        });
+
+
+
+        //MAG MINUS TAG STOCKS
+        $(".parentCart").delegate(".stockMinus", "click", function (e) {
+            var i = e.target.closest("a").getAttribute("data-medicineId");
+            if (i != null) {
+                selectedStockId = i;
+                selectedStock = cartArr.find(element => element.medicineId == i);
+
+                var stock = selectedStock.quantity;
+                var cartStock = selectedStock.stock;
+
+                if (parseInt(stock) - 1 > 0) {
+                    var newQuantVal = parseInt(stock) - 1;
+                    var newMockStock = parseInt(cartStock) - parseInt(newQuantVal);
+
+                    selectedStock.quantity = parseInt(newQuantVal);
+                    selectedStock.mockStock = parseInt(newMockStock);
+
+                    var resHold =
+                    {
+                        medicineId: selectedStock.medicineId,
+                        CQuantity: selectedStock.quantity,
+                        CMockStock: selectedStock.mockStock,
+                        cartId: selectedStock.cartId
+                    }
+
+                    $.ajax
+                        ({
+                            url: "../api/adminapi/updateCart",
+                            type: "POST",
+                            data:
+                            {
+                                ct: resHold
+                            },
+                        })
+                        .done(function (item) {
+                            populateCart();
+                        });
+
+                    populateCartList();
+
+                }
+            }
+        });
+
+
+
+        //MAG DELETE TAG GI CART BORDS
+        $(".parentCart").delegate(".deleteCart", "click", function (e) {
+            var i = e.target.closest("a").getAttribute("data-medicineId");
+            if (i != null) {
+                selectedStockId = i;
+                selectedStock = cartArr.find(element => element.medicineId == i);
+
+                const index = cartArr.indexOf(selectedStock);
+
+                var x = cartArr.splice(index, 1);
+
+                //delete cartArr[index];
+                //cartArr.slice(index);
+                if (cartArr.length <= 0) {
+                    $(".infoCart .showT").html('No cart item');
+                    $(".infoCart .labelCart").style.display = 'none';
+                }
+
+
+
+
+
+                //get the cartid value from cart to delete
+                var cartDel = selectedStock.cartId;
+                $.ajax
+                    ({
+                        url: "../api/adminapi/deleteCart",
+                        type: "POST",
+                        data:
+                        {
+                            cartId: cartDel
+                        },
+                    })
+                    .done(function (item) {
+                        populateCart();
+                    });
+
+                populateCartList();
+            }
+        });
+
+
+
+        $("#checkoutBtn").click(function (e) {
+
+
+
+            // Get the select element
+            var patientSelect = document.getElementById('patientFull');
+            var illnessSelect = document.getElementById('illness');
+            var inputDTT = document.getElementById('inputDTT');
+            var inputHM = document.getElementById('inputHM');
+
+            // Check if any option is selected
+            if (patientSelect.selectedOptions.length > 0 && illnessSelect.selectedOptions.length > 0 && inputDTT.value.trim() !== '' && inputHM.value.trim() !== '') {
+
+                console.log('At least one option is selected.');
+
+
+                saveLogbook(patientSelect.value, illnessSelect.value, inputDTT.value, inputHM.value);
+
+            } else {
+                console.log('No option is selected.', detailedId);
+
+
+
+            }
+
+        });
+
+
+
+
+
+
+        //SAVE THE ORDERS TO DATABASE
+        function saveLogbook(patient, illness, inDTT, inHM) {
+            logbookID = 0;
+            var date = new Date(Date.now());
+            var date1 = date.toLocaleString();
+
+
+
+
+            //insert the data first to array
+            var logbookHolder =
+            {
+                patientId: parseInt(patient),
+                medicineId: detailedId,
+                illnessId: parseInt(illness),
+                daystotake: inDTT,
+                hmtotake: inHM,
+                datetimePrescribe: date1
+            }
+
+            console.log('data to saved: ', logbookHolder);
+
+
+            $.ajax
+                ({
+                    url: "../api/adminapi/savetoLogbook",
+                    type: "POST",
+                    data:
+                    {
+                        ord: logbookHolder
+                    },
+                })
+                .done(function (item) {
+                    logbookID = item;
+                    saveLogbookDetails();
+                });
+
+
+        }
+
+
+        function saveLogbookDetails() {
+            //get the value of cart arr and insert only the needed items
+            cartArr.forEach(function (item) {
+                holdLogbookArr =
+                {
+                    logbookid: logbookID,
+                    medicineId: item.medicineId,
+                    quantity: item.quantity,
+
+
+                }
+
+                var nStock = item.mockStock;
+                var date = new Date(Date.now());
+                var date1 = date.toLocaleString();
+
+                //  console.log("details logbook: ",holdLogbookArr)
+
+                //save this to orderdetails and also update the new stock
+                $.ajax
+                    ({
+                        url: "../api/adminapi/savetoLogbookDetails",
+                        type: "POST",
+                        data:
+                        {
+                            ordtls: holdLogbookArr,
+                            mStock: nStock,
+                            date: date1
+                        },
+                    })
+                    .done(function (item) {
+                        //AFTER ANI KAY MAG CLEAR NATAS CART
+                        //ALSO, MAG MINUS TA SA STOCKS
+                        clearCart();
+                    });
+            });
+
+        }
+
+
+        function clearCart() {
+            $.ajax("../api/adminapi/clearCart")
+                .done(function (item) {
+                    populateCart();
+                    populateIndex();
+                });
+        }
+
+
+
 
 
 
@@ -1199,7 +1358,7 @@
         box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1), 0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1), 0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12), 0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
     }
 
-   
+
 
     .card .card-statistic-3 .card-icon-large .fas,
     .card .card-statistic-3 .card-icon-large .far,

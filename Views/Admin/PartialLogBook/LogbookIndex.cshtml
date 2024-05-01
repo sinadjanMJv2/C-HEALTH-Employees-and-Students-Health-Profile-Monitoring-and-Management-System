@@ -1,0 +1,123 @@
+
+@Html.Partial("PartialLogBook/CommonIllness")
+@Html.Partial("PartialLogBook/clinicLogTable")
+@Html.Partial("PartialLogBook/ModalRecordsDetail")
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+<script>
+
+    $("document").ready(function () {
+        displayClinicLogData()
+
+
+
+
+
+        function displayClinicLogData() {
+            $('#clinicData').DataTable().destroy();
+            if (!$.fn.DataTable.isDataTable('#clinicData')) {
+                $('#clinicData').DataTable({
+                    ajax: {
+                        url: '../api/adminapi/LogBookDetails', // API endpoint to retrieve department
+                        dataSrc: ''
+                    },
+                    columns:
+                        [
+
+
+
+                            { data: 'fullname' },
+                            { data: 'departmentName' },
+                            { data: 'courseStrandYearName' },
+                            { data: 'illnessname' },
+                            {
+                                data: 'datetimePrescribe',
+                                render: function (data, type, row) {
+                                    return (type === 'display' || type === 'filter') ? new Date(data).toLocaleString('en-US', {
+                                        month: 'long',
+                                        day: 'numeric',
+                                        year: 'numeric',
+                                        hour: 'numeric',
+                                        minute: 'numeric',
+                                        second: 'numeric',
+                                        hour12: true
+                                    }) : data;
+                                }
+                            },
+
+                            {
+                                data: 'logbookId',
+                                render: function (data, type, row) {
+                                    return viewMedicineData(data);
+                                }
+                            },
+                        ]
+                });
+            }
+        }
+
+        function viewMedicineData(logbookId) {
+            return "<center><a class='btn btn-info logbookDetail' style='color : #ffffff;'  data-logbookId=" + logbookId + ">Info</a> </center>"
+            //sample <a class='btn btn-danger CategoryDelete' data-id=" + id + "  style='color : #ffffff;'>Delete</a>
+
+        }
+
+
+        $("tbody").delegate(".logbookDetail", "click", function (e) {
+            var i = e.target.closest("a").getAttribute("data-logbookId");
+            if (i != null) {
+                showClinicLogDetails(i);
+                //console.log("detail id: ",i)
+            }
+        });
+
+
+        function showClinicLogDetails(logbookId) {
+
+            $("#modalClinicLogDetail").modal("toggle");
+            $('#clinicLogDetail').DataTable().destroy();
+            if (!$.fn.DataTable.isDataTable('#clinicLogDetail')) {
+                // Initialize DataTable
+                $('#clinicLogDetail').DataTable({
+                    ajax: {
+                        url: '../api/adminapi/ClinicLogDetails', // API endpoint to retrieve orders
+                        data:
+                        {
+                            id: logbookId,
+                        },
+                        dataSrc: ''
+                    },
+                    columns:
+                        [
+
+                            @* { data: 'logbookid' }, *@
+                            { data: 'medicineName' },
+
+                            {
+                                data: null,
+                                render: function (data, type, row) {
+                                    var customString = data.units + " &nbsp;" + data.dosage;
+                                    return customString;
+                                }
+                            },
+                            { data: 'quantity' },
+                        ]
+                });
+            }
+        }
+
+
+
+
+
+    })/////end of the program
+
+</script>

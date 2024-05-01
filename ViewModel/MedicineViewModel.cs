@@ -6,7 +6,7 @@ namespace SEPHMS.ViewModel
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string MedicineName { get; set; } 
-        public string Units { get; set; } 
+        public string? Units { get; set; } 
         public int Stock { get; set; }
         public string Status { get; set; } 
         public string PurchaseDate { get; set; }

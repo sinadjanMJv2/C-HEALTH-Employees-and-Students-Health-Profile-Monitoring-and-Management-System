@@ -235,6 +235,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbElsbG5lc3NcSWxsVGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialLogBook/clinicLogTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbExvZ0Jvb2tcY2xpbmljTG9nVGFibGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialLogBook/CommonIllness.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbExvZ0Jvb2tcQ29tbW9uSWxsbmVzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialLogBook/LogbookIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbExvZ0Jvb2tcTG9nYm9va0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialLogBook/ModalRecordsDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbExvZ0Jvb2tcTW9kYWxSZWNvcmRzRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CAPSTONE PROJECT/C-HEALTH-Employees-and-Students-Health-Profile-Monitoring-and-Management-System/Views/Admin/PartialLowStockMedicine/MedicineAddStock.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbExvd1N0b2NrTWVkaWNpbmVcTWVkaWNpbmVBZGRTdG9jay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

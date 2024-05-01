@@ -575,9 +575,9 @@ namespace SEPHMS.Entities
                     .HasColumnType("int(11)")
                     .HasColumnName("medicineId");
 
-                entity.Property(e => e.PatiendId)
+                entity.Property(e => e.PatientId)
                     .HasColumnType("int(11)")
-                    .HasColumnName("patiendId");
+                    .HasColumnName("patientId");
             });
 
             modelBuilder.Entity<Logbookdetail>(entity =>
@@ -591,17 +591,17 @@ namespace SEPHMS.Entities
                     .HasColumnType("int(11)")
                     .HasColumnName("logbookdetailsId");
 
-                entity.Property(e => e.Llogbookid)
+                entity.Property(e => e.Logbookid)
                     .HasColumnType("int(11)")
-                    .HasColumnName("llogbookid");
+                    .HasColumnName("logbookid");
 
                 entity.Property(e => e.MedicineId)
                     .HasColumnType("int(11)")
                     .HasColumnName("medicineId");
 
-                entity.Property(e => e.Quatity)
+                entity.Property(e => e.Quantity)
                     .HasColumnType("int(11)")
-                    .HasColumnName("quatity");
+                    .HasColumnName("quantity");
             });
 
             modelBuilder.Entity<Medicine>(entity =>

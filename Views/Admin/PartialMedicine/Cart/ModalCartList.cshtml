@@ -1,6 +1,5 @@
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/css/multi-select-tag.css">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/css/multi-select-tag.css">
 
 
 <div class="modal fade" id="modalCart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -8,70 +7,93 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Cart List</h5>
-        <button type="button" id="modalCartClose" class="btn-close btn-light" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" id="modalCartClose" class="btn-close btn-light" data-bs-dismiss="modal"
+          aria-label="Close"></button>
       </div>
       <div class="modal-body infoCart d-flex justify-content-center">
         <template id="card-container-cart">
-            <div class="card cardsdd" style="width: 18rem;">
-            <center><p><div class="card-title fw-bold">
-            </div></p></center>
-            <hr/>
+          <div class="card cardsdd" style="width: 18rem;">
+            <center>
+              <p>
+              <div class="card-title fw-bold">
+              </div>
+              </p>
+            </center>
+            <hr />
             <strong>
-                <center>
+              <center>
                 <div class="card-body"></div>
                 <a class="btn btn-primary stockMinus" id="stockMinus">-</a>
                 <a class="card-stock text-decoration-none"></a>
                 </a>
                 <a class="btn btn-primary stockPlus" id="stockPlus">+</a>
-                </center>
+              </center>
             </strong>
-          
-            <hr/>
+
+            <hr />
             <center>
-                <a class="btn btn-danger deleteCart" title="Delete">
+              <a class="btn btn-danger deleteCart" title="Delete">
                 <i class="fa-solid fa-trash text-white"></i>
-                </a>
+              </a>
             </center>
 
             <br>
 
-            </div>
+          </div>
         </template>
 
         <div class="parentCart"></div>
         <br>
-        <div class = "vertical"></div>
+        <div class="vertical"></div>
         <div>
-            <hr/>
-
-            <div class="showT"></div>
-
-          
-             <label name="" class="control-label labelCart">Patient fullname</label>
-             <select id="selectFullname" name="PatientId" class="form-select"></select>
-             <br>
-
-             <div class="form-group">
-              <label  class="control-label labelCart">Select an Illness</label>
-              <select name="Illness" id="illness" multiple>
-
-              </select>
-              </div>
-
-            
-
-      
-           
-        </div>
-        <br>
-      </div>
         
-    
+
+          <div class="showT"></div>
+
+          <div class="form-group">
+          <label name="" class="control-label labelCart">Patient fullname</label>
+          <select name="PatientId" id="patientFull" multiple>
+
+          </select>
+          </div>
+
+
+           <div class="form-group">
+          <label class="control-label labelCart">Select an Illness</label>
+          <select name="Illness" id="illness" multiple>
+            
+          </select>
+
+
+            <br>
+
+          <label name="" class="control-label labelCart">Days to take</label>
+          <input type="number" id="inputDTT" class="form-control" placeholder="days to take"/>
+             <br>
+          <label name="" class="control-label labelCart">Take Medicine as directed</label>
+          <input type="number" id="inputHM" class="form-control" placeholder="medicine as directed"/>
+
+        </div>
+        </div> 
+        
+        <br>
+
+       
+
+
+
+
+
+      </div>
+
+  @* data-bs-dismiss="modal" use to reload the modal*@
+
       <div class="modal-footer">
-            <button class="card-link btn btn-success checkoutBtn" id="checkoutBtn" data-bs-dismiss="modal" data-bs-toggle="tooltip" data-bs-placement="top" title="Checkout">
-            <!--<i class="fa-solid fa-pen-to-square"></i>!-->
-            Checkout
-            </button>
+        <button class="card-link btn btn-success checkoutBtn" id="checkoutBtn" 
+          data-bs-toggle="tooltip" data-bs-placement="top" title="Checkout">
+          <!--<i class="fa-solid fa-pen-to-square"></i>!-->
+          Checkout
+        </button>
       </div>
     </div>
   </div>
@@ -86,60 +108,102 @@
 
 
 <script>
-   // Sample data
-    var illnessData = [];
-    
-            $.ajax("../api/adminapi/getIll")
-                .done(function (result) {
-                    illnessData = result;
-                });
 
-             console.log(illnessData)
+  var patientData = [];
 
-    // Function to populate the select element
-    function populateillnessSelect(data) {
-        var selectElement = $('#illness');
+  // Sample data
+  var illnessData = [];
 
-        // Clear existing options
-        selectElement.empty();
+  $.ajax("../api/adminapi/getIll")
+    .done(function (result) {
+      illnessData = result;
+    });
 
-        // Iterate over the data and append options
-        $.each(data, function(index, ill) {
-            selectElement.append($('<option>', {
-                value: ill.illnessId,
-                text: ill.illnessname.trim() // Trim to remove leading/trailing spaces
-            }));
-        });
-    }
+  $.ajax("../api/adminapi/getStudents")
+    .done(function (result) {
+    patientData = result;
+    });
+
+    console.log(patientData)
+
+  // Function to populate the select element
+  function populateillnessSelect(data) {
+    var selectElement = $('#illness');
+
+    // Clear existing options
+    selectElement.empty();
+
+    // Iterate over the data and append options
+    $.each(data, function (index, ill) {
+      selectElement.append($('<option>', {
+        value: ill.illnessId,
+        text: ill.illnessname.trim() // Trim to remove leading/trailing spaces
+      }));
+    });
+  }
+
+
+   // Function to populate the select element
+  function populatePatientSelect(data) {
+    var selectElementP = $('#patientFull');
+
+    // Clear existing options
+    selectElementP.empty();
+
+    // Iterate over the data and append options
+    $.each(data, function (index, ill) {
+      selectElementP.append($('<option>', {
+        value: ill.spiId,
+        text: ill.fullname.trim() // Trim to remove leading/trailing spaces
+      }));
+    });
+  }
+
+
+
+
+
+
+
+
+  
 
     // Document ready function
-    $(document).ready(function() {
-        // Call the function to populate the select element
-        populateillnessSelect(illnessData);
+    $(document).ready(function () {
+      // Call the function to populate the select element
+       populateillnessSelect(illnessData);
+     populatePatientSelect(patientData)
+
+       function createMultiSelect(name) {
+        return new MultiSelectTag(name);
+     }
+      
+
+  createMultiSelect('illness');
+  createMultiSelect('patientFull');
+
+     
     });
 </script>
 
 
 <style>
-  *{
+  * {
     padding: 0;
     margin: 0;
   }
 
-  .x
-  {
+  .x {
     /*color: #f8f8f8;*/
     font-weight: bold;
   }
 
-  .s
-  {
-    padding : 7px;
+  .s {
+    padding: 7px;
   }
 
-  .cardsdd
-  {
-    display : inline-block;
+  .cardsdd {
+    display: inline-block;
     flex-wrap: wrap;
     max-width: 250px;
     min-width: 250px;
@@ -148,8 +212,7 @@
   .vertical {
     border-left: 6px solid black;
     weight: 200px;
-    position:absolute;
+    position: absolute;
     left: 50%;
-    }
-
+  }
 </style>
