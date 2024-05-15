@@ -29,6 +29,44 @@ namespace SEPHMS.Controllers
 
 
 
+          public ActionResult<List<Accountinginfo>> accountingInfo()
+        {
+            var res =
+            (
+                from cp in _context.Accountinginfos
+                join m in _context.Employeepersonalinformations on cp.PatientId equals m.EpiId
+
+                select new accountingInfoViewModel
+                {
+                    AccountingInfoId = cp.AccountingInfoId,
+                    PayableStatus = cp.PayableStatus,
+                    Balance = cp.Balance,
+  
+
+                    PatientId = m.EpiId,
+                    Firstname = m.Firstname,
+                    Lastname = m.Lastname,
+                    Fullname = m.Fullname,
+                
+                   
+
+                }
+            ).ToList();
+
+            return Ok(res);
+        }
+
+         public IActionResult addAccountingInfo(Accountinginfo act)
+        {
+            _context.Accountinginfos.Add(act);
+            _context.SaveChanges();
+
+            
+            return Ok();
+        }
+
+
+
 
         public ActionResult<List<Cart>> popCart()
         {

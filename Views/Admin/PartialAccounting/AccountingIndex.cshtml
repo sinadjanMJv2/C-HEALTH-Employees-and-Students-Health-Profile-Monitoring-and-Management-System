@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+var AccountInfoListId = {};
+var PatiendId = [];
+
+
+
+    $(document).ready(function () {
+
+async function getAccountingInfo() {
+    let result = await $.ajax("../api/adminapi/accountingInfo");
+    var patiendIdFor = [];
+    result.forEach(function (item) {
+        patiendIdFor.push(item.patientId);
+    });
+
+    return [...new Set(patiendIdFor)]; // Return the unique patient IDs
+}
+
+// Usage
+(async () => {
+    let PatientId = await getAccountingInfo();
+   
+
+                $.ajax("../api/adminapi/getEmployee")
+                .done(function (result) {
+                 
+               
+                    result.forEach(function (item) {
+
+                    const empId = item.epiId;
+                   // Check if empId is not in PatientId
+                if (!PatientId.includes(empId)) {
+                    console.log("Missing ID: ", empId);
+             
+              AccountingData =
+                {
+                    patientId: empId,
+                    payableStatus: "Pending",
+                    balance: 1000,
+                }
+
+                     $.ajax
+                        ({
+                            url: "../api/adminapi/addAccountingInfo",
+                            type: "POST",
+                            data:
+                            {
+                               act: AccountingData
+                            },
+                        })
+                       .done(function () {
+
+                           console.log("successfully added to database")
+                        });
+                       
+
+
+                } else {
+                    console.log("ID exists: ", empId);
+                }  
+                                  
+                });
+
+
+
+                 $.ajax("../api/adminapi/getEmployee")
+                .done(function (result) {
+                 
+               
+                    result.forEach(function (item) {
+
+                    const empId = item.epiId;
+                   // Check if empId is not in PatientId
+                if (!PatientId.includes(empId)) {
+                    console.log("Missing ID: ", empId);
+             
+              AccountingData =
+                {
+                    patientId: empId,
+                    payableStatus: "Pending",
+                    balance: 1000,
+                }
+
+                     $.ajax
+                        ({
+                            url: "../api/adminapi/addAccountingInfo",
+                            type: "POST",
+                            data:
+                            {
+                               act: AccountingData
+                            },
+                        })
+                       .done(function () {
+
+                           console.log("successfully added to database")
+                        });
+                       
+
+
+                } else {
+                    console.log("ID exists: ", empId);
+                }  
+                                  
+                });
+
+
+
+
+
+                });
+
+
+    
+
+  
+
+    
+})();
+
+
+
+
+       
+
+
+      
+
+
+
+
+    });// end of the function
+
+</script>

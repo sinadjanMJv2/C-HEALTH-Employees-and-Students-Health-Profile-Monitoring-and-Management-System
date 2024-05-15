@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
   <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <link rel="stylesheet" href="~/SEPHMS.styles.css" asp-append-version="true" />
   <link rel="stylesheet" href="~/lib/Fontawesome/all.min.css" />
@@ -83,6 +84,7 @@
             <li class="header-menu">
               <span>General</span>
             </li>
+            
             <li class="sidebar-dropdown" id="Medicine">
               <a href="#">
                 <i class="fas fa-capsules"></i>
@@ -196,10 +198,29 @@
                     <a asp-area="" asp-controller="Admin" asp-action="AdminNormalRange">Add Normal Ranges
                     </a>
                   </li>
+                  
 
 
                 </ul>
+                
+                
               </div>
+               <li class="illnessNav">
+             <a asp-area="" asp-controller="Admin" asp-action="AdminIllness">
+              <i class='fas fa-syringe'></i>
+                 <span>Illness</span>
+              </a>
+              
+            </li>
+           
+
+             <li  id="Logbook">
+
+              <a asp-area="" asp-controller="Admin" asp-action="AdminLogbook">
+                <i class="fas fa-calendar-check"></i>
+                <span>Logbook</span>
+              </a>
+            </li>
             </li>
             <li class="header-menu" id="App">
               <span>Appointment</span>
@@ -253,25 +274,20 @@
 
 
              <li class="header-menu" id="Logbook">
-              <span>LogBook</span>
+              <span>Accounting</span>
             </li>
-            
-            <li class="illnessNav">
-             <a asp-area="" asp-controller="Admin" asp-action="AdminIllness">
-              <i class='fas fa-syringe'></i>
-                 <span>Illness</span>
-              </a>
-              
-            </li>
+
            
 
              <li  id="Logbook">
 
-              <a asp-area="" asp-controller="Admin" asp-action="AdminLogbook">
-                <i class="fas fa-calendar-check"></i>
-                <span>Logbook</span>
+              <a asp-area="" asp-controller="Admin" asp-action="AdminAccounting">
+               <i class="material-icons">&#xe8a1;</i>
+                <span>Payment</span>
               </a>
             </li>
+            
+           
          
 
           </ul>

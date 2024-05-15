@@ -17,6 +17,7 @@ namespace SEPHMS.Entities
         }
 
         public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Accountinginfo> Accountinginfos { get; set; }
         public virtual DbSet<Adminaccount> Adminaccounts { get; set; }
         public virtual DbSet<Appointment> Appointments { get; set; }
         public virtual DbSet<Cart> Carts { get; set; }
@@ -92,6 +93,27 @@ namespace SEPHMS.Entities
                     .IsRequired()
                     .HasMaxLength(250)
                     .HasColumnName("password");
+            });
+
+            modelBuilder.Entity<Accountinginfo>(entity =>
+            {
+                entity.ToTable("accountinginfo");
+
+                entity.Property(e => e.AccountingInfoId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("accountingInfoId");
+
+                entity.Property(e => e.Balance)
+                    .HasPrecision(10)
+                    .HasColumnName("balance");
+
+                entity.Property(e => e.PatientId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("patientId");
+
+                entity.Property(e => e.PayableStatus)
+                    .HasMaxLength(250)
+                    .HasColumnName("payableStatus");
             });
 
             modelBuilder.Entity<Adminaccount>(entity =>
@@ -651,7 +673,6 @@ namespace SEPHMS.Entities
                     .HasColumnName("status");
 
                 entity.Property(e => e.Units)
-                    .IsRequired()
                     .HasMaxLength(250)
                     .HasColumnName("units");
             });

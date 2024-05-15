@@ -96,6 +96,13 @@ namespace SEPHMS.Controllers
           public ActionResult AdminLogbook(){
             return View("PartialLogbook/LogbookIndex");
         }
+
+            public ActionResult AdminAccounting(){
+            return View("PartialAccounting/AccountingIndex");
+        }
+
+
+
         
         
 
