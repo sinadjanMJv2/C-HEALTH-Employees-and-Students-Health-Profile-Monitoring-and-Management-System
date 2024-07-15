@@ -8,7 +8,7 @@ namespace SEPHMS.Entities
         public int MedicineId { get; set; }
         public string MedicineName { get; set; }
         public int MedicineStock { get; set; }
-        public string Units { get; set; }
+        public string? Units { get; set; }
         public int Category { get; set; }
         public string Status { get; set; }
         public string Datepurchased { get; set; }

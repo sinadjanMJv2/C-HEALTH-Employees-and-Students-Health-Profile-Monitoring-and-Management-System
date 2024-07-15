@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
 
-                    
+
 
                     <li class="nav-item">
                         <a class="nav-link" asp-area="" asp-controller="User" asp-action="Appoint">Appoint Schedule</a>
@@ -53,7 +53,7 @@
     <section class="s1">
         <div class="container">
             <div class="schedule">
-              @Html.Partial("PartialViewHealthProfileAndSchedule/Profile")
+                @Html.Partial("PartialViewHealthProfileAndSchedule/Profile")
                 @Html.Partial("PartialViewHealthProfileAndSchedule/cardtable")
 
                 <center>
@@ -96,14 +96,11 @@
 
         var userType = sessionStorage.getItem('userType');
 
-        if(userType === null)
-        {
+        if (userType === null) {
             window.location.href = "/User/practLogin";
         }
-        else
-        {
-            if(userType === "admin")
-            {
+        else {
+            if (userType === "admin") {
                 window.location.href = "/Admin/AdminCategory";
             }
         }
@@ -130,10 +127,10 @@
 
                     retrievedArray.forEach(function (item) {
                         sampleValueHIId = item.spiId;
-                    
-                    $("#Username").html(item.fullname);
-                    $("#Usergmail").html(item.gmailaddress);
-                    $("#UserProgam").html(item.courseStrandYearName);
+
+                        $("#Username").html(item.fullname);
+                        $("#Usergmail").html(item.gmailaddress);
+                        $("#UserProgam").html(item.courseStrandYearName);
 
 
                     });
@@ -143,7 +140,7 @@
                     });
 
                     console.log("dateComp", dateComp)
-                   Compare(dateComp);
+                    Compare(dateComp);
 
                     document.querySelector(".parent").innerHTML = "";
 
@@ -159,7 +156,7 @@
                         }
                     });
 
-                
+
 
 
 
@@ -190,213 +187,213 @@
                 });
 
 
-        
+
 
 
 
         }// end of funcction populate
 
 
-       
-    const Compare = datecomp => {
 
-        
-
-      var labels = ['Neutrophils 47-80', 'WBC 4.1-10.9', 'Lympocyte 13-40', 'Basophil 0-2', 'Eosinophil 0-5', 'Hematocrit 36-46', 'Hemoglobin 12-16', 'Mch 26-34', 'Mchc 31-36', 'Mcv 80-100', 'Monocyte 2-11', 'Mpv 6.9-11', 'Platelet Count 140-440', 'Rbc 4.5-9.5', 'Rcdw 11.6-14.8'];
-    
-
-          $.ajax("../api/adminapi/getNR")
-                        .done(function (result) {
-
-                            var b = [];
-
-                            b = result.filter(function (item) {
-                                return item.test === "Neutrophils" && item.unitname === "%";
-                            });
-                            
-
-                            var c = [];
-
-                            c = result.filter(function (item) {
-                                return item.test === "WBC" && item.unitname === "x(10^9)/L";
-                            });
-
-                            var d = [];
-
-                            d = result.filter(function (item) {
-                                return item.test === "Lymphocyte" && item.unitname === "%";
-                            });
-
-                            console.log('detriot',d)
-
-
-                            var e = [];
-
-                            e = result.filter(function (item) {
-                                return item.test === "Basophil" && item.unitname === "%";
-                            });
-
-                            var f = [];
-
-                            f = result.filter(function (item) {
-                                return item.test === "Eosinophil" && item.unitname === "%";
-                            });
-
-                            var g = [];
-
-                            g = result.filter(function (item) {
-                                return item.test === "Hematocrit" && item.unitname === "mg/dl";
-                            });
-
-
-                            var h = [];
-
-                            h = result.filter(function (item) {
-                                return item.test === "Hemoglobin" && item.unitname === "mg/dl";
-                            });
-
-
-                            var i = [];
-
-                            i = result.filter(function (item) {
-                                return item.test === "MCH" && item.unitname === "pg";
-                            });
-
-                            var j = [];
-
-                            j = result.filter(function (item) {
-                                return item.test === "MCHC" && item.unitname === "g/dL";
-                            });
-
-                            var k = [];
-
-                            k = result.filter(function (item) {
-                                return item.test === "MCV" && item.unitname === "fL";
-                            });
-
-                            var l = [];
-
-                            l = result.filter(function (item) {
-                                return item.test === "Monocyte" && item.unitname === "%";
-                            });
-
-
-                            var m = [];
-
-                            m = result.filter(function (item) {
-                                return item.test === "MPV" && item.unitname === "fL";
-                            });
-
-                            var n = [];
-
-                            n = result.filter(function (item) {
-                                return item.test === "Platelet Count" && item.unitname === "x(10^9)/L";
-                            });
-
-                            var o = [];
-
-                            o = result.filter(function (item) {
-                                return item.test === "RBC" && item.unitname === "10^12/L";
-                            });
-
-                            var p = [];
-
-                            p = result.filter(function (item) {
-                                return item.test === "RCDW" && item.unitname === "%";
-                            });
+        const Compare = datecomp => {
 
 
 
-                         
+            var labels = ['Neutrophils 47-80', 'WBC 4.1-10.9', 'Lympocyte 13-40', 'Basophil 0-2', 'Eosinophil 0-5', 'Hematocrit 36-46', 'Hemoglobin 12-16', 'Mch 26-34', 'Mchc 31-36', 'Mcv 80-100', 'Monocyte 2-11', 'Mpv 6.9-11', 'Platelet Count 140-440', 'Rbc 4.5-9.5', 'Rcdw 11.6-14.8'];
 
 
+            $.ajax("../api/adminapi/getNR")
+                .done(function (result) {
 
-                  var chartData = datecomp.map(function (data, index) {
+                    var b = [];
 
-
-                    console.log('sir lim',data.lymphocyte)
-
-        
-                            // console.log(sampleValue.neutrophils)
-                            // Check Neutrophils value against maxRange and minRange
-                            const neutrophilsColors = data.neutrophils >= b[0].minRange && data.neutrophils <= b[0].maxRange ? 'green' : 'red';
-                            // Check WBC value against maxRange and minRange
-                            const wbcColors = data.wbc >= c[0].minRange && data.wbc <= c[0].maxRange ? 'green' : 'red';
-                            const lymColors = data.lymphocyte >= d[0].minRange && data.lymphocyte <= d[0].maxRange ? 'green' : 'red';
-                            const basoColors = data.basophil >= e[0].minRange && data.basophil <= e[0].maxRange ? 'green' : 'red';
-                            const eosiColors = data.eosinophil >= f[0].minRange && data.eosinophil <= f[0].maxRange ? 'green' : 'red';
-                            const hemaColors = data.hematocrit >= g[0].minRange && data.hematocrit <= g[0].maxRange ? 'green' : 'red';
-                            const hemoColors = data.hemoglobin >= h[0].minRange && data.hemoglobin <= h[0].maxRange ? 'green' : 'red';
-                            const mchColors = data.mch >= i[0].minRange && data.mch <= i[0].maxRange ? 'green' : 'red';
-                            const mchcColors = data.mchc >= j[0].minRange && data.mchc <= j[0].maxRange ? 'green' : 'red';
-                            const mcvColors = data.mcv >= k[0].minRange && data.mcv <= k[0].maxRange ? 'green' : 'red';
-                            const monoColors = data.monocyte >= l[0].minRange && data.monocyte <= l[0].maxRange ? 'green' : 'red';
-                            const mpvColors = data.mpv >= m[0].minRange && data.mpv <= m[0].maxRange ? 'green' : 'red';
-                            const plColors = data.plateletcount >= n[0].minRange && data.plateletcount <= n[0].maxRange ? 'green' : 'red';
-                            const rbcColors = data.rbc >= o[0].minRange && data.rbc <= o[0].maxRange ? 'green' : 'red';
-                            const rcdwColors = data.rcdw >= p[0].minRange && data.rcdw <= p[0].maxRange ? 'green' : 'red';
+                    b = result.filter(function (item) {
+                        return item.test === "Neutrophils" && item.unitname === "%";
+                    });
 
 
-                            console.log(Chart.version);
-                            console.log(neutrophilsColors, wbcColors, lymColors, basoColors, eosiColors, hemaColors, hemoColors, mchColors, mchcColors, mcvColors, monoColors, mpvColors, plColors, rbcColors, rcdwColors);
+                    var c = [];
+
+                    c = result.filter(function (item) {
+                        return item.test === "WBC" && item.unitname === "x(10^9)/L";
+                    });
+
+                    var d = [];
+
+                    d = result.filter(function (item) {
+                        return item.test === "Lymphocyte" && item.unitname === "%";
+                    });
+
+                    console.log('detriot', d)
+
+
+                    var e = [];
+
+                    e = result.filter(function (item) {
+                        return item.test === "Basophil" && item.unitname === "%";
+                    });
+
+                    var f = [];
+
+                    f = result.filter(function (item) {
+                        return item.test === "Eosinophil" && item.unitname === "%";
+                    });
+
+                    var g = [];
+
+                    g = result.filter(function (item) {
+                        return item.test === "Hematocrit" && item.unitname === "mg/dl";
+                    });
+
+
+                    var h = [];
+
+                    h = result.filter(function (item) {
+                        return item.test === "Hemoglobin" && item.unitname === "mg/dl";
+                    });
+
+
+                    var i = [];
+
+                    i = result.filter(function (item) {
+                        return item.test === "MCH" && item.unitname === "pg";
+                    });
+
+                    var j = [];
+
+                    j = result.filter(function (item) {
+                        return item.test === "MCHC" && item.unitname === "g/dL";
+                    });
+
+                    var k = [];
+
+                    k = result.filter(function (item) {
+                        return item.test === "MCV" && item.unitname === "fL";
+                    });
+
+                    var l = [];
+
+                    l = result.filter(function (item) {
+                        return item.test === "Monocyte" && item.unitname === "%";
+                    });
+
+
+                    var m = [];
+
+                    m = result.filter(function (item) {
+                        return item.test === "MPV" && item.unitname === "fL";
+                    });
+
+                    var n = [];
+
+                    n = result.filter(function (item) {
+                        return item.test === "Platelet Count" && item.unitname === "x(10^9)/L";
+                    });
+
+                    var o = [];
+
+                    o = result.filter(function (item) {
+                        return item.test === "RBC" && item.unitname === "10^12/L";
+                    });
+
+                    var p = [];
+
+                    p = result.filter(function (item) {
+                        return item.test === "RCDW" && item.unitname === "%";
+                    });
 
 
 
 
-      //  alert(data.neutrophils)
-        var backgroundColor =  [neutrophilsColors,wbcColors,lymColors,basoColors,eosiColors,hemaColors,hemoColors,mchColors,mchcColors,mcvColors,monoColors,mpvColors,plColors,rbcColors,rcdwColors];
-        var borderColor = [neutrophilsColors,wbcColors,lymColors,basoColors,eosiColors,hemaColors,hemoColors,mchColors,mchcColors,mcvColors,monoColors,mpvColors,plColors,rbcColors,rcdwColors];
-      
-        return {
-          label: data.datet,
-          backgroundColor: backgroundColor,
-          borderColor: borderColor,
-          borderWidth: 1,
-          data: [data.neutrophils, data.wbc, data.lymphocyte,data.basophil,data.eosinophil,data.hematocrit,data.hemoglobin,data.mch,data.mchc,data.mcv,data.monocyte,data.mpv,data.plateletcount,data.rbc,data.rcdw],
+
+
+
+                    var chartData = datecomp.map(function (data, index) {
+
+
+                        console.log('sir lim', data.lymphocyte)
+
+
+                        // console.log(sampleValue.neutrophils)
+                        // Check Neutrophils value against maxRange and minRange
+                        const neutrophilsColors = data.neutrophils >= b[0].minRange && data.neutrophils <= b[0].maxRange ? 'green' : 'red';
+                        // Check WBC value against maxRange and minRange
+                        const wbcColors = data.wbc >= c[0].minRange && data.wbc <= c[0].maxRange ? 'green' : 'red';
+                        const lymColors = data.lymphocyte >= d[0].minRange && data.lymphocyte <= d[0].maxRange ? 'green' : 'red';
+                        const basoColors = data.basophil >= e[0].minRange && data.basophil <= e[0].maxRange ? 'green' : 'red';
+                        const eosiColors = data.eosinophil >= f[0].minRange && data.eosinophil <= f[0].maxRange ? 'green' : 'red';
+                        const hemaColors = data.hematocrit >= g[0].minRange && data.hematocrit <= g[0].maxRange ? 'green' : 'red';
+                        const hemoColors = data.hemoglobin >= h[0].minRange && data.hemoglobin <= h[0].maxRange ? 'green' : 'red';
+                        const mchColors = data.mch >= i[0].minRange && data.mch <= i[0].maxRange ? 'green' : 'red';
+                        const mchcColors = data.mchc >= j[0].minRange && data.mchc <= j[0].maxRange ? 'green' : 'red';
+                        const mcvColors = data.mcv >= k[0].minRange && data.mcv <= k[0].maxRange ? 'green' : 'red';
+                        const monoColors = data.monocyte >= l[0].minRange && data.monocyte <= l[0].maxRange ? 'green' : 'red';
+                        const mpvColors = data.mpv >= m[0].minRange && data.mpv <= m[0].maxRange ? 'green' : 'red';
+                        const plColors = data.plateletcount >= n[0].minRange && data.plateletcount <= n[0].maxRange ? 'green' : 'red';
+                        const rbcColors = data.rbc >= o[0].minRange && data.rbc <= o[0].maxRange ? 'green' : 'red';
+                        const rcdwColors = data.rcdw >= p[0].minRange && data.rcdw <= p[0].maxRange ? 'green' : 'red';
+
+
+                        console.log(Chart.version);
+                        console.log(neutrophilsColors, wbcColors, lymColors, basoColors, eosiColors, hemaColors, hemoColors, mchColors, mchcColors, mcvColors, monoColors, mpvColors, plColors, rbcColors, rcdwColors);
+
+
+
+
+                        //  alert(data.neutrophils)
+                        var backgroundColor = [neutrophilsColors, wbcColors, lymColors, basoColors, eosiColors, hemaColors, hemoColors, mchColors, mchcColors, mcvColors, monoColors, mpvColors, plColors, rbcColors, rcdwColors];
+                        var borderColor = [neutrophilsColors, wbcColors, lymColors, basoColors, eosiColors, hemaColors, hemoColors, mchColors, mchcColors, mcvColors, monoColors, mpvColors, plColors, rbcColors, rcdwColors];
+
+                        return {
+                            label: data.datet,
+                            backgroundColor: backgroundColor,
+                            borderColor: borderColor,
+                            borderWidth: 1,
+                            data: [data.neutrophils, data.wbc, data.lymphocyte, data.basophil, data.eosinophil, data.hematocrit, data.hemoglobin, data.mch, data.mchc, data.mcv, data.monocyte, data.mpv, data.plateletcount, data.rbc, data.rcdw],
+                        };
+                    });
+
+
+                    // Chart.js configuration
+                    var data = {
+                        labels: labels,
+                        datasets: chartData,
+                    };
+
+                    const configCom = {
+                        type: "bar",
+                        data,
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    };
+
+                    // Render the chart
+                    const myComChart = new Chart(document.getElementById("comChart"), configCom);
+
+                    // Adjust container width dynamically based on the number of labels
+                    const ComcontainerBody = document.querySelector(".comcontainerBody");
+                    const ComtotalLabels = myComChart.data.labels.length;
+
+                    if (ComtotalLabels > 7) {
+                        const ComnewWidth = 700 + (ComtotalLabels - 7) * 30;
+                        ComcontainerBody.style.width = `${ComnewWidth}px`;
+                    }
+
+
+
+
+
+                });
+
+
+
         };
-      });
-      
-      
-        // Chart.js configuration
-      var data = {
-        labels: labels,
-        datasets: chartData,
-      };
-
-      const configCom = {
-        type: "bar",
-        data,
-        options: {
-          maintainAspectRatio: false,
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-        },
-      };
-
-      // Render the chart
-      const myComChart = new Chart(document.getElementById("comChart"), configCom);
-
-     // Adjust container width dynamically based on the number of labels
-      const ComcontainerBody = document.querySelector(".comcontainerBody");
-      const ComtotalLabels = myComChart.data.labels.length;
-
-      if (ComtotalLabels > 7) {
-        const ComnewWidth = 700 + (ComtotalLabels - 7) * 30;
-        ComcontainerBody.style.width = `${ComnewWidth}px`;
-      }
-
-      
-      
-      
-      
-      });
-
-
-
-    };
 
 
 
@@ -616,65 +613,182 @@
 
 
 
-                            var data = {
-                                labels: ['Neutrophils 47-80', 'WBC 4.1-10.9', 'Lympocyte 13-40', 'Basophil 0-2', 'Eosinophil 0-5', 'Hematocrit 36-46', 'Hemoglobin 12-16', 'Mch 26-34', 'Mchc 31-36', 'Mcv 80-100', 'Monocyte 2-11', 'Mpv 6.9-11', 'Platelet Count 140-440', 'Rbc 4.5-9.5', 'Rcdw 11.6-14.8'],
+                            var _neutrophils = {
+                                labels: ['Neutrophils 47-80'],
                                 datasets: [{
                                     label: 'Blood Count',
-
-                                    data: [sampleValue.neutrophils,sampleValue.wbc,sampleValue.lymphocyte,sampleValue.basophil,sampleValue.eosinophil,sampleValue.hematocrit,sampleValue.hemoglobin,sampleValue.mch,sampleValue.mchc,sampleValue.mcv,sampleValue.monocyte,sampleValue.mpv,sampleValue.plateletcount,sampleValue.rbc,sampleValue.rcdw],
-
-
-
-                                    backgroundColor: [
-                                        neutrophilsColor,
-                                        wbcColor,
-                                        lymColor,
-                                        basoColor,
-                                        eosiColor,
-                                        hemaColor,
-                                        hemoColor,
-                                        mchColor,
-                                        mchcColor,
-                                        mcvColor,
-                                        monoColor,
-                                        mpvColor,
-                                        plColor,
-                                        rbcColor,
-                                        rcdwColor,
-                                    ],
-                                    borderColor: [
-                                        neutrophilsColor,
-                                        wbcColor,
-                                        lymColor,
-                                        basoColor,
-                                        eosiColor,
-                                        hemaColor,
-                                        hemoColor,
-                                        mchColor,
-                                        mchcColor,
-                                        mcvColor,
-                                        monoColor,
-                                        mpvColor,
-                                        plColor,
-                                        rbcColor,
-                                        rcdwColor,
-                                    ],
+                                    data: [sampleValue.neutrophils],
+                                    backgroundColor: [neutrophilsColor],
+                                    borderColor: [neutrophilsColor],
                                     borderWidth: 1
                                 }]
                             };
 
 
 
+                            var _wbc = {
+                                labels: ['WBC 4.1-10.9'],
+                                datasets: [{
+                                    label: 'Blood Count',
+                                    data: [sampleValue.wbc],
+                                    backgroundColor: [wbcColor],
+                                    borderColor: [wbcColor],
+                                    borderWidth: 1
+                                }]
+                            };
+
+                            var _lymphocyte = {
+                                labels: ['Lympocyte 13-40'],
+                                datasets: [{
+                                    label: 'Blood Count',
+                                    data: [ sampleValue.lymphocyte],
+                                    backgroundColor: [lymColor],
+                                    borderColor: [lymColor],
+                                    borderWidth: 1
+                                }]
+                            };
+
+                              var _basophil = {
+                                labels: ['Basophil 0-2'],
+                                datasets: [{
+                                    label: 'Blood Count',
+                                    data: [sampleValue.basophil],
+                                    backgroundColor: [basoColor],
+                                    borderColor: [basoColor],
+                                    borderWidth: 1
+                                }]
+                            };
+
+                            var _eosinophil = {
+                                labels: ['Eosinophil 0-5'],
+                                datasets: [{
+                                    label: 'Blood Count',
+                                    data: [ sampleValue.eosinophil],
+                                    backgroundColor: [eosiColor],
+                                    borderColor: [eosiColor],
+                                    borderWidth: 1
+                                }]
+                            };
 
 
+                            var _hematocrit = {
+                                labels: ['Hematocrit 36-46'],
+                                datasets: [{
+                                    label: 'Blood Count',
+                                    data: [sampleValue.hematocrit],
+                                    backgroundColor: [hemaColor],
+                                    borderColor: [hemaColor],
+                                    borderWidth: 1
+                                }]
+                            };
 
+
+                            var _hemoglobin = {
+                                labels: ['Hemoglobin 12-16'],
+                                datasets: [{
+                                    label: 'Blood Count',
+                                    data: [sampleValue.hemoglobin],
+                                    backgroundColor: [hemoColor],
+                                    borderColor: [hemoColor],
+                                    borderWidth: 1
+                                }]
+                            };
+
+
+                            var _mch = {
+                                labels: ['Mch 26-34'],
+                                datasets: [{
+                                    label: 'Blood Count',
+                                    data: [ sampleValue.mch],
+                                    backgroundColor: [mchColor],
+                                    borderColor: [mchColor],
+                                    borderWidth: 1
+                                }]
+                            };
+
+                            
+                            var _mchc = {
+                                labels: ['Mchc 31-36'],
+                                datasets: [{
+                                    label: 'Blood Count',
+                                    data: [ sampleValue.mchc],
+                                    backgroundColor: [mchcColor],
+                                    borderColor: [mchcColor],
+                                    borderWidth: 1
+                                }]
+                            };
+
+
+                            
+                            var _monocyte = {
+                                labels: ['Monocyte 2-11'],
+                                datasets: [{
+                                    label: 'Blood Count',
+                                    data: [sampleValue.monocyte],
+                                    backgroundColor: [monoColor],
+                                    borderColor: [monoColor],
+                                    borderWidth: 1
+                                }]
+                            };
+
+
+                            
+                            var _mpv = {
+                                labels: ['Mpv 6.9-11'],
+                                datasets: [{
+                                    label: 'Blood Count',
+                                    data: [sampleValue.mpv],
+                                    backgroundColor: [mpvColor],
+                                    borderColor: [mpvColor],
+                                    borderWidth: 1
+                                }]
+                            };
+
+
+                            
+                            var _pl = {
+                                labels: ['Platelet Count 140-440'],
+                                datasets: [{
+                                    label: 'Blood Count',
+                                    data: [ sampleValue.plateletcount],
+                                    backgroundColor: [plColor],
+                                    borderColor: [plColor],
+                                    borderWidth: 1
+                                }]
+                            };
+
+
+                            
+                            var _rbc = {
+                                labels: ['Rbc 4.5-9.5'],
+                                datasets: [{
+                                    label: 'Blood Count',
+                                    data: [ sampleValue.rbc],
+                                    backgroundColor: [rbcColor],
+                                    borderColor: [rbcColor],
+                                    borderWidth: 1
+                                }]
+                            };
+
+
+                            
+                            var _rcdw = {
+                                labels: ['Rcdw 11.6-14.8'],
+                                datasets: [{
+                                    label: 'Blood Count',
+                                    data: [sampleValue.rcdw],
+                                    backgroundColor: [rcdwColor],
+                                    borderColor: [rcdwColor],
+                                    borderWidth: 1
+                                }]
+                            };
 
 
                             // config 
                             const config = {
                                 type: 'bar',
-                                data,
-                                options: {
+                                data: _neutrophils,
+                                options: { 
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -684,19 +798,204 @@
                                 }
                             };
 
+
+                            
+                            // config 
+                            const wbc_config = {
+                                type: 'bar',
+                                data: _wbc,
+                                options: { 
+                                    maintainAspectRatio: false, // Set to false to make it responsive
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            };
+
+
+                               // config 
+                            const lym_config = {
+                                type: 'bar',
+                                data: _lymphocyte,
+                                options: { 
+                                    maintainAspectRatio: false, // Set to false to make it responsive
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            };
+
+ 
+                            const baso_config = {
+                                type: 'bar',
+                                data: _basophil,
+                                options: { 
+                                    maintainAspectRatio: false, // Set to false to make it responsive
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            };
+
+                            const eosi_config = {
+                                type: 'bar',
+                                data: _eosinophil,
+                                options: { 
+                                    maintainAspectRatio: false, // Set to false to make it responsive
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            };
+
+                            const hema_config = {
+                                type: 'bar',
+                                data: _hematocrit,
+                                options: { 
+                                    maintainAspectRatio: false, // Set to false to make it responsive
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            };
+
+
+                            const config = {
+                                type: 'bar',
+                                data: _hemoglobin,
+                                options: { 
+                                    maintainAspectRatio: false, // Set to false to make it responsive
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            };
+
+  
+                            const config = {
+                                type: 'bar',
+                                data: _mch,
+                                options: { 
+                                    maintainAspectRatio: false, // Set to false to make it responsive
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            };
+
+                              const config = {
+                                type: 'bar',
+                                data: _mchc,
+                                options: { 
+                                    maintainAspectRatio: false, // Set to false to make it responsive
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            };
+                              const config = {
+                                type: 'bar',
+                                data: _monocyte,
+                                options: { 
+                                    maintainAspectRatio: false, // Set to false to make it responsive
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            };
+                              const config = {
+                                type: 'bar',
+                                data: _mpv,
+                                options: { 
+                                    maintainAspectRatio: false, // Set to false to make it responsive
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            };
+                              const config = {
+                                type: 'bar',
+                                data: _pl,
+                                options: { 
+                                    maintainAspectRatio: false, // Set to false to make it responsive
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            };
+
+                              const config = {
+                                type: 'bar',
+                                data: _rbc,
+                                options: { 
+                                    maintainAspectRatio: false, // Set to false to make it responsive
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            };
+
+
+                              const config = {
+                                type: 'bar',
+                                data: _rcdw,
+                                options: { 
+                                    maintainAspectRatio: false, // Set to false to make it responsive
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            };
+
+
+
+
+
                             // render init block
                             const myChart = new Chart(
-                                document.getElementById('myChart'),
-                                config
+                                document.getElementById('myChart'),config
                             );
+
+                             const myChartwbc = new Chart(
+                                document.getElementById('_wbc'),wbc_config
+                            );
+
+
+
+
+
 
                             // Adjust container width dynamically based on the number of labels
                             const containerBody = document.querySelector('.containerBody');
+
                             const totalLabels = myChart.data.labels.length;
-
-
-
-
+                           
                             if (totalLabels > 7) {
                                 const newWidth = 700 + ((totalLabels - 7) * 30)
                                 containerBody.style.width = `${newWidth}%`;

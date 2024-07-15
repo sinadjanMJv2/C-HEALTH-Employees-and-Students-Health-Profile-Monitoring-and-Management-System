@@ -29,26 +29,30 @@ namespace SEPHMS.Controllers
 
 
 
-          public ActionResult<List<Accountinginfo>> accountingInfo()
+        public ActionResult<List<Accountinginfo>> accountingInfo()
         {
             var res =
             (
                 from cp in _context.Accountinginfos
-                join m in _context.Employeepersonalinformations on cp.PatientId equals m.EpiId
+                join m in _context.Employeepersonalinformations on cp.PatientId equals m.EpiId into empJoin
+                from m in empJoin.DefaultIfEmpty()
+                join s in _context.Studentpersonalinformations on cp.PatientId equals s.SpiId into stuJoin
+                from s in stuJoin.DefaultIfEmpty()
 
                 select new accountingInfoViewModel
                 {
                     AccountingInfoId = cp.AccountingInfoId,
                     PayableStatus = cp.PayableStatus,
                     Balance = cp.Balance,
-  
 
-                    PatientId = m.EpiId,
-                    Firstname = m.Firstname,
-                    Lastname = m.Lastname,
-                    Fullname = m.Fullname,
-                
-                   
+
+                    PatientId = m != null ? m.EpiId : s.SpiId,
+                    Firstname = m != null ? m.Firstname : s.Firstname,
+                    Lastname = m != null ? m.Lastname : s.Lastname,
+                    Fullname = m != null ? m.Fullname : s.Fullname,
+                    Patient = m != null ? "Employee" : "Student"
+
+
 
                 }
             ).ToList();
@@ -56,12 +60,12 @@ namespace SEPHMS.Controllers
             return Ok(res);
         }
 
-         public IActionResult addAccountingInfo(Accountinginfo act)
+        public IActionResult addAccountingInfo(Accountinginfo act)
         {
             _context.Accountinginfos.Add(act);
             _context.SaveChanges();
 
-            
+
             return Ok();
         }
 

@@ -525,7 +525,6 @@ namespace SEPHMS.Entities
                     .HasColumnName("middlename");
 
                 entity.Property(e => e.Status)
-                    .IsRequired()
                     .HasMaxLength(250)
                     .HasColumnName("status");
             });
@@ -1058,12 +1057,15 @@ namespace SEPHMS.Entities
                     .HasMaxLength(250)
                     .HasColumnName("middlename");
 
+                entity.Property(e => e.Scholar)
+                    .HasMaxLength(250)
+                    .HasColumnName("scholar");
+
                 entity.Property(e => e.SpiCode)
                     .HasColumnType("int(11)")
                     .HasColumnName("SPI_CODE");
 
                 entity.Property(e => e.Status)
-                    .IsRequired()
                     .HasMaxLength(250)
                     .HasColumnName("status");
             });

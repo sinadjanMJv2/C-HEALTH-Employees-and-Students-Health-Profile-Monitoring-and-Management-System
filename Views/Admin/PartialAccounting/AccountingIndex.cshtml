@@ -1,5 +1,4 @@
-
-
+@Html.Partial("PartialAccounting/StudentTable")
 
 
 
@@ -11,131 +10,181 @@
 
 <script>
 
-var AccountInfoListId = {};
-var PatiendId = [];
+    var AccountInfoListId = {};
+    var PatiendId = [];
 
 
 
     $(document).ready(function () {
 
-async function getAccountingInfo() {
-    let result = await $.ajax("../api/adminapi/accountingInfo");
-    var patiendIdFor = [];
-    result.forEach(function (item) {
-        patiendIdFor.push(item.patientId);
-    });
 
-    return [...new Set(patiendIdFor)]; // Return the unique patient IDs
-}
+        displayAccountingData();
 
-// Usage
-(async () => {
-    let PatientId = await getAccountingInfo();
-   
 
-                $.ajax("../api/adminapi/getEmployee")
+
+
+
+
+
+
+
+
+
+        function displayAccountingData() {
+            $('#AccountingData').DataTable().destroy();
+            if (!$.fn.DataTable.isDataTable('#AccountingData')) {
+                $('#AccountingData').DataTable({
+                    ajax: {
+                        url: '../api/adminapi/accountingInfo', // API endpoint to retrieve department
+                        dataSrc: ''
+                    },
+                    columns:
+                        [
+                            { data: 'patient' },
+                            { data: 'fullname' },
+                            { data: 'payableStatus' },
+                            { data: 'balance' },
+
+
+                            {
+                                data: 'accountingInfoId',
+                                render: function (data, type, row) {
+                                    return btnAddAcct(data);
+                                }
+                            },
+                        ]
+                });
+            }
+
+        }
+
+        function btnAddAcct(accountingInfoId) {
+            return "<center><a style='color : #ffffff;' class='btn btn-info AcctUpdate' data-accountingInfoId=" + accountingInfoId + ">Pay</a> </center>"
+        }
+
+        async function getAccountingInfo() {
+            let result = await $.ajax("../api/adminapi/accountingInfo");
+            var patiendIdFor = [];
+            result.forEach(function (item) {
+                patiendIdFor.push(item.patientId);
+            });
+
+            return [...new Set(patiendIdFor)]; // Return the unique patient IDs
+        }
+
+        // Usage
+        (async () => {
+            let PatientId = await getAccountingInfo();
+            console.log("patient id: ", PatientId);
+
+
+            studentInfo(PatientId);
+
+
+            $.ajax("../api/adminapi/getEmployee")
                 .done(function (result) {
-                 
-               
+
+
                     result.forEach(function (item) {
 
-                    const empId = item.epiId;
-                   // Check if empId is not in PatientId
-                if (!PatientId.includes(empId)) {
-                    console.log("Missing ID: ", empId);
-             
-              AccountingData =
-                {
-                    patientId: empId,
-                    payableStatus: "Pending",
-                    balance: 1000,
-                }
+                        const empId = item.epiId;
+                        // Check if empId is not in PatientId
+                        if (!PatientId.includes(empId)) {
+                            console.log("Missing ID: ", empId);
 
-                     $.ajax
-                        ({
-                            url: "../api/adminapi/addAccountingInfo",
-                            type: "POST",
-                            data:
+                            AccountingData =
                             {
-                               act: AccountingData
-                            },
-                        })
-                       .done(function () {
+                                patientId: empId,
+                                payableStatus: "Pending",
+                                balance: 1000,
+                            }
 
-                           console.log("successfully added to database")
-                        });
-                       
+                            $.ajax
+                                ({
+                                    url: "../api/adminapi/addAccountingInfo",
+                                    type: "POST",
+                                    data:
+                                    {
+                                        act: AccountingData
+                                    },
+                                })
+                                .done(function () {
+
+                                    console.log("successfully added to database")
+                                });
 
 
-                } else {
-                    console.log("ID exists: ", empId);
-                }  
-                                  
+
+                        } else {
+                            console.log("ID exists: ", empId);
+                        }
+
+                    });
                 });
 
 
+        })();
 
-                 $.ajax("../api/adminapi/getEmployee")
-                .done(function (result) {
-                 
-               
-                    result.forEach(function (item) {
+        function studentInfo(id) {
 
-                    const empId = item.epiId;
-                   // Check if empId is not in PatientId
-                if (!PatientId.includes(empId)) {
-                    console.log("Missing ID: ", empId);
-             
-              AccountingData =
-                {
-                    patientId: empId,
-                    payableStatus: "Pending",
-                    balance: 1000,
-                }
+            console.log("id form accounting: ", id);
 
-                     $.ajax
-                        ({
-                            url: "../api/adminapi/addAccountingInfo",
-                            type: "POST",
-                            data:
+
+            $.ajax("../api/adminapi/getStudent")
+                .done(function (results) {
+
+                    const filteredResults = results.filter(student => student.scholar === "NA");
+                    filteredResults.forEach(function (items) {
+
+                        const stid = items.spiId;
+                        // Check if empId is not in PatientId
+                        if (!id.includes(stid)) {
+                            console.log("Missing student ID: ", stid);
+
+
+                            AccountingData =
                             {
-                               act: AccountingData
-                            },
-                        })
-                       .done(function () {
+                                patientId: stid,
+                                payableStatus: "Pending",
+                                balance: 1000,
+                            }
 
-                           console.log("successfully added to database")
-                        });
-                       
+                            $.ajax
+                                ({
+                                    url: "../api/adminapi/addAccountingInfo",
+                                    type: "POST",
+                                    data:
+                                    {
+                                        act: AccountingData
+                                    },
+                                })
+                                .done(function () {
+
+                                    console.log("successfully added to database")
+                                });
 
 
-                } else {
-                    console.log("ID exists: ", empId);
-                }  
-                                  
+
+
+                        } else {
+                            console.log("ID student exists: ", stid);
+                        }
+
+                    });
                 });
+        }
 
 
 
 
 
-                });
-
-
-    
-
-  
-
-    
-})();
 
 
 
 
-       
 
 
-      
+
 
 
 
