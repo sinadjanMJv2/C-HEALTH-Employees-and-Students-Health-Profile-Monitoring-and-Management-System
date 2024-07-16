@@ -1,8 +1,9 @@
 
 
+<div class="Text fw-bold d-flex justify-content-center mt-5 fs-5">Neutrophils</div>
 <div class="comchartCard">
     <div class="comchartBox">
-        <div class="comcontainerChart">
+        <div class="comcomcontainerChart">
             <div class="comcontainerBody">
                 <canvas id="comChart"></canvas>
             </div>
@@ -10,11 +11,143 @@
     </div>
 </div>
 
+<div class="Text fw-bold d-flex justify-content-center mt-5 fs-5">White Blood Cell</div>
 <div class="comchartCard">
     <div class="comchartBox">
         <div class="comcontainerChart">
             <div class="comcontainerBody">
-                <canvas id="neutrophils"></canvas>
+                <canvas id="wbc_com"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="Text fw-bold d-flex justify-content-center mt-5 fs-5">Lymphocyte</div>
+<div class="comchartCard ">
+    <div class="comchartBox">
+        <div class="comcontainerChart">
+            <div class="comcontainerBody">
+                <canvas id="com_lym"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Text fw-bold d-flex justify-content-center mt-5 fs-5">Basophil</div>
+<div class="comchartCard ">
+    <div class="comchartBox">
+        <div class="comcontainerChart">
+            <div class="comcontainerBody">
+                <canvas id="com_baso"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Text fw-bold d-flex justify-content-center mt-5 fs-5">Eosinophil</div>
+<div class="comchartCard ">
+    <div class="comchartBox">
+        <div class="comcontainerChart">
+            <div class="comcontainerBody">
+                <canvas id="com_eosi"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Text fw-bold d-flex justify-content-center mt-5 fs-5">Hematocrit</div>
+<div class="comchartCard ">
+    <div class="comchartBox">
+        <div class="comcontainerChart">
+            <div class="comcontainerBody">
+                <canvas id="com_hema"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Text fw-bold d-flex justify-content-center mt-5 fs-5">Hemoglobin</div>
+<div class="comchartCard ">
+    <div class="comchartBox">
+        <div class="comcontainerChart">
+            <div class="comcontainerBody">
+                <canvas id="com_hemo"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Text fw-bold d-flex justify-content-center mt-5 fs-5">Mean Corpuscular Hemoglobin</div>
+<div class="comchartCard ">
+    <div class="comchartBox">
+        <div class="comcontainerChart">
+            <div class="comcontainerBody">
+                <canvas id="com_mch"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Text fw-bold d-flex justify-content-center mt-5 fs-5">Mean Corpuscular Hemoglobin Concentration</div>
+<div class="comchartCard ">
+    <div class="comchartBox">
+        <div class="comcontainerChart">
+            <div class="comcontainerBody">
+                <canvas id="com_mchc"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Text fw-bold d-flex justify-content-center mt-5 fs-5">Mean Corpuscular Volume</div>
+<div class="comchartCard ">
+    <div class="comchartBox">
+        <div class="comcontainerChart">
+            <div class="comcontainerBody">
+                <canvas id="com_mcv"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Text fw-bold d-flex justify-content-center mt-5 fs-5">Monocyte</div>
+<div class="comchartCard ">
+    <div class="comchartBox">
+        <div class="comcontainerChart">
+            <div class="comcontainerBody">
+                <canvas id="com_mono"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Text fw-bold d-flex justify-content-center mt-5 fs-5">MPV</div>
+<div class="comchartCard ">
+    <div class="comchartBox">
+        <div class="comcontainerChart">
+            <div class="comcontainerBody">
+                <canvas id="com_mpv"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Text fw-bold d-flex justify-content-center mt-5 fs-5">Platelet Count</div>
+<div class="comchartCard ">
+    <div class="comchartBox">
+        <div class="comcontainerChart">
+            <div class="comcontainerBody">
+                <canvas id="com_pl"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Text fw-bold d-flex justify-content-center mt-5 fs-5">Red Blood Cell</div>
+<div class="comchartCard ">
+    <div class="comchartBox">
+        <div class="comcontainerChart">
+            <div class="comcontainerBody">
+                <canvas id="com_rbc"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Text fw-bold d-flex justify-content-center mt-5 fs-5">Red Cell Distribution Width</div>
+<div class="comchartCard ">
+    <div class="comchartBox">
+        <div class="comcontainerChart">
+            <div class="comcontainerBody">
+                <canvas id="com_rcdw"></canvas>
             </div>
         </div>
     </div>
@@ -22,14 +155,14 @@
 
 
 
-<style>
 
-    .comchartCard {
+<style>
+    .comcomchartCard {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 0px;
-      
+
     }
 
     .comchartBox {
@@ -40,12 +173,12 @@
         background: white;
     }
 
-    .comcontainerChart {
+    .comcomcontainerChart {
         width: 100%;
         overflow-x: auto;
     }
 
-    .comcontainerBody {
+    .comcomcontainerBody {
         height: 300px;
         /* Set a specific height for the chart container */
         margin: auto;

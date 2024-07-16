@@ -199,10 +199,6 @@
 
 
 
-            var labels = ['Neutrophils 47-80', 'WBC 4.1-10.9', 'Lympocyte 13-40', 'Basophil 0-2', 'Eosinophil 0-5', 'Hematocrit 36-46', 'Hemoglobin 12-16', 'Mch 26-34', 'Mchc 31-36', 'Mcv 80-100', 'Monocyte 2-11', 'Mpv 6.9-11', 'Platelet Count 140-440', 'Rbc 4.5-9.5', 'Rcdw 11.6-14.8'];
-           // var wbclabels = ['Neutrophils 47-80', 'WBC 4.1-10.9', 'Lympocyte 13-40', 'Basophil 0-2', 'Eosinophil 0-5', 'Hematocrit 36-46', 'Hemoglobin 12-16', 'Mch 26-34', 'Mchc 31-36', 'Mcv 80-100', 'Monocyte 2-11', 'Mpv 6.9-11', 'Platelet Count 140-440', 'Rbc 4.5-9.5', 'Rcdw 11.6-14.8'];
-
-
 
             $.ajax("../api/adminapi/getNR")
                 .done(function (result) {
@@ -312,57 +308,33 @@
 
                     var chartData = datecomp.map(function (data, index) {
 
-
-                        console.log('sir lim', data.lymphocyte)
-
-
-                        // console.log(sampleValue.neutrophils)
                         // Check Neutrophils value against maxRange and minRange
                         const neutrophilsColors = data.neutrophils >= b[0].minRange && data.neutrophils <= b[0].maxRange ? 'green' : 'red';
-                        // Check WBC value against maxRange and minRange
-                        const wbcColors = data.wbc >= c[0].minRange && data.wbc <= c[0].maxRange ? 'green' : 'red';
-                        const lymColors = data.lymphocyte >= d[0].minRange && data.lymphocyte <= d[0].maxRange ? 'green' : 'red';
-                        const basoColors = data.basophil >= e[0].minRange && data.basophil <= e[0].maxRange ? 'green' : 'red';
-                        const eosiColors = data.eosinophil >= f[0].minRange && data.eosinophil <= f[0].maxRange ? 'green' : 'red';
-                        const hemaColors = data.hematocrit >= g[0].minRange && data.hematocrit <= g[0].maxRange ? 'green' : 'red';
-                        const hemoColors = data.hemoglobin >= h[0].minRange && data.hemoglobin <= h[0].maxRange ? 'green' : 'red';
-                        const mchColors = data.mch >= i[0].minRange && data.mch <= i[0].maxRange ? 'green' : 'red';
-                        const mchcColors = data.mchc >= j[0].minRange && data.mchc <= j[0].maxRange ? 'green' : 'red';
-                        const mcvColors = data.mcv >= k[0].minRange && data.mcv <= k[0].maxRange ? 'green' : 'red';
-                        const monoColors = data.monocyte >= l[0].minRange && data.monocyte <= l[0].maxRange ? 'green' : 'red';
-                        const mpvColors = data.mpv >= m[0].minRange && data.mpv <= m[0].maxRange ? 'green' : 'red';
-                        const plColors = data.plateletcount >= n[0].minRange && data.plateletcount <= n[0].maxRange ? 'green' : 'red';
-                        const rbcColors = data.rbc >= o[0].minRange && data.rbc <= o[0].maxRange ? 'green' : 'red';
-                        const rcdwColors = data.rcdw >= p[0].minRange && data.rcdw <= p[0].maxRange ? 'green' : 'red';
-
-
+                   
                         console.log(Chart.version);
-                        console.log(neutrophilsColors, wbcColors, lymColors, basoColors, eosiColors, hemaColors, hemoColors, mchColors, mchcColors, mcvColors, monoColors, mpvColors, plColors, rbcColors, rcdwColors);
+                        console.log(neutrophilsColors);
 
 
 
 
-                        //  alert(data.neutrophils)
-                        var backgroundColor = [neutrophilsColors, wbcColors, lymColors, basoColors, eosiColors, hemaColors, hemoColors, mchColors, mchcColors, mcvColors, monoColors, mpvColors, plColors, rbcColors, rcdwColors];
-                        var borderColor = [neutrophilsColors, wbcColors, lymColors, basoColors, eosiColors, hemaColors, hemoColors, mchColors, mchcColors, mcvColors, monoColors, mpvColors, plColors, rbcColors, rcdwColors];
-
+                       
                         return {
                             label: data.datet,
-                            backgroundColor: backgroundColor,
-                            borderColor: borderColor,
+                            backgroundColor: neutrophilsColors,
+                            borderColor: neutrophilsColors,
                             borderWidth: 1,
-                            data: [data.neutrophils, data.wbc, data.lymphocyte, data.basophil, data.eosinophil, data.hematocrit, data.hemoglobin, data.mch, data.mchc, data.mcv, data.monocyte, data.mpv, data.plateletcount, data.rbc, data.rcdw],
+                            data: [data.neutrophils],
                         };
 
-                        
+
                     });
 
 
-                     var wbchartData = datecomp.map(function (data, index) {
+                    var wbchartData = datecomp.map(function (data, index) {
 
                         const wbcColors = data.wbc >= c[0].minRange && data.wbc <= c[0].maxRange ? 'green' : 'red';
-                
-                      
+
+
 
                         return {
                             label: data.datet,
@@ -372,22 +344,325 @@
                             data: [data.wbc],
                         };
 
-                        
+
                     });
+
+                    var lymhartData = datecomp.map(function (data, index) {
+
+                        const lymColors = data.lymphocyte >= d[0].minRange && data.lymphocyte <= d[0].maxRange ? 'green' : 'red';
+
+
+
+
+                        return {
+                            label: data.datet,
+                            backgroundColor: [lymColors],
+                            borderColor: [lymColors],
+                            borderWidth: 1,
+                            data: [data.lymphocyte],
+                        };
+
+
+                    });
+
+
+                    var eosihartData = datecomp.map(function (data, index) {
+
+                        const eosiColors = data.eosinophil >= f[0].minRange && data.eosinophil <= f[0].maxRange ? 'green' : 'red';
+
+
+
+                        return {
+                            label: data.datet,
+                            backgroundColor: [eosiColors],
+                            borderColor: [eosiColors],
+                            borderWidth: 1,
+                            data: [data.eosinophil],
+                        };
+
+
+                    });
+
+
+
+                    var basohartData = datecomp.map(function (data, index) {
+
+                        const basoColors = data.basophil >= e[0].minRange && data.basophil <= e[0].maxRange ? 'green' : 'red';
+
+                        return {
+                            label: data.datet,
+                            backgroundColor: [basoColors],
+                            borderColor: [basoColors],
+                            borderWidth: 1,
+                            data: [data.basophil],
+                        };
+
+
+                    });
+
+
+
+                    var hemahartData = datecomp.map(function (data, index) {
+
+                        const hemaColors = data.hematocrit >= g[0].minRange && data.hematocrit <= g[0].maxRange ? 'green' : 'red';
+
+                        return {
+                            label: data.datet,
+                            backgroundColor: [hemaColors],
+                            borderColor: [hemaColors],
+                            borderWidth: 1,
+                            data: [data.hematocrit],
+                        };
+
+
+                    });
+
+
+
+                    var hemohartData = datecomp.map(function (data, index) {
+
+                        const hemoColors = data.hemoglobin >= h[0].minRange && data.hemoglobin <= h[0].maxRange ? 'green' : 'red';
+
+                        return {
+                            label: data.datet,
+                            backgroundColor: [hemoColors],
+                            borderColor: [hemoColors],
+                            borderWidth: 1,
+                            data: [data.hemoglobin],
+                        };
+
+
+                    });
+
+                    var mchhartData = datecomp.map(function (data, index) {
+
+                        const mchColors = data.mch >= i[0].minRange && data.mch <= i[0].maxRange ? 'green' : 'red';
+
+
+                        return {
+                            label: data.datet,
+                            backgroundColor: [mchColors],
+                            borderColor: [mchColors],
+                            borderWidth: 1,
+                            data: [data.mch],
+                        };
+
+
+                    });
+
+                    var mchchartData = datecomp.map(function (data, index) {
+
+
+                        const mchcColors = data.mchc >= j[0].minRange && data.mchc <= j[0].maxRange ? 'green' : 'red';
+
+                        return {
+                            label: data.datet,
+                            backgroundColor: [mchcColors],
+                            borderColor: [mchcColors],
+                            borderWidth: 1,
+                            data: [data.mchc],
+                        };
+
+
+                    });
+
+                    var mcvhartData = datecomp.map(function (data, index) {
+
+                        const mcvColors = data.mcv >= k[0].minRange && data.mcv <= k[0].maxRange ? 'green' : 'red';
+
+
+                        return {
+                            label: data.datet,
+                            backgroundColor: [mcvColors],
+                            borderColor: [mcvColors],
+                            borderWidth: 1,
+                            data: [data.mcv],
+                        };
+
+
+                    });
+
+
+                    var monohartData = datecomp.map(function (data, index) {
+
+                        const monoColors = data.monocyte >= l[0].minRange && data.monocyte <= l[0].maxRange ? 'green' : 'red';
+
+
+                        return {
+                            label: data.datet,
+                            backgroundColor: [monoColors],
+                            borderColor: [monoColors],
+                            borderWidth: 1,
+                            data: [data.monocyte],
+                        };
+
+
+                    });
+
+
+                    var mpvhartData = datecomp.map(function (data, index) {
+
+
+                        const mpvColors = data.mpv >= m[0].minRange && data.mpv <= m[0].maxRange ? 'green' : 'red';
+
+                        return {
+                            label: data.datet,
+                            backgroundColor: [mpvColors],
+                            borderColor: [mpvColors],
+                            borderWidth: 1,
+                            data: [data.mpv],
+                        };
+
+
+                    });
+
+
+                    var plhartData = datecomp.map(function (data, index) {
+
+                        const plColors = data.plateletcount >= n[0].minRange && data.plateletcount <= n[0].maxRange ? 'green' : 'red';
+
+
+                        return {
+                            label: data.datet,
+                            backgroundColor: [plColors],
+                            borderColor: [plColors],
+                            borderWidth: 1,
+                            data: [data.plateletcount],
+                        };
+
+
+                    });
+
+
+                    var rbchartData = datecomp.map(function (data, index) {
+
+                        const rbcColors = data.rbc >= o[0].minRange && data.rbc <= o[0].maxRange ? 'green' : 'red';
+
+
+                        return {
+                            label: data.datet,
+                            backgroundColor: [rbcColors],
+                            borderColor: [rbcColors],
+                            borderWidth: 1,
+                            data: [data.rbc],
+                        };
+
+
+                    });
+
+
+                    var rcdwhartData = datecomp.map(function (data, index) {
+
+                        const rcdwColors = data.rcdw >= p[0].minRange && data.rcdw <= p[0].maxRange ? 'green' : 'red';
+
+
+                        return {
+                            label: data.datet,
+                            backgroundColor: [rcdwColors],
+                            borderColor: [rcdwColors],
+                            borderWidth: 1,
+                            data: [data.rcdw],
+                        };
+
+
+                    });
+
+
 
 
 
                     // Chart.js configuration
                     var datos = {
-                        labels: labels,
+                        labels: ['Neutrophils 47-80'],
                         datasets: chartData,
                     };
 
-                      // Chart.js configuration
+                    // Chart.js configuration
                     var wbcData = {
                         labels: ['WBC 4.1-10.9'],
                         datasets: wbchartData,
                     };
+
+                    // Chart.js configuration
+                    var lymData = {
+                        labels: ['Lympocyte 13-40'],
+                        datasets: lymhartData,
+                    };
+
+                    // Chart.js configuration
+                    var basoData = {
+                        labels: ['Basophil 0-2'],
+                        datasets: basohartData,
+                    };
+
+                    // Chart.js configuration
+                    var eosiData = {
+                        labels: ['Eosinophil 0-5'],
+                        datasets: eosihartData,
+                    };
+
+                    // Chart.js configuration
+                    var hemaData = {
+                        labels: ['Hematocrit 36-46'],
+                        datasets: hemahartData,
+                    };
+
+                    // Chart.js configuration
+                    var hemoData = {
+                        labels: ['Hemoglobin 12-16'],
+                        datasets: hemohartData,
+                    };
+
+                    // Chart.js configuration
+                    var mchData = {
+                        labels: ['Mch 26-34'],
+                        datasets: mchhartData,
+                    };
+
+                    // Chart.js configuration
+                    var mchcData = {
+                        labels: ['Mchc 31-36'],
+                        datasets: mchchartData,
+                    };
+
+                    // Chart.js configuration
+                    var monoData = {
+                        labels: ['Monocyte 2-11'],
+                        datasets: monohartData,
+                    };
+
+                    // Chart.js configuration
+                    var mpvData = {
+                        labels: ['Mpv 6.9-11'],
+                        datasets: mpvhartData,
+                    };
+
+
+                    // Chart.js configuration
+                    var plData = {
+                        labels: ['Platelet Count 140-440'],
+                        datasets: plhartData,
+                    };
+
+                    // Chart.js configuration
+                    var rbcData = {
+                        labels: ['Rbc 4.5-9.5'],
+                        datasets: rbchartData,
+                    };
+
+                    // Chart.js configuration
+                    var rcdwData = {
+                        labels: ['Rcdw 11.6-14.8'],
+                        datasets: rcdwhartData,
+                    };
+
+                    // Chart.js configuration
+                    var mcvData = {
+                        labels: ['Mcv 26-34'],
+                        datasets: mcvhartData,
+                    };
+
+
 
                     const configCom = {
                         type: "bar",
@@ -402,7 +677,7 @@
                         },
                     };
 
-                     const wbc_configCom = {
+                    const wbc_configCom = {
                         type: "bar",
                         data: wbcData,
                         options: {
@@ -415,10 +690,202 @@
                         },
                     };
 
+                    const lym_configCom = {
+                        type: "bar",
+                        data: lymData,
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    };
+
+                    const baso_configCom = {
+                        type: "bar",
+                        data: basoData,
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    };
+
+
+                    const eosi_configCom = {
+                        type: "bar",
+                        data: eosiData,
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    };
+
+
+                    const hema_configCom = {
+                        type: "bar",
+                        data: hemaData,
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    };
+
+                    const hemp_configCom = {
+                        type: "bar",
+                        data: hemoData,
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    };
+
+
+                    const mch_configCom = {
+                        type: "bar",
+                        data: mchData,
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    };
+
+
+                    const mchc_configCom = {
+                        type: "bar",
+                        data: mchcData,
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    };
+
+                    const mcv_configCom = {
+                        type: "bar",
+                        data: mcvData,
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    };
+
+                    const mono_configCom = {
+                        type: "bar",
+                        data: monoData,
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    };
+
+                    const pl_configCom = {
+                        type: "bar",
+                        data: plData,
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    };
+
+                    const mpv_configCom = {
+                        type: "bar",
+                        data: mpvData,
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    };
+
+
+                    const rbc_configCom = {
+                        type: "bar",
+                        data: rbcData,
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    };
+
+
+                    const rcdw_configCom = {
+                        type: "bar",
+                        data: rcdwData,
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    };
+
+
+
+
                     // Render the chart
                     const myComChart = new Chart(document.getElementById("comChart"), configCom);
-                    const wbcComChart = new Chart(document.getElementById("neutrophils"), wbc_configCom);
-                    
+                    const wbcComChart = new Chart(document.getElementById("wbc_com"), wbc_configCom);
+                    const lymComChart = new Chart(document.getElementById("com_lym"), lym_configCom);
+                    const basoComChart = new Chart(document.getElementById("com_baso"), baso_configCom);
+                    const eosiComChart = new Chart(document.getElementById("com_eosi"), eosi_configCom);
+                    const hemaComChart = new Chart(document.getElementById("com_hema"), hema_configCom);
+                    const hemoComChart = new Chart(document.getElementById("com_hemo"), hemp_configCom);
+                    const mchComChart = new Chart(document.getElementById("com_mch"), mch_configCom);
+                    const mchcComChart = new Chart(document.getElementById("com_mchc"), mchc_configCom);
+                    const mcvComChart = new Chart(document.getElementById("com_mcv"), mcv_configCom);
+                    const monoComChart = new Chart(document.getElementById("com_mono"), mono_configCom);
+                    const mpvComChart = new Chart(document.getElementById("com_mpv"), mpv_configCom);
+                    const plComChart = new Chart(document.getElementById("com_pl"), pl_configCom);
+                    const rbcComChart = new Chart(document.getElementById("com_rbc"), rbc_configCom);
+                    const rcdwComChart = new Chart(document.getElementById("com_rcdw"), rcdw_configCom);
+                  
+
                     // Adjust container width dynamically based on the number of labels
                     const ComcontainerBody = document.querySelector(".comcontainerBody");
                     const ComtotalLabels = myComChart.data.labels.length;
@@ -684,14 +1151,14 @@
                                 labels: ['Lympocyte 13-40'],
                                 datasets: [{
                                     label: 'Blood Count',
-                                    data: [ sampleValue.lymphocyte],
+                                    data: [sampleValue.lymphocyte],
                                     backgroundColor: [lymColor],
                                     borderColor: [lymColor],
                                     borderWidth: 1
                                 }]
                             };
 
-                              var _basophil = {
+                            var _basophil = {
                                 labels: ['Basophil 0-2'],
                                 datasets: [{
                                     label: 'Blood Count',
@@ -706,7 +1173,7 @@
                                 labels: ['Eosinophil 0-5'],
                                 datasets: [{
                                     label: 'Blood Count',
-                                    data: [ sampleValue.eosinophil],
+                                    data: [sampleValue.eosinophil],
                                     backgroundColor: [eosiColor],
                                     borderColor: [eosiColor],
                                     borderWidth: 1
@@ -742,7 +1209,7 @@
                                 labels: ['Mch 26-34'],
                                 datasets: [{
                                     label: 'Blood Count',
-                                    data: [ sampleValue.mch],
+                                    data: [sampleValue.mch],
                                     backgroundColor: [mchColor],
                                     borderColor: [mchColor],
                                     borderWidth: 1
@@ -750,23 +1217,23 @@
                             };
 
 
-                             var _mcv = {
+                            var _mcv = {
                                 labels: ['Mcv 26-34'],
                                 datasets: [{
                                     label: 'Blood Count',
-                                    data: [ sampleValue.mcv],
+                                    data: [sampleValue.mcv],
                                     backgroundColor: [mcvColor],
                                     borderColor: [mcvColor],
                                     borderWidth: 1
                                 }]
                             };
 
-                            
+
                             var _mchc = {
                                 labels: ['Mchc 31-36'],
                                 datasets: [{
                                     label: 'Blood Count',
-                                    data: [ sampleValue.mchc],
+                                    data: [sampleValue.mchc],
                                     backgroundColor: [mchcColor],
                                     borderColor: [mchcColor],
                                     borderWidth: 1
@@ -774,7 +1241,7 @@
                             };
 
 
-                            
+
                             var _monocyte = {
                                 labels: ['Monocyte 2-11'],
                                 datasets: [{
@@ -787,7 +1254,7 @@
                             };
 
 
-                            
+
                             var _mpv = {
                                 labels: ['Mpv 6.9-11'],
                                 datasets: [{
@@ -800,12 +1267,12 @@
                             };
 
 
-                            
+
                             var _pl = {
                                 labels: ['Platelet Count 140-440'],
                                 datasets: [{
                                     label: 'Blood Count',
-                                    data: [ sampleValue.plateletcount],
+                                    data: [sampleValue.plateletcount],
                                     backgroundColor: [plColor],
                                     borderColor: [plColor],
                                     borderWidth: 1
@@ -813,12 +1280,12 @@
                             };
 
 
-                            
+
                             var _rbc = {
                                 labels: ['Rbc 4.5-9.5'],
                                 datasets: [{
                                     label: 'Blood Count',
-                                    data: [ sampleValue.rbc],
+                                    data: [sampleValue.rbc],
                                     backgroundColor: [rbcColor],
                                     borderColor: [rbcColor],
                                     borderWidth: 1
@@ -826,7 +1293,7 @@
                             };
 
 
-                            
+
                             var _rcdw = {
                                 labels: ['Rcdw 11.6-14.8'],
                                 datasets: [{
@@ -843,7 +1310,7 @@
                             const config = {
                                 type: 'bar',
                                 data: _neutrophils,
-                                options: { 
+                                options: {
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -854,12 +1321,12 @@
                             };
 
 
-                            
+
                             // config 
                             const wbc_config = {
                                 type: 'bar',
                                 data: _wbc,
-                                options: { 
+                                options: {
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -870,11 +1337,11 @@
                             };
 
 
-                               // config 
+                            // config 
                             const lym_config = {
                                 type: 'bar',
                                 data: _lymphocyte,
-                                options: { 
+                                options: {
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -884,11 +1351,11 @@
                                 }
                             };
 
- 
+
                             const baso_config = {
                                 type: 'bar',
                                 data: _basophil,
-                                options: { 
+                                options: {
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -901,7 +1368,7 @@
                             const eosi_config = {
                                 type: 'bar',
                                 data: _eosinophil,
-                                options: { 
+                                options: {
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -914,7 +1381,7 @@
                             const hema_config = {
                                 type: 'bar',
                                 data: _hematocrit,
-                                options: { 
+                                options: {
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -928,7 +1395,7 @@
                             const hemo_config = {
                                 type: 'bar',
                                 data: _hemoglobin,
-                                options: { 
+                                options: {
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -938,11 +1405,11 @@
                                 }
                             };
 
-  
+
                             const mch_config = {
                                 type: 'bar',
                                 data: _mch,
-                                options: { 
+                                options: {
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -952,10 +1419,10 @@
                                 }
                             };
 
-                              const mchc_config = {
+                            const mchc_config = {
                                 type: 'bar',
                                 data: _mchc,
-                                options: { 
+                                options: {
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -964,10 +1431,10 @@
                                     }
                                 }
                             };
-                              const monocyte_config = {
+                            const monocyte_config = {
                                 type: 'bar',
                                 data: _monocyte,
-                                options: { 
+                                options: {
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -976,10 +1443,10 @@
                                     }
                                 }
                             };
-                              const mpv_config = {
+                            const mpv_config = {
                                 type: 'bar',
                                 data: _mpv,
-                                options: { 
+                                options: {
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -988,10 +1455,10 @@
                                     }
                                 }
                             };
-                              const pl_config = {
+                            const pl_config = {
                                 type: 'bar',
                                 data: _pl,
-                                options: { 
+                                options: {
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -1001,10 +1468,10 @@
                                 }
                             };
 
-                              const rbc_config = {
+                            const rbc_config = {
                                 type: 'bar',
                                 data: _rbc,
-                                options: { 
+                                options: {
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -1015,10 +1482,10 @@
                             };
 
 
-                              const rcdw_config = {
+                            const rcdw_config = {
                                 type: 'bar',
                                 data: _rcdw,
-                                options: { 
+                                options: {
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -1028,11 +1495,11 @@
                                 }
                             };
 
-                            
-                              const mcv_config = {
+
+                            const mcv_config = {
                                 type: 'bar',
                                 data: _mcv,
-                                options: { 
+                                options: {
                                     maintainAspectRatio: false, // Set to false to make it responsive
                                     scales: {
                                         y: {
@@ -1048,64 +1515,64 @@
 
                             // render init block
                             const myChart = new Chart(
-                                document.getElementById('myChart'),config
+                                document.getElementById('myChart'), config
                             );
 
-                             const myChartwbc = new Chart(
-                                document.getElementById('_wbc'),wbc_config
+                            const myChartwbc = new Chart(
+                                document.getElementById('_wbc'), wbc_config
                             );
 
-                                const myChartlym = new Chart(
-                                document.getElementById('_lym'),lym_config
-                            ); 
-
-                                const myChartbaso = new Chart(
-                                document.getElementById('_baso'),baso_config
+                            const myChartlym = new Chart(
+                                document.getElementById('_lym'), lym_config
                             );
 
-                                const myCharteosi = new Chart(
-                                document.getElementById('_eosi'),eosi_config
+                            const myChartbaso = new Chart(
+                                document.getElementById('_baso'), baso_config
                             );
 
-                                const myCharthema = new Chart(
-                                document.getElementById('_hema'),hema_config
+                            const myCharteosi = new Chart(
+                                document.getElementById('_eosi'), eosi_config
                             );
 
-                                const myCharthemo = new Chart(
-                                document.getElementById('_hemo'),hemo_config
+                            const myCharthema = new Chart(
+                                document.getElementById('_hema'), hema_config
                             );
 
-                                const myChartmcv = new Chart(
-                                document.getElementById('_mcv'),mcv_config
+                            const myCharthemo = new Chart(
+                                document.getElementById('_hemo'), hemo_config
                             );
 
-                          
-                                const myChartmch = new Chart(
-                                document.getElementById('_mch'),mch_config
+                            const myChartmcv = new Chart(
+                                document.getElementById('_mcv'), mcv_config
                             );
 
-                                const myChartmchc = new Chart(
-                                document.getElementById('_mchc'),mchc_config
+
+                            const myChartmch = new Chart(
+                                document.getElementById('_mch'), mch_config
                             );
 
-                                const myChartmono = new Chart(
-                                document.getElementById('_mono'),monocyte_config
+                            const myChartmchc = new Chart(
+                                document.getElementById('_mchc'), mchc_config
                             );
 
-                                const myChartmpv = new Chart(
-                                document.getElementById('_mpv'),mpv_config
+                            const myChartmono = new Chart(
+                                document.getElementById('_mono'), monocyte_config
                             );
 
-                                const myChartpl = new Chart(
-                                document.getElementById('_pl'),pl_config
+                            const myChartmpv = new Chart(
+                                document.getElementById('_mpv'), mpv_config
                             );
 
-                                const myChartrbc = new Chart(
-                                document.getElementById('_rbc'),rbc_config
+                            const myChartpl = new Chart(
+                                document.getElementById('_pl'), pl_config
                             );
 
-                                const myChartrcdw = new Chart(
-                                document.getElementById('_rcdw'),rcdw_config
+                            const myChartrbc = new Chart(
+                                document.getElementById('_rbc'), rbc_config
+                            );
+
+                            const myChartrcdw = new Chart(
+                                document.getElementById('_rcdw'), rcdw_config
                             );
 
 
@@ -1132,7 +1599,7 @@
                             const containerBody = document.querySelector('.containerBody');
 
                             const totalLabels = myChart.data.labels.length;
-                           
+
                             if (totalLabels > 7) {
                                 const newWidth = 700 + ((totalLabels - 7) * 30)
                                 containerBody.style.width = `${newWidth}%`;
