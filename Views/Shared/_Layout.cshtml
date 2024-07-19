@@ -141,7 +141,7 @@
               </a>
               <div class="sidebar-submenu">
                 <ul>
-                  <li>
+                  <li id="student-profile">
                     <a asp-area="" asp-controller="Admin" asp-action="AdminStudent"> Student Profile
                     </a>
                   </li>
@@ -153,7 +153,7 @@
                     <a asp-area="" asp-controller="Admin" asp-action="AdminDepartment"> Department
                     </a>
                   </li>
-                  <li id="Cour">
+                  <li id="Course">
                     <a asp-area="" asp-controller="Admin" asp-action="AdminCourse"> Course
                     </a>
                   </li>
@@ -169,7 +169,7 @@
               </a>
               <div class="sidebar-submenu">
                 <ul>
-                  <li>
+                  <li id="emp-profile">
                     <a asp-area="" asp-controller="Admin" asp-action="AdminEmployee">Employee Profile
                     </a>
                   </li>
@@ -205,7 +205,7 @@
                 
                 
               </div>
-               <li class="illnessNav">
+               <li class="illnessNav" id="illnessNav">
              <a asp-area="" asp-controller="Admin" asp-action="AdminIllness">
               <i class='fas fa-syringe'></i>
                  <span>Illness</span>
@@ -454,8 +454,8 @@
      
         $(".user-role").html("Physician");
 
-        $("#Medicine, #Personel, #Booked, #NormalRange, #Avail, #App ").css("display", "none");
-        $("#Dept ,#Course").hide();
+        $("#Medicine, #Personel, #Booked, #NormalRange, #Avail, #App ,#illnessNav ,#Logbook").css("display", "none");
+        $("#Dept ,#Course ,#student-profile ,#emp-profile").hide();
 
 
     }  else if(userType == "admin"){
