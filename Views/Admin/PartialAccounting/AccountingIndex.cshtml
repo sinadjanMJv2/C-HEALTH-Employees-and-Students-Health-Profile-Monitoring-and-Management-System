@@ -67,9 +67,9 @@
 
         function btnAddAcct(accountingInfoId, balance) {
             if (balance === 0) {
-                return "<center><a style='color : #ffffff;' class='btn btn-info AcctUpdate disabled' data-accountingInfoId=" + accountingInfoId + ">Pay</a> </center>";
+                return "<center><a style='color : #ffffff;' class='btn btn-info AcctUpdate disabled' data-accountingInfoId=" + accountingInfoId + ">Pay</a> <a style='color : #ffffff;' class='btn btn-secondary AcctInfo' data-accountingInfoId=" + accountingInfoId + ">History</a> </center>";
             }
-            return "<center><a style='color : #ffffff;' class='btn btn-info AcctUpdate' data-accountingInfoId=" + accountingInfoId + ">Pay</a> </center>";
+            return "<center><a style='color : #ffffff;' class='btn btn-info AcctUpdate' data-accountingInfoId=" + accountingInfoId + ">Pay</a> <a style='color : #ffffff;' class='btn btn-secondary AcctInfo' data-accountingInfoId=" + accountingInfoId + ">History</a></center>";
         }
 
 
@@ -259,8 +259,11 @@
                     .done(function () {
 
                         $("#createPaymentForm")[0].reset();
-
+                       // $("#modalPaymentClose").modal("toggle");
+                     $("#modalpayment").modal('hide');
+                        
                         displaySavedProgress();
+                        displayAccountingData();
 
                     });
 
