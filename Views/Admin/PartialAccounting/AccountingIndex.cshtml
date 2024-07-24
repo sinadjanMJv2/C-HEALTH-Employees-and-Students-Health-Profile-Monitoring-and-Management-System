@@ -56,7 +56,7 @@
                             {
                                 data: 'accountingInfoId',
                                 render: function (data, type, row) {
-                                    return btnAddAcct(data);
+                                    return btnAddAcct(data, row.balance);
                                 }
                             },
                         ]
@@ -65,9 +65,13 @@
 
         }
 
-        function btnAddAcct(accountingInfoId) {
-            return "<center><a style='color : #ffffff;' class='btn btn-info AcctUpdate' data-accountingInfoId=" + accountingInfoId + ">Pay</a> </center>"
+        function btnAddAcct(accountingInfoId, balance) {
+            if (balance === 0) {
+                return "<center><a style='color : #ffffff;' class='btn btn-info AcctUpdate disabled' data-accountingInfoId=" + accountingInfoId + ">Pay</a> </center>";
+            }
+            return "<center><a style='color : #ffffff;' class='btn btn-info AcctUpdate' data-accountingInfoId=" + accountingInfoId + ">Pay</a> </center>";
         }
+
 
         async function getAccountingInfo() {
             let result = await $.ajax("../api/adminapi/accountingInfo");
@@ -207,9 +211,9 @@
 
                 $("#inputId").val(selectedPatient.accountingInfoId);
 
-              
-              
-              
+
+
+
 
             }
 
@@ -230,19 +234,35 @@
                 arrData[item.name] = item.value;
             });
 
-              const now = new Date();
-              const formattedDate = now.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+            const now = new Date();
+            const formattedDate = now.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
-              console.log(`Date: ${formattedDate}, Time: ${now.toLocaleTimeString()}`);
-              arrData.Dateandtime = `${formattedDate},${now.toLocaleTimeString()}`
+            console.log(`Date: ${formattedDate}, Time: ${now.toLocaleTimeString()}`);
+            arrData.Dateandtime = `${formattedDate},${now.toLocaleTimeString()}`
 
-              arrData.Balance = selectedPatient.balance - arrData.Pay;
-          
-            
+            arrData.Balance = selectedPatient.balance - arrData.Pay;
+
+
             if (formInputs.length === formelements.length && formInputs[0].value !== '') {
 
                 console.log("Data: ", arrData)
 
+                $.ajax
+                    ({
+                        url: "../api/adminapi/addAccountingHistory",
+                        type: "POST",
+                        data:
+                        {
+                            payment: arrData
+                        },
+                    })
+                    .done(function () {
+
+                        $("#createPaymentForm")[0].reset();
+
+                        displaySavedProgress();
+
+                    });
 
             }
             else {

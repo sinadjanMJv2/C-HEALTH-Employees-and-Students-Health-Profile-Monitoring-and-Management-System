@@ -70,6 +70,42 @@ namespace SEPHMS.Controllers
             return Ok();
         }
 
+        public IActionResult addAccountingHistory(Paymenthistory payment)
+        {
+
+            try
+            {
+                _context.Paymenthistories.Add(payment);
+                _context.SaveChanges();
+
+
+
+
+                var res = _context.Accountinginfos.FirstOrDefault(q => q.AccountingInfoId == payment.Accinfoid);
+                if (res != null)
+                {
+                    res.Balance = payment.Balance;
+                    res.PayableStatus = res.Balance == 0 ? "Paid" : res.PayableStatus;
+                    _context.Accountinginfos.Update(res);
+                    _context.SaveChanges();
+                }
+
+
+
+
+
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+
+
+            return Ok();
+        }
+
+
 
 
 
