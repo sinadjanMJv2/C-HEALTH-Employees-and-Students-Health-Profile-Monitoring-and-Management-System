@@ -50,6 +50,7 @@ namespace SEPHMS.Controllers
                     Firstname = m != null ? m.Firstname : s.Firstname,
                     Lastname = m != null ? m.Lastname : s.Lastname,
                     Fullname = m != null ? m.Fullname : s.Fullname,
+                    Gmail = m != null ? m.Gmailaddress : s.Gmailaddress,
                     Patient = m != null ? "Employee" : "Student"
 
 

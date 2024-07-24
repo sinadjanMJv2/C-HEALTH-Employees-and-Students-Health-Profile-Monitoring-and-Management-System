@@ -36,6 +36,7 @@ namespace SEPHMS.Entities
         public virtual DbSet<Medicinestockhistory> Medicinestockhistories { get; set; }
         public virtual DbSet<Normalrange> Normalranges { get; set; }
         public virtual DbSet<Nurse> Nurses { get; set; }
+        public virtual DbSet<Paymenthistory> Paymenthistories { get; set; }
         public virtual DbSet<Physician> Physicians { get; set; }
         public virtual DbSet<Signup> Signups { get; set; }
         public virtual DbSet<Studenthealthinformation> Studenthealthinformations { get; set; }
@@ -755,6 +756,35 @@ namespace SEPHMS.Entities
                     .IsRequired()
                     .HasMaxLength(250)
                     .HasColumnName("status");
+            });
+
+            modelBuilder.Entity<Paymenthistory>(entity =>
+            {
+                entity.HasKey(e => e.Paymenthistid)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("paymenthistory");
+
+                entity.Property(e => e.Paymenthistid)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("paymenthistid");
+
+                entity.Property(e => e.Accinfoid)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("accinfoid");
+
+                entity.Property(e => e.Balance)
+                    .HasPrecision(10)
+                    .HasColumnName("balance");
+
+                entity.Property(e => e.Dateandtime)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .HasColumnName("dateandtime");
+
+                entity.Property(e => e.Pay)
+                    .HasPrecision(10)
+                    .HasColumnName("pay");
             });
 
             modelBuilder.Entity<Physician>(entity =>
