@@ -60,7 +60,9 @@
                     <p style="margin-top: 50px; font-weight: bold; font-size: 30px;">See your previous and present
                         health profile</p>
 
-                    <p style="margin-top: 50px;  font-size: 20px;">Remarks:</p>
+                    <p style="margin-top: 50px;  font-size: 20px;"><span class="fw-bold">Remarks:</span> <span class="Good "></span></p>
+                    <p style="margin-top: 50px;  font-size: 20px;"><span class="fw-bold">Remarks:</span> <span class="Bad"></span></p>
+                    <p style="margin-top: 50px;  font-size: 20px;"><span class="fw-bold">Remarks:</span>  <span class="NH"></span></p>
                 </center>
                 @Html.Partial("PartialViewHealthProfileAndSchedule/Comparechart")
                 @Html.Partial("PartialViewHealthProfileAndSchedule/modalHealthProfile")
@@ -697,10 +699,22 @@
                         Object.values(subarray[0])[0] == 'green' && Object.values(subarray[1])[0] == 'green' ||   Object.values(subarray[0])[0] == 'red' && Object.values(subarray[1])[0] == 'red'
                     );
 
-                    console.log("Good data:", goodHealthRemark);
-                    console.log("Bad data:", badHealthRemark);
-                     console.log("Nothings Change:", nothingsChangeHealthRemark);
-                  
+                   
+                    const uniqueKeysGoodHealth  = [...new Set(goodHealthRemark.flat().map(obj => Object.keys(obj)[0]))];
+                    console.log("Good data:", uniqueKeysGoodHealth);
+
+                    const uniqueKeysBadHealth  = [...new Set(badHealthRemark.flat().map(obj => Object.keys(obj)[0]))];
+                    console.log("Bad data:", uniqueKeysBadHealth);
+                    
+                    const uniqueKeysNothingsChange  = [...new Set(nothingsChangeHealthRemark.flat().map(obj => Object.keys(obj)[0]))];
+                    console.log("Nothings Change:", uniqueKeysNothingsChange);
+                   
+
+                     $(".Good").html(`"Based on the data provided, you are in excellent health, with all vital signs and lab results within normal ranges. Specifically, your <b class="text-success">${uniqueKeysGoodHealth}</b> levels have shown improvement and are now well within normal ranges, and no significant health concerns are noted."`);
+                     $(".Bad").html(`"Based on the data provided, there are some areas of concern, with several lab results outside the normal range, including elevated <b class="text-danger">${uniqueKeysBadHealth}</b> levels. These changes, along with other symptoms, warrant further investigation. Please consult with a physician to address these issues and determine the appropriate course of action."`);
+                     $(".NH").html(`"Your current health data shows no significant changes compared to previous evaluations, including consistent levels of <b>${uniqueKeysNothingsChange}</b> indicating that your health status has remained stable over time."`);
+
+                    
 
 
                     const configCom = {
