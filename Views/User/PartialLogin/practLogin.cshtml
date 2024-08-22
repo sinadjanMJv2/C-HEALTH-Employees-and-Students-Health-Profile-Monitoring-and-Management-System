@@ -221,8 +221,8 @@
         getLocal();
         getEmployee();
 
-        AddSelectDepartment();
-        AddSelectDepartmentEmployee();
+       AddSelectStudentDepartment();
+       AddSelectDepartmentEmployee();
 
         AddSelectPrabens();
         SelectEmpProvince();
@@ -698,39 +698,32 @@
 
 
 
-        function AddSelectDepartment() {
+        function AddSelectStudentDepartment() {
 
             $.ajax("../api/adminapi/getDepartment")
                 .done(function (result) {
 
-                    var template = document.querySelector("template#departmentOptionTemplate");
-                    var parent = document.querySelectorAll("#Department");
+                    var templateEmp = document.querySelector("template#departmentOptionTemplate");
+                    var parentEmp = document.querySelectorAll("#STDepartment");
 
-                    for (i = 0; i < parent.length; i++) {
+                    for (i = 0; i < parentEmp.length; i++) {
                         result.forEach(function (item) {
-                            var cloned = template.content.cloneNode(true);
-                            cloned.querySelector("option").value = item.departmentId;
-                            cloned.querySelector("option").innerText = item.departmentName;
+                            var clonedEmp = templateEmp.content.cloneNode(true);
+                            clonedEmp.querySelector("option").value = item.departmentId;
+                            clonedEmp.querySelector("option").innerText = item.departmentName;
 
-                            parent[i].prepend(cloned);
+                            parentEmp[i].prepend(clonedEmp);
                         });
                     }
-
-
-
 
 
                 });
         }
 
+         const STdepSelect = document.querySelector("#STDepartment");
+        const STcourseSelect = document.querySelector("#STCourse");
 
-        const depSelect = document.querySelector("#Department");
-        const courseSelect = document.querySelector("#Course");
-
-
-
-        // Function to populate the result select with data
-        function populateResultSelect(selectedValue) {
+          function depSelectStudent(selectedValue) {
 
 
             $.ajax("../api/adminapi/getCourse")
@@ -741,36 +734,30 @@
                     const datos = data.filter(item => item.departmentId == selectedValue);
 
                     // Clear the existing options in the result select
-                    courseSelect.innerHTML = "";
+                    STcourseSelect.innerHTML = "";
 
-
-                    // Populate the result select with the filtered data
                     datos.forEach((item) => {
                         const option = document.createElement("option");
                         option.value = item.courseStrandYearId;
                         option.innerText = item.courseStrandYearName;
-                        courseSelect.appendChild(option);
-
+                        STcourseSelect.appendChild(option);
                     });
-
 
                 });
         }
 
-        // Initial population of the result select based on the default selected value
-        populateResultSelect(depSelect.value);
-
+         depSelectStudent(STdepSelect.value);
 
         // Event listener to update the result select when the category select changes
-        depSelect.addEventListener("change", function () {
+        STdepSelect.addEventListener("change", function () {
             const selectedValue = this.value;
-            populateResultSelect(selectedValue);
+            depSelectStudent(selectedValue);
         });
 
 
 
 
-
+    
         function AddSelectDepartmentEmployee() {
 
             $.ajax("../api/adminapi/getDepartment")

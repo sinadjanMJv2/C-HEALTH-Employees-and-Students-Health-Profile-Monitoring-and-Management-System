@@ -1,10 +1,29 @@
 using SEPHMS.Entities;
 
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var configuration = new ConfigurationBuilder()
+.SetBasePath(builder.Environment.ContentRootPath)
+.AddJsonFile("appsettings.json")
+.Build();
+
+
+
 // Add services to the container.
-builder.Services.AddDbContext<clinicContext>();
+builder.Services.AddControllersWithViews();
+var connectionString = configuration.GetConnectionString("DefaultConnection");
+var serverVersion = new MySqlServerVersion(new Version(8, 0, 23));
+
+// Add services to the container.
+builder.Services.AddDbContext<clinicContext>(options =>
+options.UseMySql(connectionString, serverVersion,
+mysqlOptions => mysqlOptions.EnableRetryOnFailure(
+            maxRetryCount: 3,
+            maxRetryDelay: TimeSpan.FromSeconds(3),
+            errorNumbersToAdd: null)));
 
 
 builder.Services.AddCors(options =>
