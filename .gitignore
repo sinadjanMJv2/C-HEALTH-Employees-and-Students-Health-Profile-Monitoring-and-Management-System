@@ -1,3 +1,22 @@
-SEPHMS.csproj
+# Ignore Program.cs
 Program.cs
+
+# Ignore appsettings.json
 appsettings.json
+
+# Ignore SEPHMS.csproj
+SEPHMS.csproj
+
+# Other common ignores for ASP.NET projects
+bin/
+obj/
+*.log
+*.user
+*.suo
+*.tmp
+*.pdb
+*.cache
+*.csproj.user
+*.csproj.vspscc
+*.csproj.vssscc
+*.vs/
