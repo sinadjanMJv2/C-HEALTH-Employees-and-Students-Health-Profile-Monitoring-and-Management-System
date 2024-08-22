@@ -2,7 +2,7 @@
 Program.cs
 
 # Ignore appsettings.json
-*/appsettings.json
+**/appsettings.json
 
 # Ignore SEPHMS.csproj
 SEPHMS.csproj
